@@ -133,7 +133,7 @@ After installing miniconda, type the following command into your terminal. This 
 
 ````{tab-set-code} 
 
-```{code-block} python
+```{code-block} shell
 conda create -n msse-python python=3.11
 ```
 ````
