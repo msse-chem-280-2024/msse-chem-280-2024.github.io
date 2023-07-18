@@ -126,7 +126,7 @@ html_theme_options = {
 	"show_toc_level": 2,
 	"header_links_before_dropdown": 4,
 	"external_links": [
-      {"name": "MolSSI", "url": "https://molssi.org"}
+      {"name": "MSSE", "url": "https://msse.berkeley.edu/"}
   ],
 
 	"secondary_sidebar_items": ["page-toc", "sourcelink"],
