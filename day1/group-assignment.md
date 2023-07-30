@@ -1,6 +1,12 @@
 # Day 1 - Group Assignment 
 
-For this homework assignment, you will be collaborating with your team on your group repository. 
+For this homework assignment, you will be collaborating with your team on your group repository.
+
+To start, someone in the group should add a **branch protection rule** to the repository. 
+This is available in the "Branches" section in the "Settings" tab for the repository. 
+Enable branch protection, then type "main" (for "main" branch) as the "branch name pattern".
+Click "require a pull request before merging" in the next section and save.
+
 For today, you should interview and create a markdown file that has information about someone else on your team. Some questions you might think about…
 
 - Where is your team member from?
@@ -33,23 +39,21 @@ This assignment is worth 5% of your grade and will be graded out of 5 points.
     <tr>
     <tr>
         <td>
-            <p>Blog Post</p> 
+            <p>Description</p> 
             <ul>
-                <li>In group repository in correct location (no extra files).
-                <li>Submitted on time.
-                <li>At least 250 words and is about group member
+                <li>Labeled with author and group member name.
+                <li>At least 250 words and is about group member.
         <td>
             <p>3 points total</p>
             <ul>
-                <li> 1 point
                 <li> 1 point
                 <li> 1 points
     <tr>
         <td>
             <p>Submission</p> 
             <ul>
-                <li>No extra files in final pull request.
-                <li>Descriptive commit messages
+                <li>Submitted on time, in correct location with no extra files in final pull request.
+                <li>Descriptive commit messages and pull request description.
         <td>
             <p>2 points total</p>
         </td>
