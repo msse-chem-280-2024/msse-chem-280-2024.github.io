@@ -128,7 +128,8 @@ To review a PR, click the 'Files changed' tab.
 You can review the changes (green Review changes button). 
 Since you are looking at your own PR, you won't be able to "Approve" if you have put in the branch protection rule. However, you can comment on and merge the changes if you wish.
 
-## Contributing to a repository with multiple collaborators
+(collaboration)=
+## Contributing to a repository with multiple collaborators - HOMEWORK
 
 During this section, we will all start from central repository where we are listed as collaborators, make changes, then submit something called a Pull Request to have those changes incorporated into the code. 
 We will leave the package we are developing for this section.

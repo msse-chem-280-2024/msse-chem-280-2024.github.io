@@ -1,28 +1,16 @@
 # Day 1 - Group Assignment 
 
-For this homework assignment, you will be collaborating with your team on your group repository.
+For this homework assignment, you will be collaborating with the rest of the class on a group repository.
 
-To start, someone in the group should add a **branch protection rule** to the repository. 
-This is available in the "Branches" section in the "Settings" tab for the repository. 
-Enable branch protection, then type "main" (for "main" branch) as the "branch name pattern".
-Click "require a pull request before merging" in the next section and save.
+Follow the instructions in the [GitHub Collaboration lesson for contributing to a repository](collaboration).
 
-For today, you should interview and create a markdown file that has information about someone else on your team. Some questions you might think about…
-
-- Where is your team member from?
-- Where do they live?
-- What is your favorite food? What is your least favorite food?
-- What is one thing the two of you have in common (that isn’t the MSSE program)?
-- Why did they choose the MSSE degree?
-
-Be creative with your questions, these are only suggestions. Create a file that contains an interview of your group mate and submit a pull request. 
 ### Turning this assignment in
 In order to complete this assignment, you must:
-1. Interview and write about another group member. Your post should be at least 250 words. Save the file with the group member's first and last name (`lastname_firstname.md`). List your name as author at the top of the file, after the title.
-2. Submit your write-up as a pull request to your team's central repository.
-3. Review a teammate's post. When you review, you should leave at least one comment. 
-4. Have your post approved and merged to the main repo.
-5. Turn your assignments in on bCourses.
+1. Complete the exercise linked above.
+2. Submit pull request to the central repository.
+3. Review a teammate's pull request. When you review, you should leave at least one comment. 
+4. Turn your assignments in on bCourses. You will turn in the URL of your pull request and review, so your change does not have to be merged yet to be complete.
+5. Have your pull request approved and merged to the main repo (this can happen after you "turn ).
 
 ## Group Assignment 1 Rubric
 
@@ -41,8 +29,8 @@ This assignment is worth 5% of your grade and will be graded out of 5 points.
         <td>
             <p>Description</p> 
             <ul>
-                <li>Labeled with author and group member name.
-                <li>At least 250 words and is about group member.
+                <li>Correctly formatted file.
+                <li>Adds at least three sentences about element.
         <td>
             <p>3 points total</p>
             <ul>
