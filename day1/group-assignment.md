@@ -46,8 +46,8 @@ This assignment is worth 5% of your grade and will be graded out of 5 points.
         <td>
             <p>3 points total</p>
             <ul>
-                <li> 1 point
-                <li> 1 points
+                <li> 1.5 point
+                <li> 1.5 points
     <tr>
         <td>
             <p>Submission</p> 

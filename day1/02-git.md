@@ -696,7 +696,10 @@ To switch to an existing branch, use
 
 Save and commit this change.
 
-## Getting Changes to Your main Branch
+## Getting Changes to Your main Branch -- STOP HERE 
+
+This is as far as we complete in class. 
+Do not do the next sections if you want to follow along.
 
 The portion below here should only be used if you are working on a project alone. 
 Otherwise, we will discuss how to get changes all on the same branch in the lesson on collaboration using GitHb.
