@@ -134,10 +134,10 @@ Since you are looking at your own PR, you won't be able to "Approve" if you have
 During this section, we will all start from central repository where we are listed as collaborators, make changes, then submit something called a Pull Request to have those changes incorporated into the code. 
 We will leave the package we are developing for this section.
 
-Navigate to the URL https://github.com/msse-2023-bootcamp/periodic-table in your web browser. 
+Navigate to the URL https://github.com/msse-chem-280-2023/periodic-table in your web browser. 
 You should see a GitHub repo. 
 This repository contains code to make a website which has the periodic table. 
-View the website https://msse-2023-bootcamp.github.io/periodic-table/ . 
+View the website https://msse-chem-280-2023.github.io/periodic-table/ . 
 On the website page, elements which appear with a blue background and gold text have a page and information filled in. 
 You can read more about each element by clicking on it. 
 Elements with a white background do not yet have a page. 
