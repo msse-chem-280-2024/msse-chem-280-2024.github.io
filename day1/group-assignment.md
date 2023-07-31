@@ -8,7 +8,7 @@ Follow the instructions in the [GitHub Collaboration lesson for contributing to 
 In order to complete this assignment, you must:
 1. Complete the exercise linked above.
 2. Submit pull request to the central repository.
-3. Review a teammate's pull request. When you review, you should leave at least one comment. 
+3. Review a teammate's pull request. When you review, you should leave at least one comment. **Make sure that they have included information about their chosen element, and make sure that they have the proper page header and file name!**
 4. Turn your assignments in on bCourses. You will turn in the URL of your pull request and review, so your change does not have to be merged yet to be complete.
 5. Have your pull request approved and merged to the main repo (this can happen after you "turn ).
 

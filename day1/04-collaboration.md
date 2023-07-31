@@ -240,23 +240,7 @@ Atomic Number : 11
 
 Save your file after you edit it.
 
-### Testing out the website
-
-If you have [jekyll](https://jekyllrb.com) installed, you can view a local copy of the webpage. 
-This is not a necessary step. I
-If you do not have jekyll installed, or do not wish to install Jekyll skip this step. 
-
-Execute the command
-
-````{tab-set-code} 
-
-```{code-block} shell
-bundle exec jekyll serve
-```
-````
-
-in the terminal the top level of your project to render a local copy of the webpage. 
-Navigate to the local address to view your website and make sure your new element is working. 
+Make sure you have included the header and that the file name is properly formatted.
 
 ## Committing the change
 
