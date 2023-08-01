@@ -4,6 +4,8 @@ Day 2 contains four possible homework tasks.
 Divide the tasks up among your team members. 
 Each person should complete one task for homework and review the task of at least one teammate.
 
+For each task, create a jupyter notebook with a file name of the format `lastname_firstname_task_x.ipynb` where `x` is your task number.
+
 ## Task 1 - Systematic Investigation of Error in Monte Carlo Calculation
 
 For this task, you will return to your notebook where we calculated the value of $\pi$ using Monte Carlo Methods.
@@ -23,11 +25,11 @@ In your submission, include a markdown cell that contains a reflection (at least
 
 ## Task 2 - Investigating the Lennard Jones Equation
 
-Write a `calculate_LJ` function that includes parameters for setting $\sigma\$ and $\epsilon\$.
+Write a `calculate_LJ` function that includes parameters for setting $\sigma$ and $\epsilon$.
 
 After writing the function, perform a set of calculations with $\sigma$ and $\epsilon$ both equal to one. Using these values, calculate the Lennard Jones potential energy for a range of distances, r, from r = 0.1 to r = 5 in increments of 0.1. Save your results in a list.
 
-Next, perform a set of calculations where $\sigma\$ is equal to 2 and $\epsilon\$ is equal to one. Then set $\sigma\$ equal to 1 and $\epsilon\$ equal to two. For each set of calculations, save your result in a list.
+Next, perform a set of calculations where $\sigma$ is equal to 2 and $\epsilon$ is equal to one. Then set $\sigma$ equal to 1 and $\epsilon$ equal to two. For each set of calculations, save your result in a list.
 
 Visualize all three results on a graph using `matplotlib`.
 
@@ -57,5 +59,12 @@ def calculate_distance(coord1, coord2):
 ```
 
 After writing your function, include a few test cases "sanity checks" to ensure that your function is behaving correctly.
+
+```{admonition} The distance function
+:class: warning
+ 
+You cannot use a predefined distance function like `math.dist`
+for this task.
+```
 
 In your submission, include a markdown cell that contains a reflection (at least five sentences) on your approach and observations.
