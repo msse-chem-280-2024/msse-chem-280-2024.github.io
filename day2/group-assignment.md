@@ -6,6 +6,20 @@ Each person should complete one task for homework and review the task of at leas
 
 For each task, create a jupyter notebook with a file name of the format `lastname_firstname_task_x.ipynb` where `x` is your task number.
 
+## Reviewing your teammate's change
+You may need too pull the changes from your teammate's branch when you are reviewing their pull request. You can pull their branch to your local computer by doing
+
+````{tab-set-code} 
+
+```{code-block} shell
+git switch main
+git fetch 
+git switch -c TEAMMATE_BRANCH --track origin/TEAMMATE_BRANCH
+```
+````
+
+You should then be able to see your teammates files. You should open their Jupyter notebook and review their code. If any changes are needed, leave this in your review on GitHub.
+
 ## Task 1 - Systematic Investigation of Error in Monte Carlo Calculation
 
 For this task, you will return to your notebook where we calculated the value of $\pi$ using Monte Carlo Methods.
