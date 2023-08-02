@@ -12,7 +12,7 @@ Lessons
 .. toctree::
    :maxdepth: 1
 
-   day3/00-group-meeeting
+   day3/00-group-meeting
 
 Discussions and Assignments
 ---------------------------
