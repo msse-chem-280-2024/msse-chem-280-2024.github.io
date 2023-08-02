@@ -33,7 +33,10 @@ If they exit through one side of the box, they reappear on the other.
 ## Task 1 - Alternate Initial Configuration - Random Points
 So far we have only used an initial configuration from a file. For this task, you will write a function which can generate initial system configurations from a number of particles and a desired system density. Make sure your function includes docstrings!
 
-Write a function that makes a configuration by randomly placing points in a 3 dimensional box. The function should return coordinates, box_length the same way our `read_xyz`` function does so we can switch out the two without changing our code.
+For density, use the number density. For example, in our sample configuration from NIST, the density is 0.8. This is calculated by dividing the number of atoms by the box volume - 800 atoms / (10 * 10 * 10), since 10 was our box length.
+You will need to calculate a box length depending on the number of atoms and the desired density.
+
+Write a function that makes a configuration by randomly placing points in a 3 dimensional box. The function should return `coordinates``, `box_length` the same way our `read_xyz` function does so we can switch out the two without changing our code.
 
 ## Task 2 - Alternate Initial Configuration - Cubic Lattice
 
