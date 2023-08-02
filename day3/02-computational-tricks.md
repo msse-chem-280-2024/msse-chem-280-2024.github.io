@@ -15,7 +15,7 @@ The idea is that if particles are beyond a certain distance from one another, th
 
 ### Discussion Questions
 
-1. Consider a system of 3 particles. How many pairwise particle-particle interactions will there be? What about 10 or 100 particles? Consider a system with a density of 1. Using this density, how many particles are in a sphere with radius 1, 2, 5, and 10 units? (These are math problems, you don't have to use programming to solve them, but you can.)
+1. Consider a system of 2, 3, 4, and 5 particles. How many pairwise particle-particle interactions will there be? What about 10 or 100 particles? Consider a system with a density of 1. Using this density, how many particles are in a sphere with radius 1, 2, 5, and 10 units? (These are math problems, you don't have to use programming to solve them, but you can.)
 
 2. Can you think of the benefits associated with using a cut-off? 
 
@@ -60,6 +60,8 @@ def calculate_total_energy(coordinates, box_length, cutoff):
     return total_energy
 ````
 `````
+
+Add a counter to your energy calculation and experiment with the cut off distance to see the effect on the number of interactions.
 
 ## Periodic Boundaries
 Modern molecular simulations can be carried out with up to millions of particles.
