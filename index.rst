@@ -15,5 +15,6 @@ where students work in groups to create a software package using concepts taught
    setup
    day1
    day2
+   day3
    
    
