@@ -1,6 +1,6 @@
 # Day 2 - Group Assignment 
 
-Day 2 contains four possible homework tasks.
+Day 2 contains three possible homework tasks.
 Divide the tasks up among your team members. 
 Each person should complete one task for homework and review the task of at least one teammate.
 

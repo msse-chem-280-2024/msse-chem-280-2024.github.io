@@ -1,5 +1,35 @@
 # Group Homework Assignment Day 3
 
+```{admonition} Comparing to NIST Benchmarks
+
+You can see NIST benchmark energies [on this page](https://www.nist.gov/mml/csd/chemical-informatics-group/lennard-jones-fluid-reference-calculations-cuboid-cell).
+
+We are using configuration 1.
+
+```
+
+## Group Discussion 
+
+Answer the following discussion questions.
+Everyone should include the answers in a markdown cell in their task assignment.
+
+### Discussion Questions
+
+1. Consider a system of 2, 3, 4, and 5 particles. How many pairwise particle-particle interactions will there be? What about 10 or 100 particles? A common cutoff distance is $3 \sigma$. Modify your total energy calculation to take a cut-off into account. Do you agree with this choice of cutoff? Why or why not? Justify your answer with numbers using the sample configuration from NIST.
+
+2. Can you think of the benefits associated with using a cut-off? What could be the drawbacks?
+3. To get a better idea of periodic boundaries, consider two particles in a periodic box with a length of 10 $\sigma$ (remember that when we used reduced units, our units of length are $\sigma$). 
+One particle is at `(0, 0, 0)`, and the second is at `(0, 0, 8)`. If we were to measure the distance between these two particles using our `calculate_distance` function, that distance would be 8 $\sigma$. 
+However, because we are using periodic boundary conditions, that is not the distance between the particles. 
+There is another copy, or image, of the particle in the adjacent periodic boxes. 
+If you have ever played the game Pac-Man, it is a very similar idea to how the characters in this game behave. 
+If they exit through one side of the box, they reappear on the other.
+
+	Consider the following questions:
+
+	1. What is the maximum distance any particle can be from another in each dimension? (this will have to do with the box length). Justify your answer.
+	1. What is the actual distance of our example? (`(0, 0, 0)`, `(0, 0, 8)`)
+
 ## Task 1 - Alternate Initial Configuration - Random Points
 So far we have only used an initial configuration from a file. For this task, you will write a function which can generate initial system configurations from a number of particles and a desired system density. Make sure your function includes docstrings!
 
@@ -39,7 +69,7 @@ If your group contains a member who would like a challenge, they should attempt 
 1. Modify the calculate distance function to account for periodic boundaries. Your function should take an additional keyword argument, `box_length`, which has a default value of `None`.  If `box_length` is specified, the `box_length` value should be used to calculate the minimum image distance (in other words, the distance considering periodic boundaries). 
 When calculating the minimum image distance, follow this procedure:
     - Calculate the distance in each dimension as we did previously (ie $x_2 - x_1$ )
-    - From your group discussion you should have arrived at the conclusion that the maximum distance in any direction (`x`, `y`, or `z`) was  $\frac {l_B}{2}$ (where $$l_B$$ is the box length). Therefore, if our calculated distance in any direction is greater than $\frac {l_B}{2}$, we will want to subtract $l_B$ from the value. If there is more than one box length between the two points, you will want to subtract the appropriate number. 
+    - From your group discussion you should have arrived at the conclusion that the maximum distance in any direction (`x`, `y`, or `z`) was  $\frac {l_B}{2}$ (where $l_B$ is the box length). Therefore, if our calculated distance in any direction is greater than $\frac {l_B}{2}$, we will want to subtract $l_B$ from the value. If there is more than one box length between the two points, you will want to subtract the appropriate number. 
 
 2. Make sure to test behavior of your function using a few (at least 2) test cases and `assert` statements. Write explanations of the test cases you chose.
     

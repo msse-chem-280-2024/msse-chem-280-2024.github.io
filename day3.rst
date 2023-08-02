@@ -13,6 +13,8 @@ Lessons
    :maxdepth: 1
 
    day3/00-group-meeting
+   day3/01-LJ-system
+   day3/02-computational-tricks
 
 Discussions and Assignments
 ---------------------------
@@ -20,3 +22,4 @@ Discussions and Assignments
    :maxdepth: 1
    
    individual-assignments/01-07-individualhw
+   day3/group-assignment

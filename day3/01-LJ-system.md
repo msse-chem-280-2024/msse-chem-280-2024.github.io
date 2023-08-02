@@ -157,7 +157,7 @@ sample_coords, box_length = read_xyz(config1_file)
 ```
 ````
 
-##### Sanity Checks
+### Sanity Checks
 
 1. Check that function has expected number of coordinates.
 2. Check that first line, last line is as expected.
