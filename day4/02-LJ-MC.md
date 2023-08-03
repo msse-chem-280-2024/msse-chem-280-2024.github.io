@@ -10,9 +10,21 @@ Objectives:
 - Use the Metropolis algorithm to sample configurations of LJ particles
 ````
 
+```{admonition} Thermodynamics and Statistical Mechanics
+:class: caution
+
+This lesson glosses over ideas from thermodynamics and statistical mechanics.
+These disciplines play a huge role in computational molecular science.
+
+If you would like to learn more about these topics, we suggest
+free [Introduction to Statistical Mechanics](https://web.stanford.edu/~peastman/statmech/)
+available from Stanford, and/or ["The Laws of Thermodynamics: A Very Short Introduction"](https://academic-oup-com.libproxy.berkeley.edu/book/496?login=true), available as an e-book (for free with login) from UC Berkeley libraries. 
+
+```
+
  ## Lesson Slides
 
-{download}`Lesson Slides <../_files/msse-lj-part2.pdf>`
+{download}`Lesson Slides <../_files/mc-lj-part2.pdf>`
 
 Continue from the notebook you created in the previous lesson.
 

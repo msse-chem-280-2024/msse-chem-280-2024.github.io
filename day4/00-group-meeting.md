@@ -1,7 +1,5 @@
 # Class Warm Up
 
-Make sure all pull requests from Day 3 are merged and you've pulled the changes to your main branch!
-
 ## Explain xkcd
 In your groups, take 5 minutes come up with an explanatin of this [xkcd](https://xkcd.com/) webcomic.
 
@@ -12,6 +10,8 @@ In your groups, take 5 minutes come up with an explanatin of this [xkcd](https:/
 If you'd like, you can read the explaination on [Explain xkcd](https://explainxkcd.com/wiki/index.php/1597:_Git).
 
 ## Class Prep 
+
+Make sure all pull requests from Day 3 are merged and you've pulled the changes to your main branch!
 
 Create a Jupyter notebook for today's lecture in your Day 4 folder, named with your first and last name.
 Create a markdown cell with a title.

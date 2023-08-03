@@ -1,8 +1,12 @@
 # Group Homework Assignment Day 4
 
+Like previous days, your task should be placed in the appropriate folder (`day4`), with the file name `lastname_firstname_taskX` with the appropriate extension.
+
+In additon to code, each task should also include a markdown cell reflection that is at least five sentences.
+
 ## Task 1 - Exploring the Acceptance Criteria
 Write code to calculate the probability of accepting a Monte Carlo move for energies ranging from -2 to 2 for T = 0.9, T = 0.4, and T = 1.4. 
-What is the effect of temperature on the probability of a MC move being accepted? Does this make sense from what you know about thermodynamics? Why or why not? Create a plot showing your results. Note that you aren’t going to be able to use your function accept_or_reject for this. You will have to take p_acc out of it to make the plot.
+What is the effect of temperature on the probability of a MC move being accepted? Does this make sense based on your intuition or from what you know about thermodynamics? Why or why not? Create a plot showing your results. Note that you aren’t going to be able to use your function `accept_or_reject`` for this. You will have to take `p_acc` out of it to make the plot.
 
 ## Task 2 - Comparing Performance
 In our implementation, we've made a smart choice about our algorithm. 
