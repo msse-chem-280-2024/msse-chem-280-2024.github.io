@@ -137,3 +137,20 @@ def calculate_tail_correction(arguments):
 
 In the class [Google Doc](https://docs.google.com/document/d/1Bs5K45Y9uPrfE1XoGYgawg4_oA9DGKwAGTD_-KCbe0Y/edit?usp=sharing) write an explanation of changes to our `calculate_distance` function and our `calculate_total_energy` function under the section "Code Difference Explanation" at the end of the document. 
 Add a header with your group name over your explanation.
+
+If you need a `calculate_tail_correction` function, use this one:
+
+````{tab-set-code}
+
+```{code-block} python
+def calculate_tail_correction(num_particles, box_length, cutoff):
+    """
+    Calculate the long range tail correction
+    """
+
+    const1 = (8 * math.pi * num_particles**2) / (3 * box_length**3)
+    const2 = (1 / 3) * (1 / cutoff) ** 9 - (1 / cutoff) ** 3
+
+    return const1 * const2
+```
+````

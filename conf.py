@@ -126,7 +126,8 @@ html_theme_options = {
 	"show_toc_level": 2,
 	"header_links_before_dropdown": 4,
 	"external_links": [
-      {"name": "MSSE", "url": "https://msse.berkeley.edu/"}
+      {"name": "MSSE", "url": "https://msse.berkeley.edu/"},
+      {"name": "Git Cheat Sheet", "url": "https://msse-chem-280-2023.github.io/git-cheat-sheet/"}
   ],
 
 	"secondary_sidebar_items": ["page-toc", "sourcelink"],
