@@ -17,6 +17,7 @@ Lessons
 .. toctree::
    :maxdepth: 1
 
+   day5/00-group-meeting
    day5/01-numpy
    day5/02-mc-pi-numpy
    day5/03-calculate-distance
