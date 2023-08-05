@@ -32,7 +32,7 @@ import math
 coordinates = [[0, 0, 0], [0, 0, math.pow(2, 1/6)], 
               [0, 0, 2 * math.pow(2, 1/6)], [math.pow(2, 1/6), 0, 0]]
 
-second_coordinate = coordinates[0]
+second_coordinate = coordinates[1]
 ```
 ````
 
@@ -50,6 +50,8 @@ new_coordinate = []
 for i in range(3):
     translated_coordinate = second_coordinate[i] + translation_vector[i]
     new_coordinate.append(translated_coordinate)
+
+print(new_coordinate)
 ```
 ````
 
@@ -286,11 +288,11 @@ We can convert our coordinates to a NumPy array and print the shape
 
 ```{code-block} python
 coordinates_np = np.array(coordinates)
-print(coordinate_np.shape)
+print(coordinates_np.shape)
 ```
 ````
 
-Though hard to see from our example, when the shape of a NumPy array is given, the first number is the number of rows and the second number is the number of columns. When we use `coordinats_np.shape` it tells us `(4,3)`. This means we have 4 rows and 3 columns (which is what we would expect for four atoms in three dimensions).
+Though hard to see from our example, when the shape of a NumPy array is given, the first number is the number of rows and the second number is the number of columns. When we use `coordinates_np.shape` it tells us `(4,3)`. This means we have 4 rows and 3 columns (which is what we would expect for four atoms in three dimensions).
 
 ### Accessing Information in a Multidimensional Array
 In the Python standard library, we have been representing coordinate information in a nested list. This required us to use two sets of brackets for indexing. For example, to get the x value of atom index 3 from our nested list (Python Standard library), we could do the following:
@@ -336,7 +338,7 @@ When accessing information in a NumPy array, we can put the indices in one set o
 ````{tab-set-code} 
 
 ```{code-block} python
-coordinates[3, 0]
+coordinates_np[3, 0]
 ```
 ````
 
