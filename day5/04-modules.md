@@ -357,6 +357,7 @@ For a Monte Carlo simulation, we want to keep track of the coordinates so we can
 We can add some additional statements to our functions under `if move % freq` to keep the coordinates
 at specified snapshots, then we can return them at the end of the simulation.
 
+````{tab-set-code}
 ```{code-block} python
 def run_simulation(coordinates, box_length, cutoff, reduced_temperature, num_moves, max_displacement, freq=1000):
     # Calculated quantities
