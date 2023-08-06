@@ -104,7 +104,7 @@ systems it can run, while interpreted code is often OS and platform agnostic
 ```{admonition} The Python Interpreter
 :class: discussion
 
-The Python interpreter is written in C.
+The most commonly-used Python interpreter (CPython) is written in C.
 Why do you think that is?
 ```
 
@@ -127,8 +127,8 @@ data (including external libraries) into a single library or executable.
 
 There are several different compilers that you may
 run across. These include the [GNU Compiler Collection
-(GCC)](https://gcc.gnu.org), [Clang](http://clang.org/), and
-[Intel compilers](https://software.intel.com/content/www/us/en/develop/tools/compilers/c-compilers.html).
+(GCC)](https://gcc.gnu.org), [Clang](https://clang.llvm.org), and
+[Intel compilers](https://www.intel.com/content/www/us/en/developer/tools/oneapi/dpc-compiler.html).
 
 Complex projects are often compiled/linked with a build system (such as
 [CMake](https://cmake.org)). These build systems can simplify building software
@@ -153,7 +153,7 @@ std::string s = "Hello";
 ```
 ````
 
-```{admonition} Types in Python
+`````{admonition} Types in Python
 :class: tip
 
 Python does have types, although they are not declared the same way as in C++,
@@ -171,10 +171,12 @@ b = 10
 print(type(b))
 ```
 ````
+`````
+
 
 Once set, a variable's type cannot be changed. For example, the following python code is valid:
 
-````{tab-set-code} 
+````{tab-set-code}
 
 ```{code-block} python
 def hello_world():
@@ -256,6 +258,58 @@ def sphere_volume(radius)
 }
 ```
 ````
+
+
+## A note about source files and functions
+
+In python, an entire `.py` file is 'run' by the interpreter. Statements (assignments, loops,
+function calls, etc) can exist anywhere in that file.
+
+In C++, on the other hand, only functions can be run. Therefore, any code/logic must be
+inside a function (or class).
+
+There are some exceptions to this, but in general, very nearly all logic goes into functions
+in C++.
+
+For example, the following is a valid python `.py` file
+
+````{tab-set-code}
+
+```{code-block} python
+for i in range(10):
+    print(i)
+
+def fun(x):
+    if x < 100:
+        return True
+    else:
+        return False
+```
+````
+
+but the corresponding C++ file is not valid
+
+````{tab-set-code}
+
+```{code-block} c++
+#include <iostream>
+
+for(int i = 0; i < 10; i++)
+{
+    std::cout << i << std::endl;
+}
+
+bool fun(int x)
+{
+    if(x < 100)
+        return true
+    else
+        return false
+}
+```
+````
+
+
 
 ## Mapping between C++ and Python types
 

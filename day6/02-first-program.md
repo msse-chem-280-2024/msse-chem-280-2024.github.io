@@ -136,7 +136,7 @@ now print `Hello, world!` to the terminal.
 
 ````{tab-set-code} 
 
-```{code-block} shel
+```{code-block} shell
 g++ hello_world.cpp -o hello_world
 ./hello_world 
 ```
