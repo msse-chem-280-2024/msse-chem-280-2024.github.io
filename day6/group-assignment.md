@@ -1,6 +1,30 @@
 # Group Homework Assignment - Day 6
 
-## About the assignment
+## Discussion
+
+Read [chapter 2 of Think Python](https://greenteapress.com/thinkpython2/html/thinkpython2003.html).
+
+As you read through the chapter, thing about what the equivalent C++ code would be, and if there are any differences in the way you would write the code, or in errors that you would get. 
+
+```{admonition} The Python interpreter
+:class: note
+
+Code in this book sometimes indicated with `>>>`. This means you should type `python` in your terminal to open the interative Python interpreter to run the code.
+```
+
+Answer the following questions:
+
+1. What does an assignment statement look like in Python? In C++? What are the differences?
+2. The chapter says that Python variable names can not start with a number. Is the same true for C++ variable names?
+3. What is an expression? Give an example of an expression Python and in C++.
+4. Compare using code a for loop that counts to 10 in Python and C++. Write at least three sentences about how the loops are the same or different.
+5. Is there an interactive interpreter for C++? Why or why not?
+6. Complete Exercise 1 from chapter 2 with both Python and C++.
+
+Include your write up in your homework assignment with in a file called
+`lastname_firstname_answers.md`.
+
+## Coding Assignment
 Your assignment is to again approximate the integral from the first individual
 assignment, however this time using the midpoint method in C++.
 The integral you are looking
