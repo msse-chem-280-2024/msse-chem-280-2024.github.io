@@ -1,7 +1,7 @@
 # Group Homework Assignment - Day 7 & 8
 
 Your group assignment for today (and tomorrow) is to rewrite your
-Python `mcsim` package into C++.
+Python Monte Carlo code into C++.
 
 Begin by looking through your mcsim code and determining common data structures
 that you are using (ie, a list of coordinates).  Think about what C++ data
