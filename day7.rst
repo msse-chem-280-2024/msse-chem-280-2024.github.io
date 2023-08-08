@@ -12,8 +12,9 @@ Lessons
 .. toctree::
    :maxdepth: 1
 
-   day7/01-datatypes.md
-   day7/02-pointers.md
+   day7/00-group-meeting
+   day7/01-datatypes
+   day7/02-pointers
 
 Discussions and Assignments
 ---------------------------
