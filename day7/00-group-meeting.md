@@ -116,7 +116,7 @@ Documentation is crucial for both your understanding of the function's design an
 
 #### Example Function Specification and Documentation
 
-Let's consider an example of a function in C++ that calculates the area of a rectangle:
+Let's consider an example of a function in Python that calculates the area of a rectangle:
 
 ````{tab-set-code}
 ```{code-block} python
@@ -256,7 +256,6 @@ Regular testing and refinement are essential to maintaining reliable code.
 ## Step 5 - Program Review
 
 The final step of the Programming Design Recipe is reviewing your code. 
-This process involves revisiting the entire codebase, from data definitions to function implementations, and checking for any discrepancies, possible improvements, or overlooked details. 
 Code review is a crucial practice in the professional world, and developing this habit early will benefit you in the long run.
 
 ### Step 5.1 - Review for Consistency
