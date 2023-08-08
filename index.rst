@@ -19,5 +19,6 @@ where students work in groups to create a software package using concepts taught
    day4
    day5
    day6
+   day7
    
    
