@@ -1,4 +1,4 @@
-# Individual Homework Assignment #1
+# Individual Homework Assignment 1
 
 ````{admonition} Overview
 :class: overview

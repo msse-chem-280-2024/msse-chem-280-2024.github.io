@@ -21,4 +21,5 @@ where students work in groups to create a software package using concepts taught
    day6
    day7
    day8
-   
+   individual-assignments
+   final-project.md
