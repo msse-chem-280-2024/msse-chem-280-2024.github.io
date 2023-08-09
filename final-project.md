@@ -8,6 +8,8 @@ For this project, systematically evaluate the performance of the three Monte Car
 - Increasing the number of steps with a constant number of particles or
 - Increasing the number of particles while maintaining a consistent number of steps.
 
+This will involve running 3 versions of code for 3 conditions each, with each data point being an average of 3 trials (27 simulation runs!). 
+
 After obtaining your timing data, make a plot or multiple plots showcasing your average timing results. Address the following questions in your assessment:
 
 - Which version is the fastest?
@@ -37,6 +39,14 @@ time python run_sim.py
 ````
 
 For other commands, you should replace the command. For example, to time an executable, you would  do `time ./executable_name`.
+
+## Turning in Your Code
+Each group should have the following on their group repository:
+
+1. The Python Standard Library Version of the MC simulation.
+2. The NumPy Version of the MC simulation.
+3. The C++ version of the MC simulation.
+4. A README.md file with an explanation of your repository.
 
 ## Final Presentation
 
