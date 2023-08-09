@@ -42,7 +42,7 @@ double random_double(double lower_bound, double upper_bound)
 /*! Generate a random integer within a given range
     The generated integer will be on the range [a,b)
 */
-double random_integer(int lower_bound, int upper_bound)
+int random_integer(int lower_bound, int upper_bound)
 {           
    //dist will return [a,b] but we want [a,b)
    std::uniform_int_distribution<int> dist(lower_bound, upper_bound-1);

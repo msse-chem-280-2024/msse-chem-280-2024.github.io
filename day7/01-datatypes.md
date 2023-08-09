@@ -68,6 +68,10 @@ A byte is generally the smallest quantity a program works with.
 ````
 `````
 
+
+
+
+
 ## Integral data types
 
 C++ has several integer data types
@@ -109,6 +113,35 @@ What happens if you assign a negative value to an `unsigned int`?
 
 The value of the `unsigned int` becomes a large positive number.
 The negative number *wraps around* to become positive.
+```
+````
+
+
+## Obtining the limits of a type
+
+The max/min value that could possibly be stored by a type can be obtained using
+`std::numeric_limits` (from the `<limits>` library, part of the std library)
+
+
+````{tab-set-code} 
+
+```{code-block} cpp
+#include <iostream>
+#include <limits> // for std::numeric_limits
+
+int main(void)
+{
+
+    std::cout << "limits of int: " << std::numeric_limits<int>::min() << " , "
+                                    << std::numeric_limits<int>::max() << std::endl;
+    std::cout << "limits of long: " << std::numeric_limits<long>::min() << " , "
+                                    << std::numeric_limits<long>::max() << std::endl;
+    std::cout << "limits of uint: " << std::numeric_limits<unsigned int>::min() << " , "
+                                    << std::numeric_limits<unsigned int>::max() << std::endl;
+
+    return 0;
+}
+
 ```
 ````
 

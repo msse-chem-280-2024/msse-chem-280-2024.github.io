@@ -545,60 +545,7 @@ The C++ standard library also has a replacement for C-style, fixed-sized arrays 
 It is called `std::array` and takes both the type and constant size between the angled brackets
 (as opposed to just specifying the type in `std::vector`).
 
-This is useful, for example, for 3d points (x,y,z for a molecule).
-
-````{tab-set-code} 
-
-```{code-block} cpp
-#include <iostream> // for std::cout, std::endl
-#include <vector>   // for std::vector
-
-
-int main(void)
-{
-    int memsize = 16;
-
-    // A dynamic array of double
-    std::vector<double> data;
-
-    for(int i = 0; i < memsize; i++)
-    {
-        data.push_back(3.1415 * i);
-    }
-
-    for(int i = 0; i < data.size(); i++)
-    {
-        std::cout << "Element " << i << ": " << data[i] << std::endl;
-    }
-
-    // Memory is deleted automatically! No need to delete/deallocate
-    
-    return 0;
-}
-```
-````
-
-
-What are the benefits of using `std::array` over C-style arrays? `std::array`
-contains functions like `.at`, which will do bounds checking. But perhaps the
-most important aspect is that copying `std::array` (for example, when passing to
-functions) is much more clearer than C-style arrays, which can be very tricky.
-
-````{tab-set-code} 
-
-```{code-block} cpp
-int main(void)
-{
-    int c_arr1[5] = {1, 2, 3, 4, 5}; 
-    int c_arr2[5] = {6, 7, 8, 9,10};
-
-    // ERROR!
-    c_arr2 = c_arr1;
-}
-```
-````
-
-
+This kind of object is useful, for example, for 3d points (x,y,z for a molecule).
 
 ````{tab-set-code} 
 
@@ -622,6 +569,25 @@ int main(void)
     }
 
     return 0;
+}
+```
+````
+
+What are the benefits of using `std::array` over C-style arrays? `std::array`
+contains functions like `.at`, which will do bounds checking. But perhaps the
+most important aspect is that copying `std::array` (for example, when passing to
+functions) is much more clearer than C-style arrays, which can be very tricky.
+
+````{tab-set-code} 
+
+```{code-block} cpp
+int main(void)
+{
+    int c_arr1[5] = {1, 2, 3, 4, 5}; 
+    int c_arr2[5] = {6, 7, 8, 9,10};
+
+    // ERROR!
+    c_arr2 = c_arr1;
 }
 ```
 ````
@@ -667,101 +633,4 @@ AtomCoord coord1 = {1.0, 2.0, 3.0};
 Coordinates coords;
 coords.push_back(coord1);
 ```
-````
-
-
-
-## References
-
-While pointers are inherited from the C language, C++ introduces a new but
-similar concept - a *reference*.  References are similar to pointers
-with a few key differences
-
-1. References must be set to reference an existing object
-1. References cannot be NULL/nullptr
-1. Once set, references cannot be *re-seated* (made to reference something else)
-1. The star operator is not required to dereference a reference
-
-References are created by using `&` with the type. For example,
-
-````{tab-set-code} 
-
-```{code-block} cpp
-std::string my_string = "Hello world!"; // Regular string
-std::string & ref_string = my_string; // Reference to my_string
-```
-````
-
-
-However, given the differences listed above
-
-````{tab-set-code} 
-
-```{code-block} cpp
-std::string & empty_ref; // not valid - must reference something
-
-std::string my_string = "Hello world!"; // Regular string
-std::string & ref_string = my_string; // Ok, reference to my_string
-
-std::string my_string_2 = "Hello again, world!"; // Regular string
-ref_string = my_string_2; // Cannot re-seat reference. Will copy instead.
-```
-````
-
-
-
-If we go back to our original pointer example, we can see that taking the address
-of the reference results in the same address as the pointed-to object.
-And, like pointers, the original object can be modified via the reference.
-
-````{tab-set-code} 
-
-```{code-block} cpp
-#include <iostream> // for std::cout, std::endl
-
-int main(void)
-{
-    int j = 1234;
-    std::cout << "Value of j: " << j << std::endl;
-
-    int & rj = j; // rj references j
-    std::cout << "Value of rj: " << rj << std::endl;
-
-    std::cout << "Address of j: " << &rj << std::endl;
-    std::cout << "Address of rj: " << &rj << std::endl;
-
-    // Change j via rj
-    rj = 5678;
-
-    std::cout << "Value changed!" << std::endl;
-    std::cout << "New Value of j: " << j << std::endl;
-    std::cout << "New Value of rj: " << rj << std::endl;
-
-    return 0;
-}
-```
-````
-
-
-````{tab-set-code} 
-
-```{code-block} output
-Value of j: 1234
-Value of rj: 1234
-Address of j: 0x7fff8727380c
-Address of rj: 0x7fff8727380c
-Value changed!
-New Value of j: 5678
-New Value of rj: 5678
-```
-````
-
-
-It is not common to use references by themselves, but they are very common
-when passing arguments to functions (which we will see in the next lesson).
-````{admonition} Key Points
-:class: key
-
-- Pointers are variables that point to an area of memory
-- Pointers can be used to store homogeneous lists of items
 ````
