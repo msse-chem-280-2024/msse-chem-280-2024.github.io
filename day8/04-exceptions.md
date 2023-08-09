@@ -1,20 +1,22 @@
----
-title: "Exceptions"
-teaching: 45
-exercises: 10
-questions:
-- "How do we handle major errors in C++?"
-- "How do exceptions differ from python?"
-objectives:
-- "Learn about throwing and catching exception in C++"
-keypoints:
-- "Exceptions stop execution and go back up the call stack until they are caught"
-- "Exceptions are the main way to handle major errors in C++"
----
+# Exceptions
 
-> ## Prerequisites
-> - Knowledge of basic C++ functions
-{: .prereq}
+````{admonition} Overview
+:class: overview
+
+Questions:
+- How do we handle major errors in C++?
+- How do exceptions differ from python?
+
+Objectives:
+- Learn about throwing and catching exception in C++
+````
+
+
+```{admonition} Prerequisites
+:class: note
+
+- Knowledge of basic C++ functions
+```
 
 ## Exception overview
 
@@ -29,7 +31,9 @@ if the temperature is below absolute zero and therefore unphysical.
 First, we need to include the `stdexcept` component of the standard library.
 This will allow us to use the `runtime_error` exception.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream>
 #include <stdexcept>
 
@@ -55,15 +59,19 @@ int main(void)
     
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
 
-~~~
+
+````{tab-set-code} 
+
+```{code-block} output
 terminate called after throwing an instance of 'std::runtime_error'
   what():  Temperature must be above absolute zero!
 Aborted (core dumped)
-~~~
-{: .output}
+```
+````
+
 
 When run, this code will terminate with an exception, signifying that
 something went wrong and the program could not continue.
@@ -82,7 +90,9 @@ a string describing the error. In `runtime_error`, this is the string passed to 
 
 Lets catch the exception, and write some better output to the terminal
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream>
 #include <stdexcept>
 
@@ -116,15 +126,19 @@ int main(void)
         
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
 
-~~~
+
+````{tab-set-code} 
+
+```{code-block} output
 Caught an exception! Could not convert temperature = -999
 Exception: Temperature must be above absolute zero!
 Temperature is -999
-~~~
-{: .output}
+```
+````
+
 
 Now, the error printed to the terminal is a bit better for the end user.
 
@@ -141,3 +155,9 @@ Also note that we `return 1` inside the exception handler. This is a
 signal to the operating system or parent process that this process exited
 abnormally. That is, `return 0` from `main` signifies a successful run of
 the process, while returning non-zero signifies an error.
+````{admonition} Key Points
+:class: key
+
+- Exceptions stop execution and go back up the call stack until they are caught
+- Exceptions are the main way to handle major errors in C++
+````

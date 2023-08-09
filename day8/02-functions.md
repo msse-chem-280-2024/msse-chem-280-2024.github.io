@@ -1,95 +1,25 @@
----
-title: "Function Calling and Arguments"
-teaching: 90
-exercises: 30
-start: true
-questions:
-- "How do functions differ in C++ and Python?"
-- "How are arguments passed in C++?"
-- "How can we protect variables (and function arguments) from changing?"
-objectives:
-- "Learn about C++ functions and argument passing"
-- "Learn about the const keyword"
-- "Learn about returning multiple things from a function"
-keypoints:
-- "C++ can have multiple functions with the same name"
-- "C++ functions can take arguments by copy, pointer, and reference"
----
+# Function Calling and Arguments
 
-> ## Prerequisites
-> - Knowledge basic function syntax in C++
-> - Knowledge of C++ pointers and references
-{: .prereq}
+````{admonition} Overview
+:class: overview
 
-## The `const` Keyword
+Questions:
+- How do functions differ in C++ and Python?
+- How are arguments passed in C++?
+- How can we protect variables (and function arguments) from changing?
 
-In C/C++, it is possible to mark a variable as constant, such that after
-setting, the value cannot be changed. Marking a variable as constant can also
-enable some performance improvements, although these are typically very small.
-However, they are primarily used to signify intent to other programmers,
-and can prevent some mistakes.
+Objectives:
+- Learn about C++ functions and argument passing
+- Learn about the const keyword
+- Learn about returning multiple things from a function
+````
 
-To create a constant variable, the keyword `const` is placed before the type.
 
-~~~
-const double pi = 3.1415; // Constant double
-const std::string my_string = "Hello world!"; // Constant string
-my_string = "Another string"; // Error - my_string is const!
-~~~
-{: .language-cpp}
-
-Because the constant variable cannot be changed, it must be set at the same
-time it is declared. Otherwise, you would never be able to set the value!
-
-~~~
-const int i = 123; // Declare and set
-const int j; // j can never be changed after this, so this is invalid.
-~~~
-{: .language-cpp}
-
-Constant variables can be very useful in some cases. For example, for storing
-physical constants or common strings. As we will see, they are most often
-used for declaring objects passed to functions as `const`.
-
-Constant references work in a simiar way. Data cannot be changed through a
-constant reference.
-
-A constant reference can refer to a constant or non-constant variable.
-However, a non-const reference can only refer to a non-constant variable.
-Otherwise, we would be able to change constant data just my making a reference
-to it.
-
-> ## Exercise
->
-> What happens when you try to make a non-const reference to const data?
->
->~~~
->int main(void)
->{
->    const double d = 1.123;
->    double & d2 = d;
->    return 0;
->}
->~~~
->{: .language-cpp}
->
->> ## Solution
->> A compiler error, of course!
->>
->> ~~~
->> test.cpp: In function ‘int main()’:
->> test.cpp:4:19: error: binding reference of type ‘double&’ to ‘const double’ discards qualifiers
->>     4 |     double & d2 = d;
->>       |    
->> ~~~
->>{: .output}
->>
->> In C++, the `const` keyword is called a *qualifiers*. The compiler is telling
->> you that making the reference discards the `const` qualifier. `volitile` is another qualifier, however
->> it is very rarely used in scientific computing.
-> {: .solution}
-{: .challenge}
-
+````{admonition} Prerequisites
+:class: notes
+- Knowledge basic function syntax in C++
+- Knowledge of C++ pointers and references
+````
 
 
 ## Function overview
@@ -100,7 +30,9 @@ Let's refresh our memories of some of the terminology around functions. Note tha
 this terminology is the same as in Python, although the return type is
 not defined with the function name.
 
-<center><img width='50%' src='../fig/cpp/function_terms.png'></center>
+```{image} ../fig/cpp/function_terms.png
+:align: center
+```
 
 ## The `void` Keyword
 
@@ -108,14 +40,17 @@ not defined with the function name.
 and can also be used as the return type to signify the function does not
 return anything. See, for example, our `main` function.
 
-~~~
+````{tab-set-code}
+
+```{code-block} cpp
 void say_something(void)
 {
     // No return type, no arguments!
     std::cout << "Something!" << std::endl;
 }
-~~~
-{: .language-cpp}
+
+```
+````
 
 
 ## Argument passing by copy
@@ -141,7 +76,9 @@ making accidental mistakes.
 Lets start by writing a function to convert temperatures from
 Fahrenheit to Celsius.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream> // for std::cout, std::endl
 
 void convert_F_to_C(double temperature)
@@ -158,16 +95,19 @@ int main(void)
     
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
 
 
 Here is the output
 
-~~~
+````{tab-set-code} 
+
+```{code-block} output
 Temperature is 68.1
-~~~
-{: .output}
+```
+````
+
 
 You will notice that the value of `temperature` in the `main` function does
 not change, even though we changed it inside of `convert_F_to_C`. That is
@@ -175,9 +115,11 @@ becuase the variable `temperature` inside `convert_F_to_C` is a copy of the
 `temperature` variable in `main`.
 
 
->## Discussion
-> What would be a better way of writing the temperature function?
-{: .discussion}
+```{admonition} Discussion
+:class: discussion
+
+What would be a better way of writing the temperature function?
+```
 
 
 ## Argument passing by reference
@@ -196,7 +138,9 @@ contents through the reference.
 Passing by reference is very common in C++. In general, this should be the
 default way to pass in data the will be changed in the function.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream> // for std::cout, std::endl
 
 void convert_F_to_C(double & temperature)
@@ -213,57 +157,66 @@ int main(void)
     
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
+
 
 The example above is the same as the previous example, except with the addition
 of the `&` into the function signature of `convert_F_to_C`. The output shows that
 this makes all the difference.
 
-~~~
-Temperature is 20.0556
-~~~
-{: .output}
+````{tab-set-code} 
 
-> ## Exercise
->
-> Print the address of the variable inside and outside the `convert_F_to_C` function.
-> 
->> ## Solution
->>
->>~~~
->>#include <iostream> // for std::cout, std::endl
->>
->>void convert_F_to_C(double & temperature)
->>{
->>    std::cout << "In convert_F_to_C: " << &temperature << std::endl;
->>    temperature = (temperature - 32.0)*(5.0/9.0);
->>}
->>
->>int main(void)
->>{
->>    double temperature = 68.1;
->>
->>    std::cout << "In main: " << &temperature << std::endl;
->>    convert_F_to_C(temperature);
->>
->>    std::cout << "Temperature is " << temperature << std::endl;
->>    
->>    return 0;
->>}
->>~~~
->>{: .language-cpp}
->>
->>~~~
->>In main: 0x7ffe27c761e0
->>In convert_F_to_C: 0x7ffe27c761e0
->>Temperature is 20.0556
->>~~~
->>{: .output}
->>
->> The address will likely differ from my example, however the addresses should be the same.
->{: .solution}
-{: .challenge}
+```{code-block} output
+Temperature is 20.0556
+```
+````
+
+
+``````{admonition} Exercise
+:class: exercise
+
+Print the address of the variable inside and outside the `convert_F_to_C` function.
+ 
+`````{admonition} Solution
+:class: dropdown solution
+
+````{tab-set-code} 
+
+```{code-block} cpp
+#include <iostream> // for std::cout, std::endl
+
+void convert_F_to_C(double & temperature)
+{
+    std::cout << "In convert_F_to_C: " << &temperature << std::endl;
+    temperature = (temperature - 32.0)*(5.0/9.0);
+}
+
+int main(void)
+{
+    double temperature = 68.1;
+
+    std::cout << "In main: " << &temperature << std::endl;
+    convert_F_to_C(temperature);
+
+    std::cout << "Temperature is " << temperature << std::endl;
+    
+    return 0;
+}
+```
+````
+
+````{tab-set-code}
+```{code-block} output
+In main: 0x7ffe27c761e0
+In convert_F_to_C: 0x7ffe27c761e0
+Temperature is 20.0556
+```
+````
+
+The address will likely differ from my example, however the addresses should be the same.
+`````
+``````
 
 
 ### Passing by constant reference
@@ -276,7 +229,10 @@ common idiom that you will see in C++ packages.
 If you try modifying the constant reference inside the function,
 it will cause a compiler error.
 
-~~~
+
+````{tab-set-code} 
+
+```{code-block} c++
 #include <iostream> // for std::cout, std::endl
 
 double convert_F_to_C(const double & temperature)
@@ -293,14 +249,16 @@ int main(void)
     
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
 
-> ## Comparison to Fortran
-> A `const` reference in a Function signature is similar to
-> an argument being declared as `intent(in)` in Fortran. A plain non-`const`
-> reference would be similar to `intent(inout)`.
-{: .callout}
+
+```{admonition} Comparison to Fortran
+:class: note
+A `const` reference in a Function signature is similar to
+an argument being declared as `intent(in)` in Fortran. A plain non-`const`
+reference would be similar to `intent(inout)`.
+```
 
 
 ## Argument passing by pointer
@@ -317,7 +275,9 @@ While not as common in C++, it is sometimes used to pass around arrays
 allocated with `new`, after which elements are accessed with `*`.
 This is very awkward for many other uses, where references are preferred.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream> // for std::cout, std::endl
 
 double convert_F_to_C(const double * temperature)
@@ -334,8 +294,9 @@ int main(void)
     
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
+
 
 
 ## Const correctness
@@ -378,7 +339,9 @@ which function will be used based on the arguments passed to the function.
 For example, we can have to `convert_F_to_C` functions - one that takes
 just a `double`, and the other that takes a `std::vector<double>`.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream> // for std::cout, std::endl
 #include <vector>
 
@@ -416,18 +379,19 @@ int main(void)
 
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
 
 
-> ## Argument-dependent lookup
-> The process by which C++ determines the proper function to call based
-> on arguments is extremely complex. It has to take into account
-> not just argument types, but (implicit) conversions, custom conversions,
-> and more advanced C++ features such as templates. In general, the compiler
-> will do the correct thing, and if there is ambiguity, will require further
-> clarification on your part.
-{: .callout}
+
+```{admonition} Argument-dependent lookup
+The process by which C++ determines the proper function to call based
+on arguments is extremely complex. It has to take into account
+not just argument types, but (implicit) conversions, custom conversions,
+and more advanced C++ features such as templates. In general, the compiler
+will do the correct thing, and if there is ambiguity, will require further
+clarification on your part.
+```
 
 
 ## Default Arguments
@@ -436,7 +400,9 @@ A default for an argument can be supplied in the function signature. However,
 the given default argument must be of the correct type (not like in Python,
 where you can set the argument default to be None).
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream>
 
 double convert_F_to_C(double temperature = 0.0)
@@ -454,14 +420,18 @@ int main(void)
         
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
 
-~~~
+
+````{tab-set-code} 
+
+```{code-block} output
 Temperature is 20.0556
 Temperature is -17.7778
-~~~
-{: .output}
+```
+````
+
 
 
 ## Multiple return from functions
@@ -480,7 +450,9 @@ as a pair.
 
 To use `std::pair`, include the `utility` component of the standard library.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream>
 #include <utility> // std::pair
 
@@ -498,13 +470,17 @@ int main(void)
     std::cout << "Temperature is " << t_info.first << " " << t_info.second << std::endl;
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
 
-~~~
+
+````{tab-set-code} 
+
+```{code-block} output
 Temperature is 20.0556 celsius
-~~~
-{: .output}
+```
+````
+
 
 
 ## `make_pair` and the `auto` keyword
@@ -522,7 +498,9 @@ The second thing we can do is use the `auto` keyword. This automatically
 deduces a type from a given expression.  Note that the type of the variable
 is still fixed, we are just letting the compiler figure out the type for us.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream>
 #include <utility>
 
@@ -540,13 +518,17 @@ int main(void)
     std::cout << "Temperature is " << t_info.first << " " << t_info.second << std::endl;
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
 
-~~~
+
+````{tab-set-code} 
+
+```{code-block} output
 Temperature is 20.0556 celsius
-~~~
-{: .output}
+```
+````
+
 
 
 ## Structured bindings and newer features
@@ -556,7 +538,9 @@ C++17 introduced a new syntax that makes C++ almost look like python! This is ca
 
 Depending on the compiler, you may need to compile with `std=c++17` on the command line.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream>
 #include <utility>
 
@@ -573,12 +557,15 @@ int main(void)
     std::cout << "Temperature is " << temperature << " " << units << std::endl;
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
+
 
 Lastly, we can also let the compiler deduce the return type of the function with `auto`. 
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream>
 #include <utility>
 
@@ -596,10 +583,17 @@ int main(void)
     return 0;
 }
 
-~~~
-{: .language-cpp}
+```
+````
+
 
 This code is beginning to look like python a bit! However, return-type
 deduction is somewhat discouraged, because it reduces the self-documenting
 quality of functions. It is still useful in writing very generic code,
 which is beyond this course.
+````{admonition} Key Points
+:class: key
+
+- C++ can have multiple functions with the same name
+- C++ functions can take arguments by copy, pointer, and reference
+````

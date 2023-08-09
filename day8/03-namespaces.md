@@ -1,19 +1,21 @@
----
-title: "Namespaces"
-teaching: 20
-exercises: 5
-questions:
-- "How can we group functions together under a single collection?"
-- "How can I prevent collisions with functions having the same name in other libraries?"
-objectives:
-- "Learn about grouping functions and objects with namespaces"
-keypoints:
-- "Namespaces allow programmers to group all their functions under a single name"
----
+# Namespaces
 
-> ## Prerequisites
-> - Knowledge of basic C++ functions
-{: .prereq}
+````{admonition} Overview
+:class: overview
+
+Questions:
+- How can we group functions together under a single collection?
+- How can I prevent collisions with functions having the same name in other libraries?
+
+Objectives:
+- Learn about grouping functions and objects with namespaces
+````
+
+
+````{admonition} Prerequisites
+:class: note
+- Knowledge of basic C++ functions
+````
 
 ## Namespace overview
 
@@ -36,7 +38,9 @@ You can create a namespace with the `namespace` keyword. The following code crea
 a namespace `my_package` and adds a simple function to it. The function is then
 accessed using the *scope resolution operator* (`::`).
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream>
 
 namespace my_package {
@@ -55,13 +59,16 @@ int main(void)
 
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
+
 
 
 Namespaces can be nested as well, and can contain global variables.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream>
 
 namespace my_package {
@@ -85,8 +92,9 @@ int main(void)
 
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
+
 
 In general, namespaces are a good idea, particularly if you are writing a library that
 will be used by other people. This makes it clear where each function is coming from,
@@ -101,7 +109,9 @@ at the function level.
 
 One common one is to always use `std` without needing to prefix with `std::`.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream>
 
 // Search std for functions/objects 
@@ -131,13 +141,21 @@ int main(void)
 
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
+
 
 Importing things this way is analogous to using `from package import *` in python.
 
-> ## Importing everything from a namespace
->
-> Do you think it is a good idea to import everything from a namespace? When should it be done?
-> Is it cleaner to do it, or does it make code more confusing?
-{: .discussion}
+```{admonition} Importing everything from a namespace
+:class: note
+
+Do you think it is a good idea to import everything from a namespace? When should it be done?
+Is it cleaner to do it, or does it make code more confusing?
+```
+
+````{admonition} Key Points
+:class: key
+
+- Namespaces allow programmers to group all their functions under a single name
+````
