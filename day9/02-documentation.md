@@ -1,18 +1,4 @@
----
-title: "Documentation"
-teaching: 30
-exercises: 5
-questions:
-- TODO
-objectives:
-- TODO
-keypoints:
-- TODO
----
-
-> ## Prerequisites
-> - TODO
-{: .prereq}
+# Documentation
 
 ## Doxygen-style Documentation
 
@@ -83,7 +69,9 @@ The basic syntax for Doxygen is as follows
 
 Below is an example of our `convert_temperature` function, now fully documented.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 // temperature.hpp
 
 #include <vector>
@@ -97,8 +85,9 @@ Below is an example of our `convert_temperature` function, now fully documented.
  * \return All elements of \p temperatures converted to Fahrenheit
  */
 std::vector<double> convert_temperature(const std::vector<double> & temperatures);
-~~~
-{: .language-cpp}
+```
+````
+
 
 Let's go over this in more detail.
 

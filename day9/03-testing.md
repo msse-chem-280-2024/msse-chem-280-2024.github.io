@@ -1,18 +1,4 @@
----
-title: "Testing"
-teaching: 30
-exercises: 5
-questions:
-- TODO
-objectives:
-- TODO
-keypoints:
-- TODO
----
-
-> ## Prerequisites
-> - TODO
-{: .prereq}
+# Testing
 
 ## The Catch2 package
 
@@ -42,7 +28,9 @@ This file will be compiled by itself, and **not with your already-exiting main f
 This file will contain `#define CATCH_CONFIG_MAIN` at the top, which will automatically
 create a `main` function in this source file.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 #include "temperature.hpp"
@@ -58,25 +46,30 @@ TEST_CASE("Temperature functions", "[temperature]")
 }
 
 
-~~~
-{: .language-cpp}
+```
+````
+
 
 
 Now we will compile our new source file and the `temperature.cpp` file together.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} shell
 g++ test.cpp temperature.cpp -o test_temperature
-~~~
-{: .language-bash}
+```
+````
+
 
 The `test_temperature` executable now has lots of command line arguments related
 to testing. Try running `./test_temperature -h` and see!
 
 To run your tests, just run `./test_temperature`.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} output
 ===============================================================================
 All tests passed (1 assertion in 1 test case)
-~~~
-{: .output}
-
+```
+````

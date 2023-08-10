@@ -1,19 +1,16 @@
----
-title: "Multi-file projects"
-teaching: 30
-exercises: 5
-start: true
-questions:
-- TODO
-objectives:
-- TODO
-keypoints:
-- TODO
----
+# Multi-file projects
 
-> ## Prerequisites
-> - TODO
-{: .prereq}
+````{admonition} Overview
+:class: overview
+
+Questions:
+- How can we split a large C++ project into multiple files
+
+Objectives:
+- Learn how the C++ compiler preprocesses files
+- Learn the difference between header and source files
+- Learn how to include intra-project header files
+````
 
 
 ## What does include do?
@@ -43,7 +40,9 @@ We now have to introduce a little more terminology around functions.
 C++ has a rule called the *one definition rule* - every function can only
 be defined once. However, you can *declare* a function as many times as you like.
 
-<center><img src='../fig/cpp/function_terms_2.png'></center>
+```{image} ../fig/cpp/function_terms_2.png
+:align: center
+```
 
 Note that the declaration has a semicolon at the end. This is likely something
 you will forget at some point (I certainly still do).
@@ -52,7 +51,9 @@ Take for example our temperature conversion function that takes a constant
 reference. If we place the `convert_F_to_C` function below the main function,
 it will not compile.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream> // for std::cout, std::endl
 
 int main(void)
@@ -69,16 +70,20 @@ double convert_F_to_C(double temperature)
 {
     return temperature * 1.8 + 32;
 }
-~~~
-{: .language-cpp}
+```
+````
 
-~~~
+
+````{tab-set-code} 
+
+```{code-block} output
 test.cpp: In function ‘int main()’:
 test.cpp:6:19: error: ‘convert_F_to_C’ was not declared in this scope
     6 |     temperature = convert_F_to_C(temperature);
       |   
-~~~
-{: .output}
+```
+````
+
 
 (Your error message may vary depending on compiler and version).
 
@@ -90,7 +95,9 @@ information yet; that information is at the bottom of the file.
 
 To fix this, we can *forward declare* the function above the `main` function.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 #include <iostream> // for std::cout, std::endl
 
 // Forward declaration of convert_F_to_C
@@ -111,8 +118,9 @@ double convert_F_to_C(double temperature)
 {
     return temperature * 1.8 + 32;
 }
-~~~
-{: .language-cpp}
+```
+````
+
 
 The forward declaration tells the compiler all the info it needs to compile
 `main`. Actually linking the function into main is the job of the linker,
@@ -142,13 +150,14 @@ inserts it into your source before compiling.  There are compiler options
 to even show you the result of this, which can be helpful for debugging
 esoteric compiler errors.
 
-> ## Compiling vs. linking
-> Remember the discussion on the first day about compiling vs. linking? This is where the
-> difference should become more clear. When compiling, you only need to have a function *declaration*.
-> Then, when linking, the actual connection between the calling code and the function *definition*
-> is made. That is also why there can only be one definition - if there were more, which one should
-> the linker choose?
-{: .callout}
+````{admonition} Compiling vs. linking
+:class: notes
+Remember the discussion on the first day about compiling vs. linking? This is where the
+difference should become more clear. When compiling, you only need to have a function *declaration*.
+Then, when linking, the actual connection between the calling code and the function *definition*
+is made. That is also why there can only be one definition - if there were more, which one should
+the linker choose?
+````
 
 
 So lets split our project into three files - one containing `main`, one
@@ -160,7 +169,9 @@ containing our `convert_F_to_C` function, and a header file for our
 We will create two source files. One will contain `main` and the other our
 `convert_F_to_C` function.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 // main.cpp
 
 #include <iostream> // for std::cout, std::endl
@@ -185,10 +196,13 @@ int main(void)
      
     return 0;
 }
-~~~
-{: .language-cpp}
+```
+````
 
-~~~
+
+````{tab-set-code} 
+
+```{code-block} cpp
 // temperature.cpp
 
 #include <vector>
@@ -203,39 +217,48 @@ std::vector<double> convert_F_to_C(const std::vector<double> & temperatures)
 
     return new_temperatures;
 }
-~~~
-{: .language-cpp}
+```
+````
 
-> ## Includes in multi-file projects
-> Do we need to include `iostream` in `temperature.cpp`? Why not?
-{: .callout}
+````{admonition} Includes in multi-file projects
+:class: notes
+Do we need to include `iostream` in `temperature.cpp`? Why not?
+````
 
 Now, compile these two source files by specifying them both on the
 command line:
 
-~~~
+````{tab-set-code} 
+
+```{code-block} shell
 g++ main.cpp temperature.cpp -o temperature
-~~~
-{: .language-bash}
+```
+````
+
 
 This should compile just fine. Remember, we still have the forward declaration
 of `convert_F_to_C` at the top of `main.cpp`. The second step is to move that
 to a header file, `temperature.hpp`.
 
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 // temperature.hpp
 
 #include <vector>
 
 std::vector<double> convert_F_to_C(const std::vector<double> & temperatures);
-~~~
-{: .language-cpp}
+```
+````
+
 
 
 And now, we can `#include` our new header file into `main.cpp`.
 
-~~~
+````{tab-set-code} 
+
+```{code-block} cpp
 // main.cpp
 
 #include <iostream> // for std::cout, std::endl
@@ -244,8 +267,9 @@ And now, we can `#include` our new header file into `main.cpp`.
 
 int main(void)
 ...
-~~~
-{: .language-cpp}
+```
+````
+
 
 Note the convention in include files: Files that are part of the current
 project are specified with quotation marks, and those from other libraries
