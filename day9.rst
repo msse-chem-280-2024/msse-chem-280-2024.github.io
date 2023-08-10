@@ -14,4 +14,3 @@ Lessons
 
    day9/01-multifile-projects
    day9/02-documentation
-   day9/03-testing
