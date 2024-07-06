@@ -16,7 +16,55 @@ Pre-Bootcamp: Set-Up
 Day 1
 #######
 .. csv-table:: 
-  :file: csv_tables/day_1.csv
+  :file: csv_tables/day1.csv
+  :header-rows: 1
+
+Day 2
+#######
+.. csv-table:: 
+  :file: csv_tables/day2.csv
+  :header-rows: 1
+
+Day 3
+#######
+.. csv-table:: 
+  :file: csv_tables/day4.csv
+  :header-rows: 1
+
+Day 4
+#######
+.. csv-table:: 
+  :file: csv_tables/day4.csv
+  :header-rows: 1
+
+Day 5
+#######
+.. csv-table:: 
+  :file: csv_tables/day5.csv
+  :header-rows: 1
+
+Day 6
+#######
+.. csv-table:: 
+  :file: csv_tables/day6.csv
+  :header-rows: 1
+
+Day 7
+#######
+.. csv-table:: 
+  :file: csv_tables/day7.csv
+  :header-rows: 1
+
+Day 8
+#######
+.. csv-table:: 
+  :file: csv_tables/day8.csv
+  :header-rows: 1
+
+Day 9
+#######
+.. csv-table:: 
+  :file: csv_tables/day9.csv
   :header-rows: 1
 
 .. toctree::

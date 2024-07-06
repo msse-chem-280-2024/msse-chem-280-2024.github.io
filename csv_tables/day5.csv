@@ -1,0 +1,9 @@
+Lesson Title,Objectives,Questions
+`Working with Numpy Arrays <day5/01-numpy.html>`_,"* Be able to name the differences between Python lists and numpy arrays.
+* Understand the idea of broadcasting.","* What are the differences between NumPy arrays and lists?
+* How can I use NumPy to do calculations?"
+`Using NumPy Arrays to Calculate pi <day5/02-mc-pi-numpy.html>`_,"* Be able to name the differences between Python lists and numpy arrays.
+* Understand the idea of broadcasting.",* What are the differences between numpy arrays and lists?
+`Rewriting the Distance Function <day5/03-calculate-distance.html>`_,* Rewrite calculate distance function for numpy arrays,* How can I rewrite functions to take advantage of NumPy element-wise operation and broadcasting?
+`Creating a Python Module <day5/04-modules.html>`_,"* Put Python code into a module (.py file)
+* Import functions from our module.",* What is a Python module?

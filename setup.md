@@ -22,8 +22,6 @@ We will be using Python and the conda package manager.
 If you are on MacOS or Linux and you already have Anaconda (or miniconda) installed, skip to the compilers portion of these set-up instructions. 
 If you do not have Anaconda or miniconda installed please see the appropriate section below.
 
-First see the appropriate section in the section [Operating System Specific Instructions](operating-system-specific), then everyone should do the portion in [Installation Instructions for Everyone](installation-instructions-for-everyone).
-
 ```{admonition} Anaconda vs miniconda
 :class: note
 
@@ -50,7 +48,6 @@ You can download and run the installer at this [link](https://docs.conda.io/en/l
 ### Compilers
 MacOS users should [install XCode](https://developer.apple.com/xcode/). An easy way to install XCode is through the [Mac App Store](https://apps.apple.com/us/app/xcode/id497799835?mt=12).
 
-After installing XCode, proceed to the next section [Creating a MSSE Bootcamp conda environment](#creating-a-conda-environment).
 `````
 
 `````{tab-item} Linux
@@ -68,7 +65,6 @@ sudo apt install build-essential
 ```
 ````
 
-After this command has completed, proceed to the next section [Creating a MSSE Bootcamp conda environment](#creating-a-msse-bootcamp-conda-environment).
 `````
 
 `````{tab-item} Windows
@@ -116,7 +112,6 @@ After installing miniconda, you will need to install compilers for the C++ secti
 sudo apt install build-essential
 ```
 ````
-After this command has completed, proceed to the next section [Creating a MSSE Bootcamp conda environment](#creating-a-msse-bootcamp-conda-environment).
 
 `````
 

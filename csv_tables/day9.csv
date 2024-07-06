@@ -1,0 +1,4 @@
+Lesson Title,Objectives,Questions
+`Multi-file projects <day9/01-multifile-projects.html>`_,"* Learn how the C++ compiler preprocesses files
+* Learn the difference between header and source files
+* Learn how to include intra-project header files",* How can we split a large C++ project into multiple files

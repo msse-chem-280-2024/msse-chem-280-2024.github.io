@@ -1,0 +1,8 @@
+Lesson Title,Objectives,Questions
+`Intro to Monte Carlo Methods <day2/01-MC-pi.html>`_,"* Explain Monte Carlo methods.
+* Apply Monte Carlo method to calculate pi.
+* Apply Monte Carlo to calculate integrals","* What are Monte Carlo methods?
+* How can I use Monte Carlo to estimate pi?"
+`The Lennard Jones Equation <day2/02-LJ-eqn.html>`_,"* Understand the Lennard Jones potential.
+* Understand periodic boundary conditions.","* How can Monte Carlo be applied to a thermodynamic problem?
+* How do we model the interaction of nonbonded atoms?"

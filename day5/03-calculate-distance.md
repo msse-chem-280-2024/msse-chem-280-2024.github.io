@@ -342,29 +342,9 @@ def calculate_distance_np(coord1, coord2, box_length=None):
 Now we have a `calculate_distance` function which will work on a set of particles, rather than just one particle.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ````{admonition} Key Points
 :class: key
 
-
+* NumPy arrays can be used to perform element-wise operations and broadcasting.
+* We can write our distance function to work for sets of particles instead of two particles at a time.
 ````

@@ -1,0 +1,7 @@
+Lesson Title,Objectives,Questions
+`Common data types <day7/01-datatypes.html>`_,"* Learn about the built-in data types in C++, and what they are used for","* What are the common, built-in data types in C++pointers and references in C++
+* When should I use each data type?"
+"`Arrays, Pointers, Memory, and Vectors <day7/02-pointers.html>`_","* To learn about pointers
+* To learn about different ways of representing lists/arrays of data","* What are pointers and references in C++
+* Why/when should I use a pointer or reference?
+* Pitfalls of using pointer"

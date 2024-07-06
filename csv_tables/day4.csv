@@ -1,0 +1,3 @@
+Lesson Title,Objectives,Questions
+`Total Energy Comparison <day4/01-total-energy-NIST.html>`_,* Apply a cut-off and periodic boundaries to the energy calculation and compare it to values reported by NIST.,* Does my total energy agree with the values reported from NIST?
+`Monte Carlo for a Lennard Jones Fluid <day4/02-LJ-MC.html>`_,* Use the Metropolis algorithm to sample configurations of LJ particles,* How do I write a Monte Carlo simulation?

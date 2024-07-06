@@ -1,0 +1,10 @@
+Lesson Title,Objectives,Questions
+`Introduction to C++ <day6/01-intro-cpp.html>`_,"* Explain static and dynamic typing
+* Explain basic C++ structure and syntax, comparing/contrasting with python
+* Introduce compiling from the command line","* What is the difference between compiled and interpreted languages?
+* What are the main advantages of C++ vs python?
+* What are some similarities between python and C++?"
+`First C++ Program <day6/02-first-program.html>`_,"* Be able to write and build a minimal C++ program
+* Be able to debug compiler errors","* How do I write and compile a minimal C++ program?
+* What are the basic constructs of C++?
+* How do I handle compile errors?"

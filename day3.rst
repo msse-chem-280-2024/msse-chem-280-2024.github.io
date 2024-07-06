@@ -9,8 +9,13 @@ and learn some computational tricks that allow us to simulate large systems.
 
 Lessons
 -------
+.. csv-table:: 
+  :file: csv_tables/day3.csv
+  :header-rows: 1
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    day3/00-group-meeting
    day3/01-LJ-system

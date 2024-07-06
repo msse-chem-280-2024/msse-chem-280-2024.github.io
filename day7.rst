@@ -9,8 +9,13 @@ also learn about pointers and references, which are fundamental concepts in C++ 
 
 Lessons
 -------
+.. csv-table:: 
+  :file: csv_tables/day7.csv
+  :header-rows: 1
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    day7/00-group-meeting
    day7/01-datatypes

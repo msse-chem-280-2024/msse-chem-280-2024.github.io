@@ -9,11 +9,16 @@ and how it compares and contrasts with Python.
 
 Lessons
 -------
+.. csv-table:: 
+  :file: csv_tables/day6.csv
+  :header-rows: 1
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
-   day6/01-intro-cpp.md
-   day6/02-first-program.md
+   day6/01-intro-cpp
+   day6/02-first-program
 
 Discussions and Assignments
 ---------------------------

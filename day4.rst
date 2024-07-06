@@ -14,8 +14,13 @@ we will have to change some of the ways our MC is performed.
 
 Lessons
 -------
+.. csv-table:: 
+  :file: csv_tables/day4.csv
+  :header-rows: 1
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    day4/00-group-meeting
    day4/01-total-energy-NIST

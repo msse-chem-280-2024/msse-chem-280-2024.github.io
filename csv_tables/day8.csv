@@ -1,0 +1,10 @@
+Lesson Title,Objectives,Questions
+`Function Calling and Arguments <day8/02-functions.html>`_,"* Learn about C++ functions and argument passing
+* Learn about the const keyword
+* Learn about returning multiple things from a function","* How do functions differ in C++ and Python?
+* How are arguments passed in C++?
+* How can we protect variables (and function arguments) from changing?"
+`Namespaces <day8/03-namespaces.html>`_,* Learn about grouping functions and objects with namespaces,"* How can we group functions together under a single collection?
+* How can I prevent collisions with functions having the same name in other libraries?"
+`Exceptions <day8/04-exceptions.html>`_,* Learn about throwing and catching exception in C++,"* How do we handle major errors in C++?
+* How do exceptions differ from python?"

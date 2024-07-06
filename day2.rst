@@ -10,8 +10,13 @@ The Lennard Jones equation will be introduced and discussed today.
 
 Lessons
 -------
+.. csv-table:: 
+  :file: csv_tables/day2.csv
+  :header-rows: 1
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    day2/00-group-meeting
    day2/01-MC-pi
@@ -22,5 +27,5 @@ Discussions and Assignments
 .. toctree::
    :maxdepth: 1
 
-   individual-assignmnents/01-individual.md
+   individual-assignments/individual-assignment-1
    day2/group-assignment

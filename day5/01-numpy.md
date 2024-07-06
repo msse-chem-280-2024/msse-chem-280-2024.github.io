@@ -185,7 +185,7 @@ What does each print statement result in?
 
 ````{tab-set-code}
 
-```{python}
+```{code-block} python
 a1 = np.array([2, 1, 0])
 a2 = np.array([1, 3, 5])
 
@@ -256,11 +256,14 @@ second_coordinate + my_array
 ````
 
 
-````{tab-set-code} 
+````{tab-set} 
 
-```{code-block} error
+:::{tab-item} error
+
+```{code-block} 
 ValueError: operands could not be broadcast together with shapes (3,) (2,) 
 ```
+:::
 ````
 
 

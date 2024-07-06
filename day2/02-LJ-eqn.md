@@ -133,15 +133,18 @@ assert 2 == 1
 
 results in an `AssertionError`.
 
-````{tab-set-code} 
+````{tab-set} 
 
-```{code-block} error
+:::{tab-item} error
+
+```python
 AssertionError                            Traceback (most recent call last)
 <ipython-input-26-39a8159f4693> in <module>
 ----> 1 assert 2 == 1
 
 AssertionError:
 ```
+:::
 ````
 
 

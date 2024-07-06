@@ -199,13 +199,16 @@ assert total_energy == -4351.5
 ````
 
 
-````{tab-set-code} 
+````{tab-set} 
 
-```{code-block} error
+:::{tab-item} error
+
+```{code-block}
 AssertionError                            Traceback (most recent call last)
 <ipython-input-11-b7c5eba717e6> in <module>
 ----> 1 assert total_energy == -4351.5
 
 AssertionError: 
 ```
+:::
 ````

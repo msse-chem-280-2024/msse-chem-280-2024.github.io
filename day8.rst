@@ -9,8 +9,13 @@ We will also touch on namespaces and exceptions.
 
 Lessons
 -------
+.. csv-table:: 
+  :file: csv_tables/day8.csv
+  :header-rows: 1
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    day8/01-references
    day8/02-functions

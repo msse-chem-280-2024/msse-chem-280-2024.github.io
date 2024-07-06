@@ -4,7 +4,7 @@ For this homework assignment, you will be collaborating with the rest of the cla
 
 Follow the instructions in the [GitHub Collaboration lesson for contributing to a repository](collaboration).
 
-### Turning this assignment in
+## Turning this assignment in
 In order to complete this assignment, you must:
 1. Complete the exercise linked above.
 2. Submit pull request to the central repository.
