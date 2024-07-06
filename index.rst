@@ -7,6 +7,12 @@ control, documentation, and testing.
 Central to this course is a hands-on molecular simulation project
 where students work in groups to create a software package using concepts taught in the course.
 
+Day 1
+#######
+.. csv-table:: 
+  :file: csv_tables/day_1.csv
+  :header-rows: 1
+
 .. toctree::
    :maxdepth: 2
    :hidden:

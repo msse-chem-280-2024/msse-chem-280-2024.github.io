@@ -10,8 +10,13 @@ For many poeple, the command line becomes a preferred method for using a compute
 
 Lessons
 -------
+.. csv-table:: 
+  :file: csv_tables/day_1.csv
+  :header-rows: 1
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    day1/01-command-line
    day1/02-git

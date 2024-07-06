@@ -4,10 +4,12 @@
 :class: overview
 
 Questions:
+- How is git different than GitHub?
 - How do I use git and GitHub?
 
 Objectives:
-- Explain reasons to use GitHub.
+- Explain difference between git and GitHub.
+- Learn how to use and manage a repository on GitHub.
 ````
 
 

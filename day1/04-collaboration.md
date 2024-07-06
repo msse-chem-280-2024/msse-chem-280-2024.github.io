@@ -8,7 +8,8 @@ Questions:
 - How can I contribute to the projects of others?
 
 Objectives:
-- Understand how to open a pull request.
+- Explain collaboration workflow on GitHub.
+- Understand how to open and review a pull request.
 ````
 
 ## Repository collaborators

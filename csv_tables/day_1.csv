@@ -1,0 +1,15 @@
+﻿Lesson Title,Questions,Objectives
+`Introduction to the Command Line <day1/01-command-line.html>`_,"* What is the command line?
+* How can I navigate files and directories on the command line?",* Learn basic shell commands for navigating and creating files and directories.
+`Introduction to Version Control with Git <day1/02-git.html>`_,"* What is version control?
+* How do I use git to keep a record of my project?
+* What is a branch and why would I use one?
+* How do I tell git to ignore files?","* Explain the purpose of version control
+* Introduce common git commands.
+* Understand how to view and check out previous versions of files."
+`Using GitHub <day1/03-github.html>`_,"* How is git different than GitHub?
+* How do I use git and GitHub?","* Explain difference between git and GitHub.
+* Learn how to use and manage a repository on GitHub."
+`Code Collaboration using GitHub  <04-collaboration.html>`_,"* How can others contribute to my project on GitHub?
+* How can I contribute to the projects of others?","* Explain collaboration workflow on GitHub.
+* Understand how to open and review a pull request."
