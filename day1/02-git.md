@@ -203,7 +203,7 @@ Remember that `git` only watches what we tell it to watch, and only tracks chang
 Next, we will want to tell `git` to watch `README.md` and to make a version of our project which includes the file. 
 In other words, we want to `commit` our changes.
 
-#### git add, git status, git commit
+### git add, git status, git commit
 
 Making a commit is like making a checkpoint for a particular version of your code. 
 You can easily return to, or revert to that checkpoint.
@@ -308,7 +308,7 @@ nothing to commit, working tree clean
 
 This message means nothing in the directory has changed since our last checkpoint, or commit.
 
-#### git log
+### git log
 
 Next, type
 ````{tab-set-code} 
@@ -442,13 +442,13 @@ git add README.md
 ```
 ````
 
-````{tab-set-code}
-
 Now the file is *staged* for a commit.
 Next, create the commit using the `git commit` command.
 
+````{tab-set-code}
+
 ```{code-block} shell
-git commit -m "add more information to readme"
+git commit -m "add information about how to make a commit to the readme"
 ```
 ````
 
@@ -696,7 +696,7 @@ To switch to an existing branch, use
 
 Save and commit this change.
 
-## Getting Changes to Your main Branch -- STOP HERE 
+## Getting Changes to Your main Branch
 
 This is as far as we complete in class. 
 Do not do the next sections if you want to follow along.
@@ -825,9 +825,11 @@ Copy the contents of this file to a file in your repository called `.gitignore`.
 
 Look at the contents of `.gitignore`
 
-````{tab-set-code} 
+`````{tab-set} 
 
-```{code-block} .gitignore
+````{tab-item} .gitignore
+
+```
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -864,6 +866,7 @@ wheels/
 ...
 ```
 ````
+`````
 
 Git looks at `.gitignore` and ignores any files or directories that match one of the lines.
 

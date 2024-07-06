@@ -137,11 +137,14 @@ origin  git@github.com:YOUR_GITHUB_USERNAME/git-lesson.git (push)
 
 Create the file `testing.txt` in this new directory and make it contain the following.
 
-````{tab-set-code} 
+````{tab-set}
 
-```{code-block} testing.txt
+:::{tab-item} testing.txt
+
+```{code-block} 
 I added this file from a clone!
 ```
+:::
 ````
 
 Now we will commit this new file:
@@ -266,9 +269,11 @@ Now we will make a few new edits to `testing.txt`:
 
 Add a dummy header and footer the `testing.txt`, so that it looks like this:
 
-````{tab-set-code} 
+````{tab-set} 
 
-```{code-block} testing.txt
+:::{tab-item} testing.txt
+
+```{code-block} 
 ***************************************
 This is	the start of testing.txt
 ***************************************
@@ -279,6 +284,7 @@ I added this file from a new clone!
 This is	the end	of testing.txt
 ***************************************
 ```
+:::
 ````
 
 Now commit and push this edit.
@@ -304,12 +310,15 @@ cd ../git-lesson-copy
 
 We are going to add another line to `testing.txt`, so that it looks like this:
 
-````{tab-set-code} 
+````{tab-set} 
 
-```{code-block} testing.txt
+:::{tab-item} testing.txt
+
+```{code-block}
 I added this file from a new clone!
 Now I added a new line!
 ```
+:::
 ````
 
 Now try committing and pushing the change:
@@ -406,9 +415,11 @@ Unmerged paths:
 
 The conflict is in testing.txt, so let's open it up:
 
-````{tab-set-code} 
+````{tab-set} 
 
-```{code-block} testing.txt
+:::{tab-item} testing.txt
+
+```{code-block}
 ***************************************
 This is the start of testing.txt
 ***************************************
@@ -423,6 +434,7 @@ This is the end of testing.txt
 ***************************************
 >>>>>>> 12651a37de10d61d9e9eea31c260c15b7ef3b5d4
 ```
+:::
 ````
 
 The conflict is shown within the `<<<<<<<` and `>>>>>>>` bits.
@@ -431,9 +443,11 @@ while the part after it comes from the original local clone.
 We need to decide what to do about the conflict, tidy it up, and then make a new commit.
 Edit `testing.txt` so that it reads:
 
-````{tab-set-code} 
+````{tab-set}
 
-```{code-block} testing.txt
+:::{tab-item} testing.txt
+
+```{code-block}
 ***************************************
 This is the start of testing.txt
 ***************************************
@@ -445,6 +459,7 @@ Now I added a new line!
 This is the end of testing.txt
 ***************************************
 ```
+:::
 ````
 
 ````{tab-set-code} 
@@ -479,9 +494,11 @@ Click the edit button, which looks like a small pencil near the upper right of t
 Add a line that says "I added this line from the GitHub web interface!", so that the file looks like:
 
 
-````{tab-set-code} 
+````{tab-set}
 
-```{code-block} testing.txt
+:::{tab-item} testing.txt
+
+```{code-block} 
 ***************************************
 This is the start of testing.txt
 ***************************************
@@ -494,6 +511,7 @@ I added this line from the GitHub web interface!
 This is the end of testing.txt
 ***************************************
 ```
+:::
 ````
 
 Scroll to the bottom of the page and write the name "Added a line to testing.txt from the web interface" for this commit.

@@ -208,4 +208,4 @@ man_pages = [
 
 # -- Extension configuration -------------------------------------------------
 
-myst_enable_extensions = ["dollarmath", "amsmath"]
+myst_enable_extensions = ["dollarmath", "amsmath", "colon_fence",]

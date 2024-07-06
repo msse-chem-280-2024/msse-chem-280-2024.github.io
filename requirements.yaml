@@ -1,4 +1,4 @@
-name: docs
+name: msee-chem280-2024
 channels:
   - conda-forge
 dependencies:
