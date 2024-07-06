@@ -1,0 +1,1134 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Foundations of Programming and Software Engineering for Molecular Science &#8212; UC Berkeley Chem 280  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=a3da09ef" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Set up" href="setup.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/msse_logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="_static/msse_logo.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">UC Berkeley MSSE - Chem 280</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="setup.html">
+    Set up
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day1.html">
+    Day 1
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day2.html">
+    Day 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day3.html">
+    Day 3
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="day4.html">
+    Day 4
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="day5.html">
+    Day 5
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="day6.html">
+    Day 6
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="day7.html">
+    Day 7
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="day8.html">
+    Day 8
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="day9.html">
+    Day 9
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="individual-assignments.html">
+    Individual Assignments
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="final-project.html">
+    Final Project Assignment
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://msse.berkeley.edu/">
+    MSSE
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://msse-chem-280-2023.github.io/git-cheat-sheet/">
+    Git Cheat Sheet
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.nist.gov/mml/csd/chemical-informatics-group/lennard-jones-fluid-reference-calculations-cuboid-cell">
+    NIST LJ Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://mmlapps.nist.gov/srs/LJ_PURE/mc.htm">
+    NIST MC Isotherms
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jchen0506/molssi_doc_theme" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="setup.html">
+    Set up
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day1.html">
+    Day 1
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day2.html">
+    Day 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day3.html">
+    Day 3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day4.html">
+    Day 4
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day5.html">
+    Day 5
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day6.html">
+    Day 6
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day7.html">
+    Day 7
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day8.html">
+    Day 8
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="day9.html">
+    Day 9
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="individual-assignments.html">
+    Individual Assignments
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="final-project.html">
+    Final Project Assignment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://msse.berkeley.edu/">
+    MSSE
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://msse-chem-280-2023.github.io/git-cheat-sheet/">
+    Git Cheat Sheet
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.nist.gov/mml/csd/chemical-informatics-group/lennard-jones-fluid-reference-calculations-cuboid-cell">
+    NIST LJ Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mmlapps.nist.gov/srs/LJ_PURE/mc.htm">
+    NIST MC Isotherms
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jchen0506/molssi_doc_theme" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="foundations-of-programming-and-software-engineering-for-molecular-science">
+<h1>Foundations of Programming and Software Engineering for Molecular Science<a class="headerlink" href="#foundations-of-programming-and-software-engineering-for-molecular-science" title="Link to this heading">#</a></h1>
+<p>This course provides an overview of topics relevant to programming and creating software projects.
+Students will become familiar with tools and practices commonly used in software development such as version
+control, documentation, and testing.
+Central to this course is a hands-on molecular simulation project
+where students work in groups to create a software package using concepts taught in the course.</p>
+<section id="pre-bootcamp-set-up">
+<h2>Pre-Bootcamp: Set-Up<a class="headerlink" href="#pre-bootcamp-set-up" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lesson Title</p></th>
+<th class="head"><p>Questions</p></th>
+<th class="head"><p>Objectives</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="setup.html">Computer Set-Up</a></p></td>
+<td><ul class="simple">
+<li><p>How do I set up my computer?</p></li>
+<li><p>How do I set up git and GitHub?</p></li>
+<li><p>What text editor should I use?</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Use conda to create an environment and install packages.</p></li>
+<li><p>Install compilers for operating system.</p></li>
+<li><p>Set up credentials for GitHub.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="day-1">
+<h2>Day 1<a class="headerlink" href="#day-1" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lesson Title</p></th>
+<th class="head"><p>Questions</p></th>
+<th class="head"><p>Objectives</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="day1/01-command-line.html">Introduction to the Command Line</a></p></td>
+<td><ul class="simple">
+<li><p>What is the command line?</p></li>
+<li><p>How can I navigate files and directories on the command line?</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Learn basic shell commands for navigating and creating files and directories.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="day1/02-git.html">Introduction to Version Control with Git</a></p></td>
+<td><ul class="simple">
+<li><p>What is version control?</p></li>
+<li><p>How do I use git to keep a record of my project?</p></li>
+<li><p>What is a branch and why would I use one?</p></li>
+<li><p>How do I tell git to ignore files?</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Explain the purpose of version control</p></li>
+<li><p>Introduce common git commands.</p></li>
+<li><p>Understand how to view and check out previous versions of files.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="day1/03-github.html">Using GitHub</a></p></td>
+<td><ul class="simple">
+<li><p>How is git different than GitHub?</p></li>
+<li><p>How do I use git and GitHub?</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Explain difference between git and GitHub.</p></li>
+<li><p>Learn how to use and manage a repository on GitHub.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="04-collaboration.html">Code Collaboration using GitHub</a></p></td>
+<td><ul class="simple">
+<li><p>How can others contribute to my project on GitHub?</p></li>
+<li><p>How can I contribute to the projects of others?</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Explain collaboration workflow on GitHub.</p></li>
+<li><p>Understand how to open and review a pull request.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="day-2">
+<h2>Day 2<a class="headerlink" href="#day-2" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lesson Title</p></th>
+<th class="head"><p>Objectives</p></th>
+<th class="head"><p>Questions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="day2/01-MC-pi.html">Intro to Monte Carlo Methods</a></p></td>
+<td><ul class="simple">
+<li><p>Explain Monte Carlo methods.</p></li>
+<li><p>Apply Monte Carlo method to calculate pi.</p></li>
+<li><p>Apply Monte Carlo to calculate integrals</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>What are Monte Carlo methods?</p></li>
+<li><p>How can I use Monte Carlo to estimate pi?</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="day2/02-LJ-eqn.html">The Lennard Jones Equation</a></p></td>
+<td><ul class="simple">
+<li><p>Understand the Lennard Jones potential.</p></li>
+<li><p>Understand periodic boundary conditions.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>How can Monte Carlo be applied to a thermodynamic problem?</p></li>
+<li><p>How do we model the interaction of nonbonded atoms?</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="day-3">
+<h2>Day 3<a class="headerlink" href="#day-3" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lesson Title</p></th>
+<th class="head"><p>Objectives</p></th>
+<th class="head"><p>Questions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="day4/01-total-energy-NIST.html">Total Energy Comparison</a></p></td>
+<td><ul class="simple">
+<li><p>Apply a cut-off and periodic boundaries to the energy calculation and compare it to values reported by NIST.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Does my total energy agree with the values reported from NIST?</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="day4/02-LJ-MC.html">Monte Carlo for a Lennard Jones Fluid</a></p></td>
+<td><ul class="simple">
+<li><p>Use the Metropolis algorithm to sample configurations of LJ particles</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>How do I write a Monte Carlo simulation?</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="day-4">
+<h2>Day 4<a class="headerlink" href="#day-4" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lesson Title</p></th>
+<th class="head"><p>Objectives</p></th>
+<th class="head"><p>Questions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="day4/01-total-energy-NIST.html">Total Energy Comparison</a></p></td>
+<td><ul class="simple">
+<li><p>Apply a cut-off and periodic boundaries to the energy calculation and compare it to values reported by NIST.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Does my total energy agree with the values reported from NIST?</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="day4/02-LJ-MC.html">Monte Carlo for a Lennard Jones Fluid</a></p></td>
+<td><ul class="simple">
+<li><p>Use the Metropolis algorithm to sample configurations of LJ particles</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>How do I write a Monte Carlo simulation?</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="day-5">
+<h2>Day 5<a class="headerlink" href="#day-5" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lesson Title</p></th>
+<th class="head"><p>Objectives</p></th>
+<th class="head"><p>Questions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="day5/01-numpy.html">Working with Numpy Arrays</a></p></td>
+<td><ul class="simple">
+<li><p>Be able to name the differences between Python lists and numpy arrays.</p></li>
+<li><p>Understand the idea of broadcasting.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>What are the differences between NumPy arrays and lists?</p></li>
+<li><p>How can I use NumPy to do calculations?</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="day5/02-mc-pi-numpy.html">Using NumPy Arrays to Calculate pi</a></p></td>
+<td><ul class="simple">
+<li><p>Be able to name the differences between Python lists and numpy arrays.</p></li>
+<li><p>Understand the idea of broadcasting.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>What are the differences between numpy arrays and lists?</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="day5/03-calculate-distance.html">Rewriting the Distance Function</a></p></td>
+<td><ul class="simple">
+<li><p>Rewrite calculate distance function for numpy arrays</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>How can I rewrite functions to take advantage of NumPy element-wise operation and broadcasting?</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="day5/04-modules.html">Creating a Python Module</a></p></td>
+<td><ul class="simple">
+<li><p>Put Python code into a module (.py file)</p></li>
+<li><p>Import functions from our module.</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>What is a Python module?</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="day-6">
+<h2>Day 6<a class="headerlink" href="#day-6" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lesson Title</p></th>
+<th class="head"><p>Objectives</p></th>
+<th class="head"><p>Questions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="day6/01-intro-cpp.html">Introduction to C++</a></p></td>
+<td><ul class="simple">
+<li><p>Explain static and dynamic typing</p></li>
+<li><p>Explain basic C++ structure and syntax, comparing/contrasting with python</p></li>
+<li><p>Introduce compiling from the command line</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>What is the difference between compiled and interpreted languages?</p></li>
+<li><p>What are the main advantages of C++ vs python?</p></li>
+<li><p>What are some similarities between python and C++?</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="day6/02-first-program.html">First C++ Program</a></p></td>
+<td><ul class="simple">
+<li><p>Be able to write and build a minimal C++ program</p></li>
+<li><p>Be able to debug compiler errors</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>How do I write and compile a minimal C++ program?</p></li>
+<li><p>What are the basic constructs of C++?</p></li>
+<li><p>How do I handle compile errors?</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="day-7">
+<h2>Day 7<a class="headerlink" href="#day-7" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lesson Title</p></th>
+<th class="head"><p>Objectives</p></th>
+<th class="head"><p>Questions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="day7/01-datatypes.html">Common data types</a></p></td>
+<td><ul class="simple">
+<li><p>Learn about the built-in data types in C++, and what they are used for</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>What are the common, built-in data types in C++pointers and references in C++</p></li>
+<li><p>When should I use each data type?</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="day7/02-pointers.html">Arrays, Pointers, Memory, and Vectors</a></p></td>
+<td><ul class="simple">
+<li><p>To learn about pointers</p></li>
+<li><p>To learn about different ways of representing lists/arrays of data</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>What are pointers and references in C++</p></li>
+<li><p>Why/when should I use a pointer or reference?</p></li>
+<li><p>Pitfalls of using pointer</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="day-8">
+<h2>Day 8<a class="headerlink" href="#day-8" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lesson Title</p></th>
+<th class="head"><p>Objectives</p></th>
+<th class="head"><p>Questions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="day8/02-functions.html">Function Calling and Arguments</a></p></td>
+<td><ul class="simple">
+<li><p>Learn about C++ functions and argument passing</p></li>
+<li><p>Learn about the const keyword</p></li>
+<li><p>Learn about returning multiple things from a function</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>How do functions differ in C++ and Python?</p></li>
+<li><p>How are arguments passed in C++?</p></li>
+<li><p>How can we protect variables (and function arguments) from changing?</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="day8/03-namespaces.html">Namespaces</a></p></td>
+<td><ul class="simple">
+<li><p>Learn about grouping functions and objects with namespaces</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>How can we group functions together under a single collection?</p></li>
+<li><p>How can I prevent collisions with functions having the same name in other libraries?</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="day8/04-exceptions.html">Exceptions</a></p></td>
+<td><ul class="simple">
+<li><p>Learn about throwing and catching exception in C++</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>How do we handle major errors in C++?</p></li>
+<li><p>How do exceptions differ from python?</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="day-9">
+<h2>Day 9<a class="headerlink" href="#day-9" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Lesson Title</p></th>
+<th class="head"><p>Objectives</p></th>
+<th class="head"><p>Questions</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="day9/01-multifile-projects.html">Multi-file projects</a></p></td>
+<td><ul class="simple">
+<li><p>Learn how the C++ compiler preprocesses files</p></li>
+<li><p>Learn the difference between header and source files</p></li>
+<li><p>Learn how to include intra-project header files</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>How can we split a large C++ project into multiple files</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="setup.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Set up</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-bootcamp-set-up">Pre-Bootcamp: Set-Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-1">Day 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-2">Day 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-3">Day 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-4">Day 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-5">Day 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-6">Day 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-7">Day 7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-8">Day 8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-9">Day 9</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+        <p class="sphinx-version">
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br>
+        </p>
+        
+
+        <p class="theme-version">
+        Built with a customized <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+        </p>
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

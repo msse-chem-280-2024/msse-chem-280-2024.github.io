@@ -1,0 +1,1118 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Class Warm Up &#8212; UC Berkeley Chem 280  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a3da09ef" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'day7/00-group-meeting';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Common data types" href="01-datatypes.html" />
+    <link rel="prev" title="Day 7" href="../day7.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/msse_logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/msse_logo.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">UC Berkeley MSSE - Chem 280</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../setup.html">
+    Set up
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day1.html">
+    Day 1
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day2.html">
+    Day 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day3.html">
+    Day 3
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day4.html">
+    Day 4
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day5.html">
+    Day 5
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day6.html">
+    Day 6
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../day7.html">
+    Day 7
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day8.html">
+    Day 8
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day9.html">
+    Day 9
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../individual-assignments.html">
+    Individual Assignments
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../final-project.html">
+    Final Project Assignment
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://msse.berkeley.edu/">
+    MSSE
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://msse-chem-280-2023.github.io/git-cheat-sheet/">
+    Git Cheat Sheet
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.nist.gov/mml/csd/chemical-informatics-group/lennard-jones-fluid-reference-calculations-cuboid-cell">
+    NIST LJ Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://mmlapps.nist.gov/srs/LJ_PURE/mc.htm">
+    NIST MC Isotherms
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jchen0506/molssi_doc_theme" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../setup.html">
+    Set up
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day1.html">
+    Day 1
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day2.html">
+    Day 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day3.html">
+    Day 3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day4.html">
+    Day 4
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day5.html">
+    Day 5
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day6.html">
+    Day 6
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day7.html">
+    Day 7
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day8.html">
+    Day 8
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day9.html">
+    Day 9
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../individual-assignments.html">
+    Individual Assignments
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../final-project.html">
+    Final Project Assignment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://msse.berkeley.edu/">
+    MSSE
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://msse-chem-280-2023.github.io/git-cheat-sheet/">
+    Git Cheat Sheet
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.nist.gov/mml/csd/chemical-informatics-group/lennard-jones-fluid-reference-calculations-cuboid-cell">
+    NIST LJ Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mmlapps.nist.gov/srs/LJ_PURE/mc.htm">
+    NIST MC Isotherms
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jchen0506/molssi_doc_theme" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class Warm Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-datatypes.html">Common data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-pointers.html">Arrays, Pointers, Memory, and Vectors</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="group-assignment.html">Group Homework Assignment - Day 7 &amp; 8</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../day7.html" class="nav-link">Day 7</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Class Warm Up</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="class-warm-up">
+<h1>Class Warm Up<a class="headerlink" href="#class-warm-up" title="Link to this heading">#</a></h1>
+<p>Today, for the class warm-up, we will be learning about and applying the <a class="reference external" href="https://course.ccs.neu.edu/cs5010sp15/recipe.html">Programming Design Recipe</a>.
+This is a formalized strategy and design process for writing a function.
+There is a more detailed specification, but we present a condensed version here.</p>
+<p>Some text is taken directly and adapted from the reference.</p>
+<p>As you read through the design recipe, apply it to the following problems for both Python and C++:</p>
+<ol class="arabic simple">
+<li><p>Calculation of number density given a number of molecules an a box length (assume cubic box).</p></li>
+<li><p>Calculation of the solute’s contribution to final volume in a dilution. Given a starting concentration <span class="math notranslate nohighlight">\(C_{1}\)</span> and volume of solution <span class="math notranslate nohighlight">\(V_{1}\)</span>, and knowing the final concentration <span class="math notranslate nohighlight">\(C_2\)</span> after adding solvent, calculate the volume <span class="math notranslate nohighlight">\(V_2\)</span> that represents the solute’s contribution to the final solution. The relationship between these quantities is represented by the equation:
+<span class="math notranslate nohighlight">\( C_1 \times V_1 = C_2 \times V_2 \)</span></p></li>
+</ol>
+<p>As you work through the Design Recipe steps, record your answers in the <a class="reference external" href="https://docs.google.com/document/d/1Bs5K45Y9uPrfE1XoGYgawg4_oA9DGKwAGTD_-KCbe0Y/edit?usp=sharing">class Google Doc</a></p>
+<section id="summary-of-recipe-steps">
+<h2>Summary of Recipe Steps<a class="headerlink" href="#summary-of-recipe-steps" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Data Design</p></li>
+<li><p>Function Specification</p></li>
+<li><p>Function Implementation</p></li>
+<li><p>Testing</p></li>
+<li><p>Program Review</p></li>
+</ol>
+</section>
+<section id="step-1-data-design">
+<h2>Step 1 - Data Design<a class="headerlink" href="#step-1-data-design" title="Link to this heading">#</a></h2>
+<p>All programs must process and compute with facts from the real world. We call these facts information. For example,</p>
+<ul class="simple">
+<li><p>One program may process road and location information to compute driving directions.</p></li>
+<li><p>Another may process player input information to compute the current state of a game.</p></li>
+<li><p>Another may process information about files on a disk to create a user interface.</p></li>
+</ul>
+<p>To do this processing, however, programs must first encode information from the real world as data representations in the computer. The Data Design step determines these data representations.</p>
+<p><strong>This is the most critical step of the design recipe. It dictates all subsequent steps.</strong>
+Deciding “how” to represent information on a computer can sometimes be very difficult and takes practice!
+Over time, you will develop an intuition for this.
+Sometimes data representations of real-world information as data will seem abstract.
+Data design can involve creating representations that may not directly resemble the real-world objects or concepts being modeled.</p>
+<section id="step-1-1-data-definitions">
+<h3>Step 1.1 - Data Definitions<a class="headerlink" href="#step-1-1-data-definitions" title="Link to this heading">#</a></h3>
+<p>To create a data representation for a piece of information, we write <em>data definitions</em>.</p>
+<p>A <em>data definition</em> is a written statement that defines a piece of data.
+In simpler terms, it helps us describe what the data should look like and how it is structured.</p>
+<section id="why-data-design-matters">
+<h4>Why Data Design Matters<a class="headerlink" href="#why-data-design-matters" title="Link to this heading">#</a></h4>
+<p>Data design is essential because it lays the foundation for writing functions.
+By defining data clearly, we can better understand what inputs our functions need and what outputs they should produce.
+This understanding is crucial for writing effective and reliable programs.</p>
+</section>
+<section id="examples-of-data-definitions">
+<h4>Examples of Data Definitions<a class="headerlink" href="#examples-of-data-definitions" title="Link to this heading">#</a></h4>
+<p>Let’s consider a few examples of data definitions:</p>
+<ol class="arabic simple">
+<li><p><strong>3D Coordinate in Python</strong>:</p>
+<ul class="simple">
+<li><p>A coordinate is a <em>list</em> with format [x, y, z].</p></li>
+<li><p>An x value is a floating-point number.</p></li>
+<li><p>A y value is a floating-point number.</p></li>
+<li><p>A z value is a floating-point number.</p></li>
+</ul>
+</li>
+<li><p><strong>A Rectangle</strong>:</p>
+<ul class="simple">
+<li><p>A rectangle is represented by a <em>length</em> and <em>width</em>.</p></li>
+<li><p>A width is a floating point number (Python) or a double (C++).</p></li>
+<li><p>A height is a floating point number or a double (C++).</p></li>
+</ul>
+</li>
+<li><p><strong>Person’s Information</strong>:</p>
+<ul class="simple">
+<li><p>A person’s information is a <em>dictionary</em> with keys: “name”, “age”, “email”.</p></li>
+<li><p>The name is a <em>string</em>.</p></li>
+<li><p>The age is an integer.</p></li>
+<li><p>The email is a <em>string</em>.</p></li>
+</ul>
+</li>
+</ol>
+<p>Now that we understand the importance of data design and how to create data definitions, we are ready to move on to the next steps in the Programming Design Recipe.</p>
+</section>
+</section>
+</section>
+<section id="step-2-function-specification">
+<h2>Step 2 - Function Specification<a class="headerlink" href="#step-2-function-specification" title="Link to this heading">#</a></h2>
+<p>You will next define the function specification.
+This involves deciding the function inputs and signature and writing
+function documentation.</p>
+<p>In Python a function signature looks like</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-0">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">arguments</span><span class="p">):</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In C++, a function signature looks like</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="c++" for="sd-tab-item-1">
+C++</label><div class="sd-tab-content docutils">
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">return_type</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">arguments</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="step-2-1-defining-function-inputs">
+<h3>Step 2.1 - Defining Function Inputs<a class="headerlink" href="#step-2-1-defining-function-inputs" title="Link to this heading">#</a></h3>
+<p>Before writing a function, you need to determine what inputs the function requires to perform its task.
+These inputs are known as function parameters or arguments.
+Think about the data that the function will need to process and how it should be organized.</p>
+</section>
+<section id="step-2-2-writing-function-documentation">
+<h3>Step 2.2 - Writing Function Documentation<a class="headerlink" href="#step-2-2-writing-function-documentation" title="Link to this heading">#</a></h3>
+<p>Once you have identified the function’s inputs and purpose, it is essential to write clear documentation for the function.
+Good documentation explains the function’s purpose, its inputs, expected behavior, and the data it returns.
+Documentation is crucial for both your understanding of the function’s design and for other programmers who may use your code.</p>
+<section id="example-function-specification-and-documentation">
+<h4>Example Function Specification and Documentation<a class="headerlink" href="#example-function-specification-and-documentation" title="Link to this heading">#</a></h4>
+<p>Let’s consider an example of a function in Python that calculates the area of a rectangle:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-2">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_rectangle_area</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the area of a rectangle.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    length : float </span>
+<span class="sd">        The length of the rectangle.</span>
+<span class="sd">    width : float</span>
+<span class="sd">        The width of the rectangle.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ---------</span>
+<span class="sd">    area : float</span>
+<span class="sd">        The area of the rectangle.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="step-3-function-implementation">
+<h2>Step 3 - Function Implementation<a class="headerlink" href="#step-3-function-implementation" title="Link to this heading">#</a></h2>
+<p>Once you have designed the data and specified your function, the next step is to implement it.
+Function implementation is where you turn the design and specification into actual code that accomplishes the task you set out to perform.</p>
+<section id="step-3-1-break-the-problem-down">
+<h3>Step 3.1 - Break the Problem Down<a class="headerlink" href="#step-3-1-break-the-problem-down" title="Link to this heading">#</a></h3>
+<p>A good practice before writing any code is to break the problem down into smaller tasks or components.
+Think about the sequence of operations that need to be performed and jot them down.
+This will give you a clearer path and can simplify the coding process.</p>
+</section>
+<section id="step-3-2-write-the-code">
+<h3>Step 3.2 - Write the Code<a class="headerlink" href="#step-3-2-write-the-code" title="Link to this heading">#</a></h3>
+<p>Now that you have a road map, start coding.
+Use the function signature and documentation you wrote in the previous step as a guide.
+Make sure to adhere to the data definitions and respect the expected inputs and outputs.</p>
+</section>
+<section id="step-3-3-add-comments">
+<h3>Step 3.3 - Add Comments<a class="headerlink" href="#step-3-3-add-comments" title="Link to this heading">#</a></h3>
+<p>While coding, it’s good practice to add comments explaining complex or non-intuitive parts of your code. This can be beneficial for your future self or other programmers who might work on the code later.</p>
+<section id="example-function-implementation">
+<h4>Example Function Implementation<a class="headerlink" href="#example-function-implementation" title="Link to this heading">#</a></h4>
+<p>Continuing with our rectangle area calculation example:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-3">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_rectangle_area</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the area of a rectangle.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    length : float </span>
+<span class="sd">        The length of the rectangle.</span>
+<span class="sd">    width : float</span>
+<span class="sd">        The width of the rectangle.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    ---------</span>
+<span class="sd">    area : float</span>
+<span class="sd">        The area of the rectangle.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span class="n">width</span>
+
+    <span class="k">return</span> <span class="n">area</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, we’ve taken the function specification and added the necessary code to compute the rectangle’s area.</p>
+<p>With the function now implemented, the next step would be to test it thoroughly to ensure it works as expected.</p>
+</section>
+</section>
+</section>
+<section id="step-4-testing-aka-sanity-checks">
+<h2>Step 4 - Testing (aka “Sanity Checks”)<a class="headerlink" href="#step-4-testing-aka-sanity-checks" title="Link to this heading">#</a></h2>
+<p>After implementing your function, it’s crucial to test it to ensure it behaves as expected.
+Testing can identify errors or discrepancies in your code, allowing you to correct them before using the function in larger programs or deploying it in real-world scenarios.</p>
+<section id="step-4-1-write-test-cases">
+<h3>Step 4.1 - Write Test Cases<a class="headerlink" href="#step-4-1-write-test-cases" title="Link to this heading">#</a></h3>
+<p>Before running any tests, identify and write down several test cases. These should include:</p>
+<ul class="simple">
+<li><p><strong>Normal Cases</strong>: These are typical inputs that the function will handle most of the time.</p></li>
+<li><p><strong>Edge Cases</strong>: Inputs that test the boundaries or limits of your function.</p></li>
+<li><p><strong>Error Cases</strong>: Inputs that the function should reject or handle gracefully.</p></li>
+</ul>
+</section>
+<section id="step-4-2-use-assertions-or-print-statements">
+<h3>Step 4.2 - Use Assertions or Print Statements<a class="headerlink" href="#step-4-2-use-assertions-or-print-statements" title="Link to this heading">#</a></h3>
+<p>In languages that support them, assertions can be used to automatically verify if a function’s output is as expected.
+Otherwise, you can use print statements to display outputs for manual verification.</p>
+</section>
+<section id="step-4-3-run-the-tests">
+<h3>Step 4.3 - Run the Tests<a class="headerlink" href="#step-4-3-run-the-tests" title="Link to this heading">#</a></h3>
+<p>Execute each test case and compare the function’s output to your expected result.
+Take note of any discrepancies.</p>
+</section>
+<section id="step-4-4-review-and-refine">
+<h3>Step 4.4 - Review and Refine<a class="headerlink" href="#step-4-4-review-and-refine" title="Link to this heading">#</a></h3>
+<p>If a test case fails, analyze why it failed.
+Is there a bug in the function?
+Did you overlook a specific scenario?
+Review the function and refine it as necessary, then retest until all test cases pass.</p>
+<section id="example-testing-for-rectangle-area-function">
+<h4>Example Testing for Rectangle Area Function<a class="headerlink" href="#example-testing-for-rectangle-area-function" title="Link to this heading">#</a></h4>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">calculate_rectangle_area</span></code> function from our previous sections:</p>
+<ol class="arabic simple">
+<li><p><strong>Normal Case</strong>:</p>
+<ul class="simple">
+<li><p>Input: <code class="docutils literal notranslate"><span class="pre">calculate_rectangle_area(5.0,</span> <span class="pre">10.0)</span></code></p></li>
+<li><p>Expected Output: <code class="docutils literal notranslate"><span class="pre">50.0</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Edge Case</strong>:</p>
+<ul class="simple">
+<li><p>Input: <code class="docutils literal notranslate"><span class="pre">calculate_rectangle_area(0.0,</span> <span class="pre">10.0)</span></code></p></li>
+<li><p>Expected Output: <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Error Case</strong>:</p>
+<ul class="simple">
+<li><p>While our function doesn’t have explicit error handling, think about scenarios that could be problematic,
+such as negative lengths or widths.</p></li>
+</ul>
+</li>
+</ol>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-4">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tests</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">calculate_rectangle_area</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mf">50.0</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Test 1 Failed: Expected 50.0 but got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">calculate_rectangle_area</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Test 2 Failed: Expected 0.0 but got </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It’s important to understand that no matter how thorough your tests are, there’s always the possibility of undiscovered issues.
+Regular testing and refinement are essential to maintaining reliable code.</p>
+</section>
+</section>
+</section>
+<section id="step-5-program-review">
+<h2>Step 5 - Program Review<a class="headerlink" href="#step-5-program-review" title="Link to this heading">#</a></h2>
+<p>The final step of the Programming Design Recipe is reviewing your code.
+Code review is a crucial practice in the professional world, and developing this habit early will benefit you in the long run.</p>
+<section id="step-5-1-review-for-consistency">
+<h3>Step 5.1 - Review for Consistency<a class="headerlink" href="#step-5-1-review-for-consistency" title="Link to this heading">#</a></h3>
+<p>Ensure that your data definitions, function specifications, and implementations align with one another.
+Any deviation might lead to unexpected behaviors.</p>
+</section>
+<section id="step-5-2-check-for-code-quality">
+<h3>Step 5.2 - Check for Code Quality<a class="headerlink" href="#step-5-2-check-for-code-quality" title="Link to this heading">#</a></h3>
+<p>Review the code to ensure it’s readable, maintainable, and follows good coding practices.
+Check variable names, function names, and comments to ensure clarity.</p>
+</section>
+<section id="step-5-3-refactor-if-necessary">
+<h3>Step 5.3 - Refactor if Necessary<a class="headerlink" href="#step-5-3-refactor-if-necessary" title="Link to this heading">#</a></h3>
+<p>As you review, you might identify parts of the code that could be improved.
+Refactoring involves restructuring existing code without changing its external behavior.
+It’s a way to improve the code’s design, readability, or reduce complexity.</p>
+</section>
+<section id="step-5-4-peer-review">
+<h3>Step 5.4 - Peer Review<a class="headerlink" href="#step-5-4-peer-review" title="Link to this heading">#</a></h3>
+<p>If possible, have a classmate or colleague review your code.
+They might provide a fresh perspective, notice things you’ve missed, or offer suggestions for improvement.
+This is a common practice in the software industry and is known to improve code quality significantly.</p>
+<section id="example-program-review-for-rectangle-area-function">
+<h4>Example Program Review for Rectangle Area Function<a class="headerlink" href="#example-program-review-for-rectangle-area-function" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Review Data Definitions</strong>: Ensure the function uses the defined data types and adheres to their structure.
+For the rectangle function, we used <code class="docutils literal notranslate"><span class="pre">float</span></code> for both length and width as defined.</p></li>
+<li><p><strong>Review Function Specification</strong>: Re-read the documentation and ensure it aligns with the function’s behavior.
+In our case, the function should take two floating-point numbers and return the computed area.</p></li>
+<li><p><strong>Check for Quality</strong>: The function is simple and straightforward, but always ensure there’s no redundant code, variables have meaningful names, and comments are clear.</p></li>
+<li><p><strong>Refactor</strong>: While our example function is already concise, always be on the lookout for repetitive patterns or overly complex segments that can be simplified.</p></li>
+<li><p><strong>Peer Review</strong>: Share the function with a classmate.
+Did they understand its purpose immediately?
+Did they notice any potential issues or have suggestions for improvement?</p></li>
+</ol>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../day7.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 7</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="01-datatypes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Common data types</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-recipe-steps">Summary of Recipe Steps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-data-design">Step 1 - Data Design</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-1-data-definitions">Step 1.1 - Data Definitions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-data-design-matters">Why Data Design Matters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-data-definitions">Examples of Data Definitions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-function-specification">Step 2 - Function Specification</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-1-defining-function-inputs">Step 2.1 - Defining Function Inputs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-2-writing-function-documentation">Step 2.2 - Writing Function Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-function-specification-and-documentation">Example Function Specification and Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-function-implementation">Step 3 - Function Implementation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-1-break-the-problem-down">Step 3.1 - Break the Problem Down</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-2-write-the-code">Step 3.2 - Write the Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-3-add-comments">Step 3.3 - Add Comments</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-function-implementation">Example Function Implementation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-testing-aka-sanity-checks">Step 4 - Testing (aka “Sanity Checks”)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-1-write-test-cases">Step 4.1 - Write Test Cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-2-use-assertions-or-print-statements">Step 4.2 - Use Assertions or Print Statements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-3-run-the-tests">Step 4.3 - Run the Tests</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-4-review-and-refine">Step 4.4 - Review and Refine</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-testing-for-rectangle-area-function">Example Testing for Rectangle Area Function</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-program-review">Step 5 - Program Review</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-1-review-for-consistency">Step 5.1 - Review for Consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-2-check-for-code-quality">Step 5.2 - Check for Code Quality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-3-refactor-if-necessary">Step 5.3 - Refactor if Necessary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-4-peer-review">Step 5.4 - Peer Review</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-program-review-for-rectangle-area-function">Example Program Review for Rectangle Area Function</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/day7/00-group-meeting.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+        <p class="sphinx-version">
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br>
+        </p>
+        
+
+        <p class="theme-version">
+        Built with a customized <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+        </p>
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1091 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Lennard Jones Equation &#8212; UC Berkeley Chem 280  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a3da09ef" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'day2/02-LJ-eqn';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Individual Homework Assignment 1" href="../individual-assignments/individual-assignment-1.html" />
+    <link rel="prev" title="Intro to Monte Carlo Methods" href="01-MC-pi.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/msse_logo.svg" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/msse_logo.svg" class="logo__image only-dark" alt=""/>`);</script>
+  
+  
+    <p class="title logo__title">UC Berkeley MSSE - Chem 280</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../setup.html">
+    Set up
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day1.html">
+    Day 1
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day2.html">
+    Day 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day3.html">
+    Day 3
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day4.html">
+    Day 4
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day5.html">
+    Day 5
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day6.html">
+    Day 6
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day7.html">
+    Day 7
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day8.html">
+    Day 8
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day9.html">
+    Day 9
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../individual-assignments.html">
+    Individual Assignments
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../final-project.html">
+    Final Project Assignment
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://msse.berkeley.edu/">
+    MSSE
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://msse-chem-280-2023.github.io/git-cheat-sheet/">
+    Git Cheat Sheet
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.nist.gov/mml/csd/chemical-informatics-group/lennard-jones-fluid-reference-calculations-cuboid-cell">
+    NIST LJ Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://mmlapps.nist.gov/srs/LJ_PURE/mc.htm">
+    NIST MC Isotherms
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jchen0506/molssi_doc_theme" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../setup.html">
+    Set up
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day1.html">
+    Day 1
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day2.html">
+    Day 2
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day3.html">
+    Day 3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day4.html">
+    Day 4
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day5.html">
+    Day 5
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day6.html">
+    Day 6
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day7.html">
+    Day 7
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day8.html">
+    Day 8
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day9.html">
+    Day 9
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../individual-assignments.html">
+    Individual Assignments
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../final-project.html">
+    Final Project Assignment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://msse.berkeley.edu/">
+    MSSE
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://msse-chem-280-2023.github.io/git-cheat-sheet/">
+    Git Cheat Sheet
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.nist.gov/mml/csd/chemical-informatics-group/lennard-jones-fluid-reference-calculations-cuboid-cell">
+    NIST LJ Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mmlapps.nist.gov/srs/LJ_PURE/mc.htm">
+    NIST MC Isotherms
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/jchen0506/molssi_doc_theme" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00-group-meeting.html">Meet your group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-MC-pi.html">Intro to Monte Carlo Methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Lennard Jones Equation</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../individual-assignments/individual-assignment-1.html">Individual Homework Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="group-assignment.html">Day 2 - Group Assignment</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../day2.html" class="nav-link">Day 2</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">The Lennard...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-lennard-jones-equation">
+<h1>The Lennard Jones Equation<a class="headerlink" href="#the-lennard-jones-equation" title="Link to this heading">#</a></h1>
+<div class="overview admonition">
+<p class="admonition-title">Overview</p>
+<p>Questions:</p>
+<ul class="simple">
+<li><p>How can Monte Carlo be applied to a thermodynamic problem?</p></li>
+<li><p>How do we model the interaction of nonbonded atoms?</p></li>
+</ul>
+<p>Objectives:</p>
+<ul class="simple">
+<li><p>Understand the Lennard Jones potential.</p></li>
+<li><p>Understand periodic boundary conditions.</p></li>
+</ul>
+</div>
+<p>This module is based on work by former MolSSI Software Scientist Eliseo Marin-Rimoldi and Prof. John D. Chodera.</p>
+<section id="lesson-slides">
+<h2>Lesson Slides<a class="headerlink" href="#lesson-slides" title="Link to this heading">#</a></h2>
+<p><a class="reference download internal" download="" href="../_downloads/21555fc3ed2fcd866d8427a141281d93/intro-lennard-jones.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Lennard</span> <span class="pre">Jones</span> <span class="pre">Slides</span></code></a></p>
+</section>
+<section id="motivation-using-monte-carlo-on-molecular-systems">
+<h2>Motivation - Using Monte Carlo on molecular systems<a class="headerlink" href="#motivation-using-monte-carlo-on-molecular-systems" title="Link to this heading">#</a></h2>
+<p>We are going to use Monte Carlo simulation to solve a chemical problem. MC simulation is used in a lot of different fields, and one of those is molecular simulation. MC methods for molecules can be quite advanced these days, but for this bootcamp, we will be using MC to simulate noble gases.</p>
+<p>In statistical mechanics, we are interested in computing averages of thermodynamic properties as a function of atom positions an momenta. A thermodynamic average depending only on configurational properties can be computed by evaluating a multivariate integral.</p>
+<div class="math notranslate nohighlight">
+\[ 
+\left&lt;Q\right&gt; = \int_V Q\left(\textbf{r}^N\right)
+	\rho\left(\textbf{r}^N\right) d\textbf{r}^N
+	\label{eq.statMechAverage} 
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(Q\left(\textbf{r}^N\right)\)</span> is the thermodynamic quantity of interest that depends on only on the configuration, <span class="math notranslate nohighlight">\(\rho\left(\textbf{r}^N\right)\)</span> is the probability density, and <span class="math notranslate nohighlight">\(V\)</span> defines the volume of configuration space over which <span class="math notranslate nohighlight">\(\rho\)</span> has support.</p>
+<p>This integral is very hard to compute, even for small atomic systems. For instance, a monoatomic system of 10 atoms leads to a 30 dimensional integral.</p>
+<p>We learned in the previous lesson about using Monte Carlo to evaluate integrals. We can apply this same approach to solve this integral. There are a few extra things we have to consider, however, because of the high dimensionality of the problem. We’ll worry more about exactly how to implement this MC integration tomorrow. Today’s lesson will focus on the model we are going to use for our thermodynamic quantity (in our case the system potential energy).</p>
+</section>
+<section id="modeling-the-system">
+<h2>Modeling the system<a class="headerlink" href="#modeling-the-system" title="Link to this heading">#</a></h2>
+<p>When modeling atomic and molecular systems, the energy of nonbonded interactions are often approximated using the <strong>Lennard Jones Potential</strong>.</p>
+<div class="math notranslate nohighlight">
+\[ 
+U(r) = 4 \epsilon \left[\left(\frac{\sigma}{r}\right)^{12} -\left(\frac{\sigma}{r}\right)^{6} \right] 
+\]</div>
+<p>This is a pairwise potential which is a function of distance between two atoms. It has two parameters, <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\epsilon\)</span>, which represent the size of the particle, and the depth of the potential well (you can think of this as how strongly the particles are attracted to one another), respectively.</p>
+<p>This potential is commonly used in molecular simulation to model nonbonded interactions, not just for those of noble gases. For more complicated systems, you will have additional energy terms in addition to the LJ potential, but for our system of noble gases, the is the only contribution to the potential energy.</p>
+<p>The first thing we will do is write a function which evaluates the LJ energy based on an input of distance.</p>
+<p>Commonly used parameters for simulating Argon are <span class="math notranslate nohighlight">\(\sigma = 3.4 \unicode{xC5} \)</span> and <span class="math notranslate nohighlight">\(\epsilon/k_B = 120~K\)</span></p>
+<section id="dealing-with-units">
+<h3>Dealing with units<a class="headerlink" href="#dealing-with-units" title="Link to this heading">#</a></h3>
+<p>Throughout this project, we will be working with <strong>reduced units</strong>. As stated above, common values are <span class="math notranslate nohighlight">\(\sigma = 3.4 \unicode{xC5}\)</span> and <span class="math notranslate nohighlight">\(\epsilon/k_B = 120~K\)</span>. When converted to SI units, these quickly become inconvenient to work with. Often, in simulation, we will use something called <em>reduced units</em> in order to make calculations more convenient. This approach essentially scales quantities by characteristic values to get them closer to unity.</p>
+<p>For example, when working with Argon, the distances we compute will be in units of $<span class="math notranslate nohighlight">\(\sigma\)</span>$ instead of angstrom.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quantity</p></th>
+<th class="head"><p>Expression</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Length</p></td>
+<td><p><span class="math notranslate nohighlight">\(L^*=L / \sigma\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Density</p></td>
+<td><p><span class="math notranslate nohighlight">\(\rho^* = N \sigma^3 / V\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Energy</p></td>
+<td><p><span class="math notranslate nohighlight">\(U^* = U / \epsilon\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Pressure</p></td>
+<td><p><span class="math notranslate nohighlight">\(P^* = P \sigma^3 / \epsilon\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Volume</p></td>
+<td><p><span class="math notranslate nohighlight">\(V^* = V / \sigma^3 \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Temperature</p></td>
+<td><p><span class="math notranslate nohighlight">\(T^* = k_{B} T / \epsilon \)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Time</p></td>
+<td><p><span class="math notranslate nohighlight">\(t^* = t \sqrt{\frac{\epsilon}{ m \sigma^2}}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Conveniently for us, Lennard Jones fluids have the surprisingly pleasant property of possessing universal behavior when expressed in terms of reduced units as (you can verify this for yourself by substituting <span class="math notranslate nohighlight">\(\sigma\)</span> and <span class="math notranslate nohighlight">\(\epsilon\)</span> for their reduced unit expressions):</p>
+<div class="math notranslate nohighlight">
+\[ 	
+U^*\left(r_{ij} \right) = 4 \left[\left(\frac{1}{r^*_{ij}}\right)^{12} -\left(\frac{1}{r^*_{ij}}\right)^{6} \right] 
+\]</div>
+<p>Since we know that we will need this as a function for our MC calculation, we will write a function for it to use later.</p>
+<p>Recall that in Python, we define a function using the syntax:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-0">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">function_arguments</span><span class="p">):</span>
+    <span class="o">**</span> <span class="n">FUNCTION</span> <span class="n">HERE</span> <span class="o">**</span>
+    <span class="k">return</span> <span class="n">return_value</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For our <code class="docutils literal notranslate"><span class="pre">calculate_LJ</span></code> function, we will need to raise $<span class="math notranslate nohighlight">\(\frac{1}{r_ij}\)</span>$ to the 12th and 6th power. We will use the <code class="docutils literal notranslate"><span class="pre">pow</span></code> function in the python <code class="docutils literal notranslate"><span class="pre">math</span></code> module for this.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-1">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_LJ</span><span class="p">(</span><span class="n">r_ij</span><span class="p">):</span>
+    <span class="n">r6_term</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">r_ij</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">r12_term</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">r6_term</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">pairwise_energy</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">r12_term</span> <span class="o">-</span> <span class="n">r6_term</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">pairwise_energy</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sanity-checks">
+<h3>Sanity checks<a class="headerlink" href="#sanity-checks" title="Link to this heading">#</a></h3>
+<p>It is always a good idea to test the expected behavior of your function, or do some “sanity checks”. We’ll think about a few qualities of the LJ potential to check if our function is reasonable.</p>
+<p>From the equation for the LJ potential, we can see a few qualities that should be true if our function is implemented correctly -</p>
+<ol class="arabic simple">
+<li><p>This function should equal zero at r = 1.</p></li>
+<li><p>A minimum occurs at <span class="math notranslate nohighlight">\(r = 2^{1/6}\sigma.\)</span> In our case, we are using reduced units and <span class="math notranslate nohighlight">\(\sigma\)</span> is equal to one. This minimum will have a value equal to <span class="math notranslate nohighlight">\(-\epsilon\)</span>, in our case -1.</p></li>
+</ol>
+<p>We’ll check these two test statements using something called an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement in Python. In an <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement, you assert that something is <code class="docutils literal notranslate"><span class="pre">True</span></code>. If the statement following the word <code class="docutils literal notranslate"><span class="pre">assert</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, nothing happens. However, if the statement is <code class="docutils literal notranslate"><span class="pre">False</span></code>, you will get an assertion error.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-2">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>results in no visible output. But,</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-3">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>results in an <code class="docutils literal notranslate"><span class="pre">AssertionError</span></code>.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+error</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">AssertionError</span>                            <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">26</span><span class="o">-</span><span class="mi">39</span><span class="n">a8159f4693</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">----&gt;</span> <span class="mi">1</span> <span class="k">assert</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span>
+
+<span class="ne">AssertionError</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s translate our two criteria into <code class="docutils literal notranslate"><span class="pre">asserts</span></code> to check our function:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-5">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">calculate_LJ</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">calculate_LJ</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">6</span><span class="p">)))</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="python-style-docstrings">
+<h3>Python Style - Docstrings<a class="headerlink" href="#python-style-docstrings" title="Link to this heading">#</a></h3>
+<p>Part of this class is cultivating good coding habits. A “best practice” when writing your code is to make sure that your code is adequately documented. This could be through code comments, but a very good way to document your code is to use something called <code class="docutils literal notranslate"><span class="pre">docstrings</span></code> in Python. In this course, we may not always write <code class="docutils literal notranslate"><span class="pre">docstrings</span></code> right away, but you should always write them.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">docstring</span></code>, or <code class="docutils literal notranslate"><span class="pre">documentation</span> <span class="pre">string</span></code> is a string which follows the function definition and describes a function’s inputs and behavior. If you write <code class="docutils literal notranslate"><span class="pre">docstrings</span></code>, you will have a much easier time returning to your code, sharing it with others, and creating online documentation. For Python, there is a tool called <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code> which can parse your code for <code class="docutils literal notranslate"><span class="pre">docstrings</span></code> and build web documentation for you (we will not discuss this in this course).</p>
+<p>We will write <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> style <code class="docutils literal notranslate"><span class="pre">docstrings</span></code>. Consider our <code class="docutils literal notranslate"><span class="pre">calculate_LJ</span></code> function with a docstring:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-6">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_LJ</span><span class="p">(</span><span class="n">r_ij</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    The LJ interaction energy between two particles.</span>
+
+<span class="sd">    Computes the pairwise Lennard Jones interaction energy based on the separation distance in reduced units.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    r_ij : float</span>
+<span class="sd">        The distance between the particles in reduced units.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pairwise_energy : float</span>
+<span class="sd">        The pairwise Lennard Jones interaction energy in reduced units.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; calculate_LJ(1)</span>
+<span class="sd">    0</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">r6_term</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">r_ij</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">r12_term</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="n">r6_term</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">pairwise_energy</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">r12_term</span> <span class="o">-</span> <span class="n">r6_term</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">pairwise_energy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ve now added a multi-line comment to the beginning of our function. Docstrings <strong>are the first statement after a function or module definition</strong> and are opened and closed with three quotes.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">docstring</span></code> should explain what the function or module does (and not how it is done).</p>
+</section>
+<section id="sections-of-a-docstring">
+<h3>Sections of a Docstring<a class="headerlink" href="#sections-of-a-docstring" title="Link to this heading">#</a></h3>
+<p>There are many ways you could format this docstring (different styles/conventions). We recommend using <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#sections">numpy style docstrings</a>, and this is what the example above and <code class="docutils literal notranslate"><span class="pre">calculate_LJ</span></code> function are written in.</p>
+<p>Each docstring has a number of sections which are separated by headings. Headings should be underlined with hyphens (<code class="docutils literal notranslate"><span class="pre">-----</span></code>). There are many options for sections, we will only cover the most relevant here. If you would like to see a full list, check out the documentation for <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#sections">numpy style docstrings</a>.</p>
+<section id="short-summary">
+<h4>1. Short summary<a class="headerlink" href="#short-summary" title="Link to this heading">#</a></h4>
+<p>A one-line summary that does not use the variable name or the function name. In our <code class="docutils literal notranslate"><span class="pre">calculate_LJ</span></code> function, this corresponds to the following.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-7">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">The LJ interaction energy between two particles.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="extended-summary">
+<h4>2. Extended summary<a class="headerlink" href="#extended-summary" title="Link to this heading">#</a></h4>
+<p>A few sentences giving a detailed description of the function or module. This section should be used to clarify <em>functionality</em>, not to discuss implementation.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-8">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Computes the pairwise Lennard Jones interaction energy based on the separation distance in reduced units.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="parameters">
+<h4>3. Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h4>
+<p>This section contains a description of the function arguments - keywords and expected types.</p>
+<p>The parameters for our <code class="docutils literal notranslate"><span class="pre">calculate_LJ</span></code> function is shown below:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-9">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    r_ij : float</span>
+<span class="sd">        The distance between the particles in reduced units.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, you can see that the parameter section begins with the section title (“Parameters”), followed by a line of hypens (”—-“). On the next line, we have the argument name (r_ij), then a colon followed by the input type of the argument. This line says that the argument should be of type <code class="docutils literal notranslate"><span class="pre">float</span></code>. The next line gives a more detailed description of the variable. When the there is more than one input parameter,they should be written on new line.</p>
+</section>
+<section id="returns">
+<h4>4. Returns<a class="headerlink" href="#returns" title="Link to this heading">#</a></h4>
+<p>This section is very similar to the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> section above. In contrast to the <code class="docutils literal notranslate"><span class="pre">Parameters</span></code> section, each returned value does not have to be named, but the type of the return value is required.</p>
+<p>For our <code class="docutils literal notranslate"><span class="pre">calculate_LJ</span></code> function, our <code class="docutils literal notranslate"><span class="pre">Returns</span></code> section looks like the following.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-10">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    pairwise_energy : float</span>
+<span class="sd">        The pairwise Lennard Jones interaction energy in reduced units.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="examples">
+<h4>5. Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h4>
+<p>This is an optional section to show examples of functionality. This section is meant to illustrate usage. Though this section is optional, its use is strongly encouraged.</p>
+<p>Consider the example we have in our docstring</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-11" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-11">
+PYTHON</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Examples</span>
+<span class="sd">--------</span>
+<span class="sd">&gt;&gt;&gt; calculate_LJ(1)</span>
+<span class="sd">    0</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is important that your Examples in docstrings be working Python.</p>
+<p>We have one line of code for our example. In examples, lines of code begin with <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>. On the last line, you give the output (with no <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> in front.)</p>
+<div class="key admonition">
+<p class="admonition-title">Key Points</p>
+<ul class="simple">
+<li><p>Thermodynamic properties of a system can be thought of as a very high dimensional integral.</p></li>
+<li><p>We can use MC methods for this, but the calculation is more complicated due to the high dimensionality of the problem.</p></li>
+<li><p>We model pairwise atomic interactions using the Lennard Jones potential.</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01-MC-pi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Intro to Monte Carlo Methods</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../individual-assignments/individual-assignment-1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Individual Homework Assignment 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesson-slides">Lesson Slides</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-using-monte-carlo-on-molecular-systems">Motivation - Using Monte Carlo on molecular systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-the-system">Modeling the system</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-units">Dealing with units</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sanity-checks">Sanity checks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-style-docstrings">Python Style - Docstrings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sections-of-a-docstring">Sections of a Docstring</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#short-summary">1. Short summary</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extended-summary">2. Extended summary</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">3. Parameters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#returns">4. Returns</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">5. Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/day2/02-LJ-eqn.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+<div class="row h-10">
+    <div class="col-2">
+        <a href="https://molssi.org/" target="_blank" title="Go to MolSSI in a new tab">
+            <img src="../_static/molssi_main_logo.png" class="logo__image only-light footer_logo" alt="Logo image">
+            <img src="../_static/molssi_main_logo_inverted_white.png" class="logo__image only-dark footer_logo" alt="Logo image">
+        </a>
+    </div>
+    <div class="col-8">
+        <p> &copy; Copyright 2019-2023 <a href="https://molssi.org/">The Molecular Sciences Software Institute</a></p>
+        <p>Funded by the National Science Foundation 
+          <a href="https://nsf.gov/awardsearch/showAward?AWD_ID=1547580">OAC-1547580</a> and 
+          <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2136142">CHE-2136142.</a></p>
+ 
+        
+        <p class="sphinx-version">
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 7.3.7.<br>
+        </p>
+        
+
+        <p class="theme-version">
+        Built with a customized <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+        </p>
+
+    </div>
+    <div class="col-2">
+        <a href="https://nsf.gov/" target="_blank" title="Go to the NSF in a new tab">
+            <img src="../_static/nsf.png" class="footer_logo" alt="The NSF">
+          </a>
+    </div>
+</div></div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>
