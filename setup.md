@@ -6,10 +6,9 @@ Participation in the MSSE Bootcamp will require using your own personal computer
 :class: caution
 
 If you are working on a Windows computer, participating in the course will require you to install the Windows Subsystem for Linux (WSL).
-You should install WSL 2. You will need to have the Windows 10 OS with the following version requirements:
-
-* For x64 systems: Version 1903 or higher, with Build 18362 or higher.
-* For ARM64 systems: Version 2004 or higher, with Build 19041 or higher.  
+You should install WSL 2 for this course.
+If you are using Windows 11, WSL 2 fully supported.
+If you are using Windows 10, [see these notes on installation requirements for WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install-manual#step-2---check-requirements-for-running-wsl-2).
 ```
 
 Please follow the instructions here to ensure you have the necessary software installed. 
@@ -17,7 +16,7 @@ We will be using Python and the conda package manager.
 If you are on MacOS or Linux and already have Anaconda (or Miniconda) installed, skip to the "compilers" portion of these set-up instructions. 
 Please see the appropriate section below if you do not have Anaconda or Miniconda installed.
 
-```{admonition} Anaconda vs miniconda
+```{admonition} Anaconda vs Miniconda
 :class: note
 
 Anaconda is a distribution of Python, the conda package manager, and several third-party libraries which are commonly used in data science.
