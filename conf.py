@@ -112,7 +112,7 @@ html_favicon = "_static/molssi_square.png"
 # documentation.
 #
 html_theme_options = {
-	"github_url": "https://github.com/jchen0506/molssi_doc_theme",
+	"github_url": "https://github.com/msse-chem-280-2024/msse-chem-280-2024.github.io",
 	"twitter_url": "https://twitter.com/MolSSI_NSF",
 
 	"logo": {
@@ -191,8 +191,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'molssi_doc_theme.tex', 'molssi_doc_theme Documentation',
-     'molssi_doc_theme', 'manual'),
+    (master_doc),
 ]
 
 
@@ -201,7 +200,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'molssi_doc_theme', 'molssi_doc_theme Documentation',
+    (master_doc,
      [author], 1)
 ]
 
