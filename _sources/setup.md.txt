@@ -1,4 +1,4 @@
-# Set up
+# Computer Set-Up
 
 Participation in the MSSE Bootcamp will require using your own personal computer or laptop and installing some software.
 
