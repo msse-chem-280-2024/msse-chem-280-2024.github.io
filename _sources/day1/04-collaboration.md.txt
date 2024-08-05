@@ -214,8 +214,8 @@ We have now created a new branch called `YOUR_CHOSEN_ELEMENT` and checked it out
 ## Editing our element
 
 Now it's time to edit our periodic table element. 
-If you have picked an element which exists already, there will be a file with the name `element_name.md` where element name is the element you've chosen. 
-If the file does not exist, create it.
+If you have picked an element which exists already, there will be a file in the `elements` folder with the name `element_name.md` where element name is the element you've chosen. 
+If the file does not exist, create it in the `elements` folder.
 
 Once the file is created, open it in your text editor of choice. 
 It is important that every element have the following at the top of the page (note - spacing is very important!)
