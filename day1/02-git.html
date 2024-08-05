@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=4974aa07" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -54,6 +54,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'day1/02-git';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Using GitHub" href="03-github.html" />
+    <link rel="prev" title="Introduction to the Command Line" href="01-command-line.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../setup.html">
     Computer Set-Up
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day1.html">
+    Day 1
   </a>
 </li>
 
@@ -283,6 +292,13 @@ document.write(`
 </li>
 
 
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day1.html">
+    Day 1
+  </a>
+</li>
+
+
 <li class="nav-item ">
   <a class="nav-link nav-external" href="https://msse.berkeley.edu/">
     MSSE
@@ -348,7 +364,17 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-command-line.html">Introduction to the Command Line</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Version Control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-github.html">Using GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-collaboration.html">Code Collaboration using GitHub</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="group-discussion.html">Group Discussion - Day 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="group-assignment.html">Day 1 - Group Assignment</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -384,6 +410,9 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="../day1.html" class="nav-link">Day 1</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page">Introduction...</li>
   </ul>
 </nav>
@@ -409,7 +438,7 @@ document.write(`
 <ul class="simple">
 <li><p>What is version control?</p></li>
 <li><p>How do I use git to keep a record of my project?</p></li>
-<li><p>What is a branch and why would I use it?</p></li>
+<li><p>What is a branch, and why would I use one?</p></li>
 <li><p>How do I tell <code class="docutils literal notranslate"><span class="pre">git</span></code> to ignore files?</p></li>
 </ul>
 <p>Objectives:</p>
@@ -423,7 +452,7 @@ document.write(`
 <p class="admonition-title">Prerequisites</p>
 <ul class="simple">
 <li><p>Completed the previous lesson.</p></li>
-<li><p>Created GitHub account (described in set-up instructions)</p></li>
+<li><p>Created a GitHub account (described in set-up instructions)</p></li>
 <li><p>Configured git (described in set-up instructions)</p></li>
 </ul>
 </div>
@@ -431,23 +460,23 @@ document.write(`
 <h2>Version Control<a class="headerlink" href="#version-control" title="Link to this heading">#</a></h2>
 <p>Version control keeps a complete history of your work on a given project.
 It facilitates collaboration where everyone can work freely on different parts of a project without overriding others’ changes.
-You can move between past versions and rollback when needed.<br />
-You can also review the history of your project through commit messages that describe changes on the source code
+You can move between past versions and roll back when needed.  
+You can also review the history of your project through commit messages that describe changes in the source code
 and see what exactly has been modified in any given commit.</p>
-<p>This is greatly beneficial whether you are working independently or within a team. We recommend <em>always</em> using git when working on a programming project.</p>
+<p>Version control is incredibly beneficial whether you are working independently or within a team. We recommend <em>always</em> using git when working on a programming project.</p>
 <div class="admonition-git-vs-github admonition">
 <p class="admonition-title">git vs. GitHub</p>
 <p><code class="docutils literal notranslate"><span class="pre">git</span></code> is the software used for version control, while GitHub is a hosting service.
 You can use <code class="docutils literal notranslate"><span class="pre">git</span></code> locally (without using an online hosting service), or you can use it with other hosting services such as GitLab or BitBucket.
 Other examples of version control software include SVN and Mercurial.</p>
 </div>
-<p>MolSSI recommends using the software <code class="docutils literal notranslate"><span class="pre">git</span></code> for version control, and <a class="reference external" href="https://github.com">GitHub</a> as a hosting service, though there are other options.</p>
+<p>MolSSI recommends using the software <code class="docutils literal notranslate"><span class="pre">git</span></code> for version control and <a class="reference external" href="https://github.com">GitHub</a> as a hosting service, though there are other options.</p>
 </section>
 <section id="using-git-to-keep-a-record-of-your-project">
 <h2>Using <code class="docutils literal notranslate"><span class="pre">git</span></code> to keep a record of your project<a class="headerlink" href="#using-git-to-keep-a-record-of-your-project" title="Link to this heading">#</a></h2>
-<p>You should have git installed and configured from the setup instructions.</p>
-<p>In this section, we are going to create a file with some Python functions and use <code class="docutils literal notranslate"><span class="pre">git</span></code> to track changes to our project.</p>
-<p>First, use a terminal to <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the directory where you are keeping your files for the bootcamp (<code class="docutils literal notranslate"><span class="pre">chem_280</span></code>).</p>
+<p>You should have git installed and configured based on the setup instructions.</p>
+<p>In this section, we will create a file with some Python functions and use <code class="docutils literal notranslate"><span class="pre">git</span></code> to track changes to our project.</p>
+<p>First, use a terminal to <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the <code class="docutils literal notranslate"><span class="pre">chem_280</span></code> directory we created in the last lesson.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-0">
@@ -477,8 +506,8 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 <p><strong>Make sure you execute the commands that are in the solution of the challenge above before continuing.</strong></p>
 <p>We will do our first <code class="docutils literal notranslate"><span class="pre">git</span></code> project in this folder.</p>
-<p>In order for git to keep track of your project, or any changes in your project, you must first tell git that you want it start a project and track your changes.
-After starting a project, you must manually create check-points if you wish to have points to return to.
+<p>To allow git to track your project or any changes in it, you must first tell it to start a project.
+After starting a project, you must manually create checkpoints if you wish to have points to return to.
 If we want to tell <code class="docutils literal notranslate"><span class="pre">git</span></code> that the folder we are working in represents a project, we do so with the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>.
 In your folder, use the command</p>
 <div class="sd-tab-set docutils">
@@ -490,7 +519,7 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>You will see an output message similar to the following, except with the path to your directory</p>
+<p>You will see an output message similar to the following, except with the path to your directory.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-3" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="output" for="sd-tab-item-3">
@@ -500,8 +529,8 @@ OUTPUT</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>Now, when you check the contents of the directory using <code class="docutils literal notranslate"><span class="pre">ls</span></code>, it will still look empty.
-However, if you look at the hidden files (files or folders beginning with a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>) using the <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>, you will see that the directory is no longer empty</p>
+<p>Now, when you check the directory’s contents using <code class="docutils literal notranslate"><span class="pre">ls</span></code>, it will still look empty.
+However, if you look at the hidden files (files or folders beginning with a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>) using the <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-a</span></code>, you will see that the directory is no longer empty.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-4" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-4">
@@ -515,12 +544,12 @@ SHELL</label><div class="sd-tab-content docutils">
 <input checked="checked" id="sd-tab-item-5" name="sd-tab-set-5" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="output" for="sd-tab-item-5">
 OUTPUT</label><div class="sd-tab-content docutils">
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">.   ..  .git</span>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">.   ..  .git</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The presence of the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder indicates to us that the <code class="docutils literal notranslate"><span class="pre">git</span></code> software is now watching the folder for changes.
+<p>The presence of the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder indicates that the git software is now monitoring the folder for changes.
 <code class="docutils literal notranslate"><span class="pre">.git</span></code> is a directory where <code class="docutils literal notranslate"><span class="pre">git</span></code> stores the repository data.
 We can tell from this output that we are in a git repository.</p>
 <p>Another way we can tell if we are in a git repository is to use the command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p>
@@ -547,14 +576,14 @@ OUTPUT</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <p>The command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> gives us the current state of our repository.
-This message tells us that we are on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch, and that we haven’t yet created a checkpoint, or commit, of our project.</p>
+This message tells us that we are on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch and haven’t yet created a checkpoint (a commit) for our project.</p>
 </section>
-<section id="the-3-steps-of-a-commit">
-<h2>The 3 steps of a commit<a class="headerlink" href="#the-3-steps-of-a-commit" title="Link to this heading">#</a></h2>
-<p>A particular version of your project is called a “commit”. There is a very specific procedure that you should follow when making a commit. These steps are : (1) Making changes to your project. (2) Marking the changes you want to record (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>). (3) Creating a version, or a “commit” to the repository (you can also think of this as a project checkpoint).</p>
-<p>Now that we’ve covered the steps, let’s see how to make versions of our project and view the project history.</p>
+<section id="the-three-steps-of-a-commit">
+<h2>The three steps of a commit<a class="headerlink" href="#the-three-steps-of-a-commit" title="Link to this heading">#</a></h2>
+<p>A particular version of your project is called a “commit.” There is a specific procedure that you should follow when making a commit. These steps are : (1) Making changes to your project. (2) Marking the changes you want to record (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>). (3) Creating a version or a “commit” to the repository (you can also think of this as a project checkpoint).</p>
+<p>Now that we’ve covered the steps let’s see how to make versions of our project and view the project history.</p>
 <p>Create a file called <code class="docutils literal notranslate"><span class="pre">README.md</span></code> in your text editor of choice.
-The README file is a file which typically accompanies git repositories and gives information about that project.
+The README file is a file that typically accompanies git repositories and gives information about that project.
 We will use <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown</a>, which we covered in the last lesson, for the README to give it a nice formatting when viewed online.</p>
 <p>Add the following to your README</p>
 <div class="sd-tab-set docutils">
@@ -568,8 +597,8 @@ This lesson covers the basics of git for version control.
 </div>
 </div>
 </div>
-<p>Save this file an return to the terminal.
-Now that we have made a change, check the status of your project again.</p>
+<p>Save this file and return to the terminal.
+Now that we have made a change recheck the status of your project.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-9" name="sd-tab-set-9" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-9">
@@ -588,8 +617,8 @@ OUTPUT</label><div class="sd-tab-content docutils">
 <span class="go">No commits yet</span>
 
 <span class="go">Untracked files:</span>
-<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
-<span class="go">	README.md</span>
+<span class="go"> (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go"> README.md</span>
 
 <span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
@@ -597,9 +626,9 @@ OUTPUT</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <p>Notice how <code class="docutils literal notranslate"><span class="pre">git</span></code> is watching our repository!
-It tells us that it sees that we have added a new file (<code class="docutils literal notranslate"><span class="pre">README.md</span></code>), but git is not actually tracking that file yet.
-Remember that <code class="docutils literal notranslate"><span class="pre">git</span></code> only watches what we tell it to watch, and only tracks changes in files we tell it to track changes in.
-Next, we will want to tell <code class="docutils literal notranslate"><span class="pre">git</span></code> to watch <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and to make a version of our project which includes the file.
+It tells us that it sees that we have added a new file (<code class="docutils literal notranslate"><span class="pre">README.md</span></code>), but git is not tracking that file yet.
+Remember that <code class="docutils literal notranslate"><span class="pre">git</span></code> only watches what we tell it to watch and tracks changes in files we tell it to track.
+Next, we will want to tell <code class="docutils literal notranslate"><span class="pre">git</span></code> to watch <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and create a version of our project that includes the file.
 In other words, we want to <code class="docutils literal notranslate"><span class="pre">commit</span></code> our changes.</p>
 <section id="git-add-git-status-git-commit">
 <h3>git add, git status, git commit<a class="headerlink" href="#git-add-git-status-git-commit" title="Link to this heading">#</a></h3>
@@ -609,7 +638,7 @@ You can easily return to, or revert to that checkpoint.</p>
 We might modify <em>many</em> files at a time in a repository.
 Thus, the first step in creating a checkpoint (or commit) is to tell <code class="docutils literal notranslate"><span class="pre">git</span></code> which files we want to include in the checkpoint.
 We do this with a command called <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.
-This adds files to what is called the <em>staging area</em>.</p>
+The command <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> adds files to the <em>staging area</em>.</p>
 <p>Let’s look at our output from <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> again.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-11" name="sd-tab-set-11" type="radio">
@@ -620,8 +649,8 @@ OUTPUT</label><div class="sd-tab-content docutils">
 <span class="go">No commits yet</span>
 
 <span class="go">Untracked files:</span>
-<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
-<span class="go">	README.md</span>
+<span class="go"> (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go"> README.md</span>
 
 <span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
@@ -629,7 +658,7 @@ OUTPUT</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <p>Git even tells us to use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to include what will be committed.
-Let’s follow the instructions and tell <code class="docutils literal notranslate"><span class="pre">git</span></code> that we want to create a checkpoint with the current version of <code class="docutils literal notranslate"><span class="pre">README.md</span></code></p>
+Let’s follow the instructions and tell <code class="docutils literal notranslate"><span class="pre">git</span></code> that we want to create a checkpoint with the current version of <code class="docutils literal notranslate"><span class="pre">README.md</span></code>.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-12" name="sd-tab-set-12" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-12">
@@ -657,16 +686,16 @@ OUTPUT</label><div class="sd-tab-content docutils">
 <span class="go">No commits yet</span>
 
 <span class="go">Changes to be committed:</span>
-<span class="go">  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
-<span class="go">	new file:   README.md</span>
+<span class="go"> (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+<span class="go"> new file:   README.md</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>We are now on the second step of creating a commit.
 We have <code class="docutils literal notranslate"><span class="pre">added</span></code> our files to the staging area.
-In our case, we only have one file in the staging area, but we could add more if we had more files.</p>
-<p>To create the checkpoint, or commit, we will now use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command.
+In this case, we only have one file in the staging area, but we could add more if we had more files.</p>
+<p>To create the checkpoint or commit, we will now use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command.
 We add a <code class="docutils literal notranslate"><span class="pre">-m</span></code> after the command for “message.”
 Whenever you create a commit, you should write a message about what the commit does.</p>
 <div class="sd-tab-set docutils">
@@ -689,7 +718,7 @@ OUTPUT</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>Check your status after the commit</p>
+<p>Check your status after the commit.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-17" name="sd-tab-set-17" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-17">
@@ -730,9 +759,9 @@ SHELL</label><div class="sd-tab-content docutils">
 OUTPUT</label><div class="sd-tab-content docutils">
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">commit dc466ff70070312b622ab0041f4d770bd37bb248 (HEAD -&gt; main)</span>
 <span class="go">Author: Jessica Nash &lt;janash@vt.edu&gt;</span>
-<span class="go">Date:   Wed Jul 8 15:59:57 2020 -0400</span>
+<span class="go">Date:   Wed Jul 8 15:59:57 2020 -0400</span>
 
-<span class="go">    add README with information about project</span>
+<span class="go"> add README with information about project</span>
 </pre></div>
 </div>
 </div>
@@ -751,17 +780,17 @@ This number is unique for every commit, meaning you will have a different number
 </div>
 <p>This should be your information.
 This way, anyone who is working with this project can see who made each commit.
-Note that this name and email address matches what you specified when you configured git in the setup.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Date</span><span class="p">:</span>   <span class="n">Wed</span> <span class="n">Jul</span> <span class="mi">8</span> <span class="mi">15</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">57</span> <span class="mi">2020</span> <span class="o">-</span><span class="mi">0400</span>
+Note that this name and email address match what you specified when you configured git in the setup.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Date</span><span class="p">:</span>   <span class="n">Wed</span> <span class="n">Jul</span> <span class="mi">8</span> <span class="mi">15</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">57</span> <span class="mi">2020</span> <span class="o">-</span><span class="mi">0400</span>
 </pre></div>
 </div>
 <p>Next, it lists the date and time the commit was made.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">add</span> <span class="n">README</span> <span class="k">with</span> <span class="n">information</span> <span class="n">about</span> <span class="n">project</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">add</span> <span class="n">README</span> <span class="k">with</span> <span class="n">information</span> <span class="n">about</span> <span class="n">project</span>
 </pre></div>
 </div>
 <p>Finally, there will be a blank line followed by a commit message.
-The commit message is a message whoever made the commit chose to write, but should describe the change that took place when the commit was made.
-You’ll recognize this message from what you just wrote when you used the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command.</p>
+The commit message is a message whoever made the commit chose to write but it should describe the change that took place when the commit was made.
+You’ll recognize this message from what you wrote when you used the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> command.</p>
 <p>To exit the log, press the <code class="docutils literal notranslate"><span class="pre">q</span></code> key.</p>
 <p>When we have more commits (or versions) of our code, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> will show a history of these commits, and they will all have the same format discussed above.
 Right now, we have only one commit.</p>
@@ -794,8 +823,8 @@ git<span class="w"> </span>status
 OUTPUT</label><div class="sd-tab-content docutils">
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Changes to be committed:</span>
-<span class="go">  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span>
-<span class="go">        modified:   README.md</span>
+<span class="go"> (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span>
+<span class="go"> modified:   README.md</span>
 </pre></div>
 </div>
 </div>
@@ -881,9 +910,9 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <p>We now have a log with three commits.
-This means there are three versions of the repository we are working in.</p>
-<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> lists all commits  made to a repository in reverse chronological order.
-The listing for each commit includes the commit’s full identifier,the commit’s author, when it was created, and the commit title.</p>
+The presence of three commits in our log means there are three versions of the repository we are working in.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> lists all commits made to a repository in reverse chronological order.
+The listing for each commit includes the commit’s full identifier, the commit’s author, when it was created, and the commit title.</p>
 <p>We can see differences in files between commits using git diff.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-31" name="sd-tab-set-31" type="radio">
@@ -894,8 +923,8 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>Here HEAD refers to the point in our commit history (and current branch).
-When we use <code class="docutils literal notranslate"><span class="pre">~1</span></code>, we are asking git to show us the different of the current point minus one commit.</p>
+<p>Here “HEAD” refers to the point in our commit history (and current branch).
+When we use <code class="docutils literal notranslate"><span class="pre">~1</span></code>, we are asking git to show us the difference of the current point minus one commit.</p>
 <p>Lines that have been added are indicated in green with a plus sign next to them (‘+’), while lines that have been deleted, if we had any, would be indicated in red with a minus sign next to them (‘-‘).</p>
 </section>
 </section>
@@ -911,7 +940,7 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>This will temporarily revert the repository to whatever the state was at the specified commit ID.</p>
+<p>This temporarily reverts the repository to the state at the specified commit ID.</p>
 <p>Let’s checkout the version before we made the most recent edit to the README.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-33" name="sd-tab-set-33" type="radio">
@@ -933,7 +962,7 @@ OUTPUT</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>In this log, the commit ID is the first number on the left.</p>
+<p>The commit ID is the first number on the left in this log.</p>
 <p>To revert to the version of the repository where we first edited the readme, use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> command with the appropriate commit id.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-35" name="sd-tab-set-35" type="radio">
@@ -958,10 +987,10 @@ SHELL</label><div class="sd-tab-content docutils">
 </section>
 <section id="creating-new-features-using-branches">
 <h2>Creating new features - using branches<a class="headerlink" href="#creating-new-features-using-branches" title="Link to this heading">#</a></h2>
-<p>When you are working on a project to implement new features, it is a good practice to isolate the the changes you are making and work on one particular topic at a time.
-To do this, you can use something called a <strong>branch</strong> in git.
+<p>When working on a project to implement new features, it is a good practice to isolate the changes you are making and work on one particular topic at a time.
+To do this, you can use a <strong>branch</strong> in git.
 Working on branches allows you to isolate particular changes.
-If you make sure that your code works before merging to your main or <strong>main</strong> branch, you will ensure that you always have a working version of code on your main branch.</p>
+If you make sure that your code works before merging to your main branch, you will ensure that you always have a working version of your code.</p>
 <p>By default, you are typically in the main branch.
 To create a new branch and move to it, you can use the command</p>
 <div class="sd-tab-set docutils">
@@ -998,8 +1027,8 @@ PYTHON</label><div class="sd-tab-content docutils">
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-    <span class="n">quote</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
-    <span class="k">return</span> <span class="n">quote</span>
+ <span class="n">quote</span> <span class="o">=</span> <span class="s2">&quot;Hello, World!&quot;</span>
+ <span class="k">return</span> <span class="n">quote</span>
 </pre></div>
 </div>
 </div>
@@ -1021,7 +1050,7 @@ PYTHON</label><div class="sd-tab-content docutils">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-41">
 SHELL</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>hello_world.py
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;add function to print Hello World&quot;</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;add function to print Hello World.&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -1038,7 +1067,7 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <p>This will list all of your branches.
-he active branch, or the branch you are on will be noted with an asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p>
+The active branch, or the branch you are on, will be noted with an asterisk (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p>
 <p>To switch back to the main branch,</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-43" name="sd-tab-set-43" type="radio">
@@ -1051,7 +1080,7 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 <p>On your main branch, you should see that there is no <code class="docutils literal notranslate"><span class="pre">quotes.py</span></code> module.</p>
 <p>You can further verify this by using the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> command.</p>
-<p>Consider that at the same time we have some changes or features we’d like to implement.
+<p>Consider that, at the same time, we have some changes or features we’d like to implement.
 Let’s make a branch to do a documentation update.</p>
 <p>Create a new branch</p>
 <div class="sd-tab-set docutils">
@@ -1070,7 +1099,7 @@ Update your README to include this information:</p>
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="README.md" for="sd-tab-item-45">
 README.MD</label><div class="sd-tab-content docutils">
 <div class="highlight-README.md notranslate"><div class="highlight"><pre><span></span><span class="gu">## Adding Features</span>
-Features should be developed on branches. To create and switch to a branch, use the command
+Features should be developed on branches. To create and switch to a branch, use the command:
 
 <span class="sb">`git switch -c new_branch_name`</span>
 
@@ -1083,97 +1112,19 @@ To switch to an existing branch, use
 </div>
 <p>Save and commit this change.</p>
 </section>
-<section id="getting-changes-to-your-main-branch">
-<h2>Getting Changes to Your main Branch<a class="headerlink" href="#getting-changes-to-your-main-branch" title="Link to this heading">#</a></h2>
-<p>This is as far as we complete in class.
-Do not do the next sections if you want to follow along.</p>
-<p>The portion below here should only be used if you are working on a project alone.
-Otherwise, we will discuss how to get changes all on the same branch in the lesson on collaboration using GitHb.</p>
-<p>To incorporate these changes in main, you will need to do a <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code>.
-When you do a merge, you should be on the branch you would like to merge into. In this case, we will first merge the changes from our <code class="docutils literal notranslate"><span class="pre">doc_update</span></code> branch, then our <code class="docutils literal notranslate"><span class="pre">hello_world</span></code> branch, so we should be on our <code class="docutils literal notranslate"><span class="pre">main</span></code> branch.
-Next we will use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> command.</p>
-<p>The syntax for this command is</p>
+<section id="ignoring-files">
+<h2>Ignoring Files<a class="headerlink" href="#ignoring-files" title="Link to this heading">#</a></h2>
+<p>Sometimes, while you work on a project, you may create temporary files.
+For example, if your text editor is Emacs, you may end up with many files called <code class="docutils literal notranslate"><span class="pre">&lt;filename&gt;~</span></code>.
+By default, git tracks all files, including these.
+Extra files like this tend to be annoying since it means that any time you do “git status,” all of these unimportant files show up.</p>
+<p>We will now find out how to tell git to ignore these files so that it doesn’t keep telling us about them every time we do “git status.”
+Even if you aren’t working with Emacs, someone else working on your project might so let’s do the courtesy of telling git not to track these temporary files.
+First, let’s ensure that we have a few dummy files. Create empty files in your text editor called <code class="docutils literal notranslate"><span class="pre">quotes.py~</span></code> and <code class="docutils literal notranslate"><span class="pre">README.md~</span></code>.</p>
+<p>Now check what git says about these files:</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-46" name="sd-tab-set-46" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-46">
-SHELL</label><div class="sd-tab-content docutils">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>branch_name
-</pre></div>
-</div>
-</div>
-</div>
-<p>where <code class="docutils literal notranslate"><span class="pre">branch_name</span></code> is the name of the branch you would like to merge.</p>
-<p>We can merge our <code class="docutils literal notranslate"><span class="pre">doc_update</span></code> branch to get changes from our <code class="docutils literal notranslate"><span class="pre">doc_update</span></code> branch to our main branch:</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-47" name="sd-tab-set-47" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-47">
-SHELL</label><div class="sd-tab-content docutils">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
-git<span class="w"> </span>merge<span class="w"> </span>doc_update
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now our changes from the branch are on main.</p>
-<p>We can merge our <code class="docutils literal notranslate"><span class="pre">hello_world</span></code> branch to get our changes on main:</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-48" name="sd-tab-set-48" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-48">
-SHELL</label><div class="sd-tab-content docutils">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>hello_world
-</pre></div>
-</div>
-</div>
-</div>
-<p>This time, you will see a different message, and a text editor will open for a merge commit message.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-49" name="sd-tab-set-49" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="output" for="sd-tab-item-49">
-OUTPUT</label><div class="sd-tab-content docutils">
-<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Merge made by the &#39;recursive&#39; strategy.</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>This is because <code class="docutils literal notranslate"><span class="pre">main</span></code> and <code class="docutils literal notranslate"><span class="pre">hello_world</span></code> had development histories which have diverged (their commit histories were different).
-Git had to do some work in this case to merge the branches. A merge commit was created.</p>
-<p>Merge commits create a branched git history.
-We can visualize the history of our project by adding <code class="docutils literal notranslate"><span class="pre">--graph</span></code> to git log.
-There are other workflows you can use to make the commit history more linear, but we will not discuss them in this course.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-50" name="sd-tab-set-50" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-50">
-SHELL</label><div class="sd-tab-content docutils">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>--graph
-</pre></div>
-</div>
-</div>
-</div>
-<p>Once we are done with a feature branch,  we can delete it:</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-51" name="sd-tab-set-51" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-51">
-SHELL</label><div class="sd-tab-content docutils">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>hello_world
-git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>doc_update
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ignoring-files">
-<h2>Ignoring Files<a class="headerlink" href="#ignoring-files" title="Link to this heading">#</a></h2>
-<p>Sometimes while you work on a project, you may end up creating some temporary files.
-For example, if your text editor is Emacs, you may end up with lots of files called <code class="docutils literal notranslate"><span class="pre">&lt;filename&gt;~</span></code>.
-By default, Git tracks all files, including these.
-This tends to be annoying, since it means that any time you do “git status”, all of these unimportant files show up.</p>
-<p>We are now going to find out how to tell Git to ignore these files, so that it doesn’t keep telling us about them ever time we do “git status”.
-Even if you aren’t working with Emacs, someone else working on your project might, so let’s do the courtesy of telling Git not to track these temporary files.
-First, lets ensure that we have a few dummy files. Create empty files in your text editor called <code class="docutils literal notranslate"><span class="pre">quotes.py~</span></code> and <code class="docutils literal notranslate"><span class="pre">README.md~</span></code>.</p>
-<p>Now check what Git says about these files:</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-52" name="sd-tab-set-52" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-52">
 SHELL</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
@@ -1181,34 +1132,34 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-53" name="sd-tab-set-53" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="output" for="sd-tab-item-53">
+<input checked="checked" id="sd-tab-item-47" name="sd-tab-set-47" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="output" for="sd-tab-item-47">
 OUTPUT</label><div class="sd-tab-content docutils">
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 
 <span class="go">Untracked files:</span>
-<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go"> (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
 
-<span class="go">	README.md~</span>
-<span class="go">	quotes.py~</span>
+<span class="go"> README.md~</span>
+<span class="go"> quotes.py~</span>
 
 <span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now we will make Git stop telling us about these files.
+<p>Now we will make sure git stops telling us about these files.
 We do this with a file called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.
-A <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> does what it sounds like - it tells <code class="docutils literal notranslate"><span class="pre">git</span></code> files or directories to ignore.
-If we can created our repository on GitHub and cloned it to our computer, we could have selected to create the repository with a <code class="docutils literal notranslate"><span class="pre">.gitignore.</span></code>
-We could have told <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> what language we were planning to use, and it would have given us a starting <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> with files we would be likely to want to ignore.</p>
+A <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> does what it sounds like—it tells <code class="docutils literal notranslate"><span class="pre">git</span></code> files or directories to ignore them.
+If we could have created our repository on GitHub and cloned it to our computer, we could have selected to make the repository with a <code class="docutils literal notranslate"><span class="pre">.gitignore.</span></code>
+We could have told GitHub what language we were planning to use, and it would have given us a starting <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> with files we would likely want to ignore.</p>
 <p>Navigate <a class="reference external" href="https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore">here</a> to get a good starting gitignore for python.
 Copy the contents of this file to a file in your repository called <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.</p>
 <p>Look at the contents of <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code></p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-54" name="sd-tab-set-54" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-54">
+<input checked="checked" id="sd-tab-item-48" name="sd-tab-set-48" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-48">
 .gitignore</label><div class="sd-tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Byte-compiled / optimized / DLL files
 __pycache__/
@@ -1238,8 +1189,8 @@ wheels/
 *.egg
 
 # PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -1249,10 +1200,10 @@ wheels/
 </div>
 </div>
 <p>Git looks at <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> and ignores any files or directories that match one of the lines.</p>
-<p>Commit your gitignore to the repository.</p>
+<p>Commit your .gitignore to the repository.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-55" name="sd-tab-set-55" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-55">
+<input checked="checked" id="sd-tab-item-49" name="sd-tab-set-49" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-49">
 SHELL</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.gitignore
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;add gitignore to repository</span>
@@ -1267,10 +1218,10 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
 </pre></div>
 </div>
 <p>Now do “git status” again.
-Notice that the files we added are no longer recognized by git.</p>
+Notice that git no longer recognizes the files we added.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-56" name="sd-tab-set-56" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-56">
+<input checked="checked" id="sd-tab-item-50" name="sd-tab-set-50" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-50">
 SHELL</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 </pre></div>
@@ -1278,17 +1229,17 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-57" name="sd-tab-set-57" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="output" for="sd-tab-item-57">
+<input checked="checked" id="sd-tab-item-51" name="sd-tab-set-51" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="output" for="sd-tab-item-51">
 OUTPUT</label><div class="sd-tab-content docutils">
 <div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">On branch main</span>
 <span class="go">Your branch is up to date with &#39;origin/main&#39;.</span>
 
 <span class="go">Changes not staged for commit:</span>
-<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
-<span class="go">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="go"> (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="go"> (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span>
 
-<span class="go">	modified:   .gitignore</span>
+<span class="go"> modified:   .gitignore</span>
 
 <span class="go">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
 </pre></div>
@@ -1297,8 +1248,8 @@ OUTPUT</label><div class="sd-tab-content docutils">
 </div>
 <p>We want these additions to .gitignore to become a permanent part of the repository, so do</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-58" name="sd-tab-set-58" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-58">
+<input checked="checked" id="sd-tab-item-52" name="sd-tab-set-52" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-52">
 SHELL</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.gitignore
 git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Ignores Emacs temporary files and data directory&quot;</span>
@@ -1340,6 +1291,24 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="01-command-line.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to the Command Line</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03-github.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Using GitHub</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1360,14 +1329,13 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control">Version Control</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-git-to-keep-a-record-of-your-project">Using <code class="docutils literal notranslate"><span class="pre">git</span></code> to keep a record of your project</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-3-steps-of-a-commit">The 3 steps of a commit</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-three-steps-of-a-commit">The three steps of a commit</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-add-git-status-git-commit">git add, git status, git commit</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#git-log">git log</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viewing-previous-versions">Viewing previous versions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-new-features-using-branches">Creating new features - using branches</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-changes-to-your-main-branch">Getting Changes to Your main Branch</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ignoring-files">Ignoring Files</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-tutorials">More Tutorials</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-git">Basic git</a></li>

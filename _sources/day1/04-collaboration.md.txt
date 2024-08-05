@@ -54,7 +54,7 @@ Protecting your main branch will require contributors to submit their changes th
 As the repository owner, you can also change the code through a pull request on GitHub.
 
 Previously, we discussed that all changes should take place on branches. 
-This is still true, however, we are now going to incorporate those changes through a pull request on GitHub rather than through a merge.
+We are now going to incorporate those changes through a pull request on GitHub.
 
 Create a new branch in your repository to make a small change.
 
@@ -130,28 +130,29 @@ You can review the changes (green Review changes button).
 Since you are looking at your own PR, you won't be able to "Approve" if you have put in the branch protection rule. However, you can comment on and merge the changes if you wish.
 
 (collaboration)=
-## Contributing to a repository with multiple collaborators - HOMEWORK
+## Homework: Contributing to a repository with multiple collaborators
 
 During this section, we will all start from central repository where we are listed as collaborators, make changes, then submit something called a Pull Request to have those changes incorporated into the code. 
 We will leave the package we are developing for this section.
 
-Navigate to the URL https://github.com/msse-chem-280-2023/periodic-table in your web browser. 
+Navigate to the URL https://github.com/msse-chem-280-2024/periodic-table in your web browser. 
 You should see a GitHub repo. 
 This repository contains code to make a website which has the periodic table. 
-View the website https://msse-chem-280-2023.github.io/periodic-table/ . 
+View the website https://msse-chem-280-2024.github.io/periodic-table/ . 
 On the website page, elements which appear with a blue background and gold text have a page and information filled in. 
+When you view the site initially, there will not be any elements filled in.
+However, as you and your classmates have merged pull requests, there will be more elements filled in.
 You can read more about each element by clicking on it. 
 Elements with a white background do not yet have a page. 
-Take a minute or two to click around. 
 
-You have all been added as collaborators to the project, so you can make changes. 
+Everyone in the class has been added as collaborators to the project.
 However, the `main` branch has been protected by the the repository owners so that you cannot push to main. 
 We will have to make our changes on a branch.
 
 Make a clone of the repository on your personal computer. 
 Before you make the clone, MAKE SURE YOU ARE NOT IN A GIT REPOSITORY.
 
-Type
+To check if you are in a git repository, you can use `git status`.
 
 ````{tab-set-code} 
 
@@ -182,9 +183,10 @@ cd periodic-table
 ````
 
 ## Developing a new page
+
 We will implement a new element for the webpage. 
 Pick an element you would like to add information about. 
-Create an issue on the central repository to let everyone else know you are planning to add a feature.
+**[Create an issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue) on the central repository to let everyone else know you are planning to add a feature.**
 
 Create a new branch in your repo with your element of choice. 
 For this demo, I will be editing the sodium page. 

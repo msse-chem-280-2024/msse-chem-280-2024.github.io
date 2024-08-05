@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=4974aa07" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -54,6 +54,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'day1/01-command-line';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introduction to Version Control with Git" href="02-git.html" />
+    <link rel="prev" title="Day 1" href="../day1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,6 +156,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../setup.html">
     Computer Set-Up
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day1.html">
+    Day 1
   </a>
 </li>
 
@@ -283,6 +292,13 @@ document.write(`
 </li>
 
 
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day1.html">
+    Day 1
+  </a>
+</li>
+
+
 <li class="nav-item ">
   <a class="nav-link nav-external" href="https://msse.berkeley.edu/">
     MSSE
@@ -348,7 +364,17 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-git.html">Introduction to Version Control with Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-github.html">Using GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-collaboration.html">Code Collaboration using GitHub</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="group-discussion.html">Group Discussion - Day 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="group-assignment.html">Day 1 - Group Assignment</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -384,6 +410,9 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="../day1.html" class="nav-link">Day 1</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page">Introduction...</li>
   </ul>
 </nav>
@@ -424,16 +453,16 @@ document.write(`
 <p>In this course, we will be navigating files and using git (a software for version control) using the command line.
 The Linux command line is a text interface to your computer.
 When you use the command line, you use something called a shell.
-You can access the command line, or shell, using a <em>terminal</em>.
-If you are using WSL, the only type of interface you have to your Linux operating system is a command line, or terminal.</p>
-<p>In scientific computing, you will need to use the Linux command line on high performance computing (HPC) servers.
-Knowing the command line will also allow you to perform repetitive tasks quickly through shell scripting.
+You can access the command line or shell using a <em>terminal</em>.
+If you are using WSL, the only interface to your Linux operating system is a command line or terminal.</p>
+<p>In scientific computing, you often need to use the Linux command line on high-performance computing (HPC) servers.
+Knowing the command line will allow you to perform repetitive tasks quickly through shell scripting.
 You will learn more about the command line and scripting in Chem 274A.
-For this course, we will focus on basic navigation, file creation, and using git from the command line.</p>
-<p>Most modern operating systems have graphical user interfaces, or GUIs (often pronounced “gooey”), that are used to interact with the computer.
+This course will focus on basic navigation, file creation, and using git from the command line.</p>
+<p>Most modern operating systems have graphical user interfaces, or GUIs (often pronounced “gooey”), used to interact with the computer.
 However, you can also interact with the computer using text only.</p>
 <p><a class="reference external" href="https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955">Open your terminal</a>.
-On Mac, you should be able to find a terminal application.
+If you are using a Mac, you should open your terminal application.
 If you are using WSL, open your Linux distribution.
 You can use this interface to issue commands to your computer using text.</p>
 </section>
@@ -442,7 +471,7 @@ You can use this interface to issue commands to your computer using text.</p>
 <p>The first command we will discuss is the command <code class="docutils literal notranslate"><span class="pre">pwd</span></code>.
 <code class="docutils literal notranslate"><span class="pre">pwd</span></code> stands for “<strong>p</strong>rint <strong>w</strong>orking <strong>d</strong>irectory.”
 This command gives the name of the folder you are currently in.
-In Linux, “directory” means the same thing as “folder”.</p>
+In Linux, “directory” means the same thing as “folder.”</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-0">
@@ -462,9 +491,9 @@ OUTPUT</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <p>When you open a terminal initially, you will be in your home directory.
-The path displayed as your output will be whatever your home directory is if you type <code class="docutils literal notranslate"><span class="pre">pwd</span></code> immediately after opening your terrminal.</p>
+The path displayed as your output will be whatever your home directory is if you type <code class="docutils literal notranslate"><span class="pre">pwd</span></code> immediately after opening your terminal.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command shows you the contents of the directory you are in.
-<code class="docutils literal notranslate"><span class="pre">ls</span></code> stands for “list”, and the command shows you the contents of the directory you are in.</p>
+<code class="docutils literal notranslate"><span class="pre">ls</span></code> stands for “list,” and the command shows you the contents of the directory you are in.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-2">
@@ -474,7 +503,7 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>If you want to see contents of another directory, you can follow <code class="docutils literal notranslate"><span class="pre">ls</span></code> with the path to that directory.
+<p>If you want to see the contents of another directory, you can follow <code class="docutils literal notranslate"><span class="pre">ls</span></code> with the path to that directory.
 In the command below, you should substitute a directory you can see from the previous <code class="docutils literal notranslate"><span class="pre">ls</span></code> command.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-3" name="sd-tab-set-3" type="radio">
@@ -487,15 +516,20 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 <div class="note admonition">
 <p class="admonition-title">Clearing the screen</p>
-<p>If you’d like to make room on your screen, you can use the <code class="docutils literal notranslate"><span class="pre">clear</span></code> command too get a fresh terminal.
+<p>If you’d like to make room on your screen, you can use the <code class="docutils literal notranslate"><span class="pre">clear</span></code> command to get a fresh terminal.
 Pressing <code class="docutils literal notranslate"><span class="pre">ctrl+L</span></code> on your keyboard will also clear the screen.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">The <code class="docutils literal notranslate"><span class="pre">tab</span></code> key</p>
+<p>When typing a file or folder name into your terminal, you can autocomplete the name by pressing the <code class="docutils literal notranslate"><span class="pre">tab</span></code> key.</p>
+<p>For example, if you have a folder called <code class="docutils literal notranslate"><span class="pre">my_folder</span></code>, you can type <code class="docutils literal notranslate"><span class="pre">my_f</span></code> and then press <code class="docutils literal notranslate"><span class="pre">tab</span></code>. If there is only one folder that starts with <code class="docutils literal notranslate"><span class="pre">my_f</span></code>, the terminal will complete the name for you. If there are multiple folders that start with <code class="docutils literal notranslate"><span class="pre">my_f</span></code>, pressing <code class="docutils literal notranslate"><span class="pre">tab</span></code> twice will show you the options.</p>
 </div>
 </section>
 <section id="creating-and-navigating-directories">
 <h2>Creating and navigating directories<a class="headerlink" href="#creating-and-navigating-directories" title="Link to this heading">#</a></h2>
 <p>We will make a directory to keep our work in for the course.
-For the sake of uniformity, these directions will tell you how to create a folder in your home directory.
-If you have another preference for where you would like to store your files and you are able to navigate files, you can use that location.</p>
+These directions will tell you how to create a folder in your home directory for the sake of uniformity.
+If you have another preference for where you would like to store your files and you can navigate files, you can use that location.</p>
 <p>The command to <strong>m</strong>a<strong>k</strong>e a <strong>dir</strong>ectory is <code class="docutils literal notranslate"><span class="pre">mkdir</span></code>.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-4" name="sd-tab-set-4" type="radio">
@@ -508,19 +542,19 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Check Your Understanding</p>
-<p>What command that you have learned so far could you use to see that your newly created folder is in your current location?</p>
+<p>What command have you learned so far that you could use to see if your newly created folder is in your current location?</p>
 <div class="solution dropdown admonition">
 <p class="admonition-title">Solution</p>
 <p>You could use the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to confirm that there is now a folder called <code class="docutils literal notranslate"><span class="pre">chem_280</span></code> in your home directory.</p>
 </div>
 </div>
 <p>This has created an empty folder, or directory, named <code class="docutils literal notranslate"><span class="pre">chem_280</span></code> in your home directory.
-To navigate to be inside of that directory, we need to <strong>c</strong>hange the <strong>d</strong>irectory we are in using the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command.</p>
+To navigate inside that directory, we need to <strong>c</strong>hange the <strong>d</strong>irectory using the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command.</p>
 <div class="note admonition">
 <p class="admonition-title">Spaces in file and directory names</p>
 <p>In general, you will notice that most file and directory names created on systems where the command line is used do not contain spaces.</p>
 <p>On the command line, many applications and scripts may not work with file names or directories containing spaces.
-It is best to use underscores <code class="docutils literal notranslate"><span class="pre">_</span></code> or dashes <code class="docutils literal notranslate"><span class="pre">-</span></code> to separate words in file names.</p>
+Underscores <code class="docutils literal notranslate"><span class="pre">_</span></code> or dashes <code class="docutils literal notranslate"><span class="pre">-</span></code> are used in place of spaces to separate words in file names.</p>
 </div>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-5" name="sd-tab-set-5" type="radio">
@@ -531,7 +565,7 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>We will create a file that has a description of what is in this folder.</p>
+<p>We will create a file describing what is in this folder.</p>
 <p>You can verify what folder you are in using the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-6" name="sd-tab-set-6" type="radio">
@@ -543,7 +577,7 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <p>Open a text file in your text editor of choice.
-If you installed <a class="reference external" href="https://code.visualstudio.com/download">VSCode</a>  you will be able to open a file called <code class="docutils literal notranslate"><span class="pre">README.md</span></code> using VSCode with the following command. <strong>Note</strong> If you are on MacOS it will be necessary to <a class="reference external" href="https://code.visualstudio.com/docs/setup/mac">add VSCode to your path manually</a>.</p>
+If you installed <a class="reference external" href="https://code.visualstudio.com/download">VSCode</a>  , you will be able to open a file called <code class="docutils literal notranslate"><span class="pre">README.md</span></code> using VSCode with the following command. <strong>Note</strong> If you are on MacOS, you will need to <a class="reference external" href="https://code.visualstudio.com/docs/setup/mac">add VSCode to your path manually</a>.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-7" name="sd-tab-set-7" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-7">
@@ -566,11 +600,11 @@ Foundations of Programming and Software Engineering.
 </div>
 </div>
 </div>
-<p>This file uses something called <a class="reference external" href="https://www.markdownguide.org/">Markdown</a>, which a mark-up, or text formatting language.
-This is often used for README files, and we will use <code class="docutils literal notranslate"><span class="pre">Markdown</span></code> throughout the bootcamp.
+<p>This file uses <a class="reference external" href="https://www.markdownguide.org/">Markdown</a>, a text formatting language.
+Markdown is often used for README files, and we will use it throughout this course and the following courses.
 The hashtag (<code class="docutils literal notranslate"><span class="pre">#</span></code>) followed by the space results indicates a title.
 Save this file and exit.</p>
-<p>Now, when you type <code class="docutils literal notranslate"><span class="pre">ls</span></code>, you will see that you have a file called <code class="docutils literal notranslate"><span class="pre">README.md</span></code> in your directory.</p>
+<p>Now, when you type <code class="docutils literal notranslate"><span class="pre">ls</span></code>, you will see that a file called <code class="docutils literal notranslate"><span class="pre">README.md</span></code> is in your directory.</p>
 <p>To navigate out of this folder, you can use <code class="docutils literal notranslate"><span class="pre">..</span></code> as the file location.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-9" name="sd-tab-set-9" type="radio">
@@ -581,12 +615,12 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>This will move you back to your home directory.</p>
+<p>The command above will move you back to your home directory.</p>
 <div class="note admonition">
 <p class="admonition-title">Changing to the home directory from anywhere</p>
 <p>If you use the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command followed by no path, you will always be returned to your home directory.</p>
 </div>
-<p>Other commands which will be useful to you are <code class="docutils literal notranslate"><span class="pre">mv</span></code> which is used for moving files from one place to another, and <code class="docutils literal notranslate"><span class="pre">cp</span></code> for copying files from one place to another. For example, you can create a copy of your README.md file:</p>
+<p>Other commands that will be useful to you are <code class="docutils literal notranslate"><span class="pre">mv</span></code>, which is used for moving files from one place to another, and <code class="docutils literal notranslate"><span class="pre">cp</span></code> for copying files from one place to another. For example, you can create a copy of your README.md file:</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-10" name="sd-tab-set-10" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-10">
@@ -597,7 +631,7 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <p>This command will create a copy of the README.md file in your current directory.
-The dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>) is a short-cut for your current directory.
+The dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>) is a shortcut for your current directory.
 In this case, the created file will have the same name as the one you copied it from.
 You could also give the file another name:</p>
 <div class="sd-tab-set docutils">
@@ -609,7 +643,7 @@ SHELL</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">mv</span></code> command behaves the same way except that the original file is removed.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">mv</span></code> command behaves similarly, except the original file is removed.</p>
 <p>You can remove a file using the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command.
 Let’s get rid of those copies we just made:</p>
 <div class="sd-tab-set docutils">
@@ -645,7 +679,7 @@ ls
 <ul class="simple">
 <li><p>The terminal or “command line” is a text interface to your computer.</p></li>
 <li><p>You can use text commands in the command line to navigate directories and change files.</p></li>
-<li><p>We will use a text mark-up notation called “markdown”. This will be in text files and doesn’t directly have to do with the terminal.</p></li>
+<li><p>We will use a text mark-up notation called “markdown.” This will be in text files and doesn’t directly involve the terminal.</p></li>
 </ul>
 </div>
 </section>
@@ -661,6 +695,24 @@ ls
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../day1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 1</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02-git.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to Version Control with Git</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
