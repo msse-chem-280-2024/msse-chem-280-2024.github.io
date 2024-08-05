@@ -177,7 +177,7 @@ Next, clone the repository to your computer.
 ````{tab-set-code} 
 
 ```{code-block} shell
-git clone git@github.com:msse-chem-280-2023/periodic-table.git
+git clone git@github.com:msse-chem-280-2024/periodic-table.git
 cd periodic-table
 ```
 ````
@@ -280,7 +280,7 @@ As part of the output from this command, you should see the following:
 ```{code-block} output
 remote:
 remote: Create a pull request for 'sodium' on GitHub by visiting:
-remote:      https://github.com/msse-2022-bootcamp/periodic-table/pull/new/sodium
+remote:      https://github.com/msse-2024-bootcamp/periodic-table/pull/new/sodium
 remote:
 ```
 ````
