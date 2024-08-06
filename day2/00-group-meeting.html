@@ -54,6 +54,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'day2/00-group-meeting';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Day 2" href="../day2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,6 +162,13 @@
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../day1.html">
     Day 1
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day2.html">
+    Day 2
   </a>
 </li>
 
@@ -297,6 +305,13 @@ document.write(`
 </li>
 
 
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day2.html">
+    Day 2
+  </a>
+</li>
+
+
 <li class="nav-item ">
   <a class="nav-link nav-external" href="https://msse.berkeley.edu/">
     MSSE
@@ -362,7 +377,10 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Meet your group</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -398,6 +416,9 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="../day2.html" class="nav-link">Day 2</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page">Meet your group</li>
   </ul>
 </nav>
@@ -418,16 +439,11 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="meet-your-group">
 <h1>Meet your group<a class="headerlink" href="#meet-your-group" title="Link to this heading">#</a></h1>
 <p>To start today’s class you will be meeting with your team and
-collaborating with your team on a group repository.</p>
-<p>Before beginning this assignment, take some time to come up with a name for your group.</p>
-<p>Next, click the following link to start your group repository.
-The first person who clicks the link will enter your group name.
-Other members will be able to choose the team once it exists.</p>
-<p>Start your group repository, <a class="reference external" href="https://classroom.github.com/a/E_XD54zg">click this link</a>.</p>
-<p>To start, someone in the group should add a <strong>branch protection rule</strong> to the repository.
-This is available in the “Branches” section in the “Settings” tab for the repository.
-Enable branch protection, then type “main” (for “main” branch) as the “branch name pattern”.
-Click “require a pull request before merging” in the next section and save.</p>
+collaborating with your team on a group repository.
+You should first interview your team members to get to know them better.
+Then, in the second part, you will create a group repository and each submit a pull request.</p>
+<section id="interviewing-team-members">
+<h2>Interviewing Team Members<a class="headerlink" href="#interviewing-team-members" title="Link to this heading">#</a></h2>
 <p>For today, you should interview and create a markdown file that has information about someone else on your team. Some questions you might think about…</p>
 <ul class="simple">
 <li><p>Where is your team member from?</p></li>
@@ -436,9 +452,36 @@ Click “require a pull request before merging” in the next section and save.<
 <li><p>What is one thing the two of you have in common (that isn’t the MSSE program)?</p></li>
 <li><p>Why did they choose the MSSE degree?</p></li>
 </ul>
-<p>Be creative with your questions, these are only suggestions.
-You will need to clone this repository to your local computer.
-Then, create a file in the <code class="docutils literal notranslate"><span class="pre">group_bios</span></code> folder that contains an interview of your group member (save the file with <code class="docutils literal notranslate"><span class="pre">theirLastName_theirFirstName.md</span></code>) and submit a pull request. Be sure to include your name as the author!</p>
+<p>Be creative with your questions, these are only suggestions.</p>
+</section>
+<section id="starting-a-group-repository">
+<h2>Starting a Group Repository<a class="headerlink" href="#starting-a-group-repository" title="Link to this heading">#</a></h2>
+<p>Before beginning this assignment, take some time to come up with a name for your group.</p>
+<p>Next, click the linke below to start your group repository.
+The first person who clicks the link will enter your group name.
+Other members will be able to choose the team once it exists.</p>
+<p>Start your group repository, <a class="reference external" href="https://classroom.github.com/a/SzcOh_yv">click this link</a>.
+The first person who clicks this link will be responsible for putting a team name.
+Each person who clicks the link after will be able to join the team.</p>
+<p>To start, someone in the group should add a <strong>branch protection rule</strong> to the repository.
+To add a branch protection rule, go to the repository settings and click on “Branches”.
+Then, click on “Add rule” and add a rule for the “main” branch.
+The image below shows screenshots with numbers next to what you click.</p>
+<img alt="../_images/branch-protection-1.png" class="align-center" src="../_images/branch-protection-1.png" />
+<p>After clicking “Add classic branch protection rule”, you will see the following screen.
+Type “main” into the box that says “Branch name pattern”.
+Next, click “require a pull request before merging” and “Require approvals” and save the rule.</p>
+<img alt="../_images/branch-protection-2.png" class="align-center" src="../_images/branch-protection-2.png" />
+<p>You will need to clone this repository to your local computer.
+To clone your repository, navigate to your repository in your browser.
+The URL will be <code class="docutils literal notranslate"><span class="pre">github.com/msse-chem-280-2024/group-repository-YOUR-TEAMNAME</span></code>.</p>
+<p>You should then click the buttons shown below to get the location for cloning your repository.</p>
+<img alt="../_images/clone-repo.png" class="align-center" src="../_images/clone-repo.png" />
+<p>Once have copied this to your clipboard, go to your <code class="docutils literal notranslate"><span class="pre">chem_280</span></code> folder and do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">URL</span></code> where <code class="docutils literal notranslate"><span class="pre">URL</span></code> is the URL you copied.</p>
+<p>Then, create a file in the <code class="docutils literal notranslate"><span class="pre">group_bios</span></code> folder that contains an interview of your group member (save the file with <code class="docutils literal notranslate"><span class="pre">theirLastName_theirFirstName.md</span></code>) and submit a pull request.
+Be sure that your file has a title (using <code class="docutils literal notranslate"><span class="pre">#</span></code>) and other markdown formatting.
+Be sure to include your name as the author!</p>
+</section>
 </section>
 
 
@@ -451,6 +494,15 @@ Then, create a file in the <code class="docutils literal notranslate"><span clas
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../day2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 2</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -460,6 +512,19 @@ Then, create a file in the <code class="docutils literal notranslate"><span clas
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interviewing-team-members">Interviewing Team Members</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-group-repository">Starting a Group Repository</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 
