@@ -32,10 +32,13 @@ Discussions and Assignments
 ..
   Day 2
   #######
+..
+  Lessons
+  =======
   .. csv-table:: 
     :file: csv_tables/day2.csv
     :header-rows: 1
-
+..
   Day 3
   #######
   .. csv-table:: 
@@ -85,3 +88,4 @@ Discussions and Assignments
 
    setup
    day1
+   day2
