@@ -29,15 +29,21 @@ Discussions and Assignments
   :file: csv_tables/day1_assignments.csv  
   :header-rows: 1
 
-..
-  Day 2
-  #######
-..
-  Lessons
-  =======
-  .. csv-table:: 
-    :file: csv_tables/day2.csv
-    :header-rows: 1
+
+Day 2
+#######
+
+Lessons
+=======
+.. csv-table:: 
+  :file: csv_tables/day2.csv
+  :header-rows: 1
+
+Discussions and Assignments
+===========================
+.. csv-table:: 
+  :file: csv_tables/day2_assignments.csv  
+  :header-rows: 1
 ..
   Day 3
   #######
