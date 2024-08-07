@@ -175,11 +175,47 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-external" href="https://msse.berkeley.edu/">
+  <a class="nav-link nav-internal" href="../day3.html">
+    Day 3
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://msse.berkeley.edu/">
     MSSE
   </a>
 </li>
 
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://msse-chem-280-2023.github.io/git-cheat-sheet/">
+    Git Cheat Sheet
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://www.nist.gov/mml/csd/chemical-informatics-group/lennard-jones-fluid-reference-calculations-cuboid-cell">
+    NIST LJ Reference
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://mmlapps.nist.gov/srs/LJ_PURE/mc.htm">
+    NIST MC Isotherms
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
   </ul>
 </nav></div>
       
@@ -316,8 +352,36 @@ document.write(`
 
 
 <li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day3.html">
+    Day 3
+  </a>
+</li>
+
+
+<li class="nav-item ">
   <a class="nav-link nav-external" href="https://msse.berkeley.edu/">
     MSSE
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://msse-chem-280-2023.github.io/git-cheat-sheet/">
+    Git Cheat Sheet
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://www.nist.gov/mml/csd/chemical-informatics-group/lennard-jones-fluid-reference-calculations-cuboid-cell">
+    NIST LJ Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mmlapps.nist.gov/srs/LJ_PURE/mc.htm">
+    NIST MC Isotherms
   </a>
 </li>
 
@@ -653,8 +717,8 @@ PYTHON</label><div class="sd-tab-content docutils">
 <p>Monte Carlo methods are numerical techniques
 frequently used to estimate complex multidimensional integrals which otherwise could not be performed. The idea of Monte Carlo integration is to estimate the value of an integral by generating random points from the probability density.</p>
 <p>For instance, the integral of the function <span class="math notranslate nohighlight">\(f(\textbf{x})\)</span>, where <span class="math notranslate nohighlight">\(\textbf{x} \in \Re^{M}\)</span>, is approximated as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3635eba9-cfe1-4940-8eb3-342439901f1f">
-<span class="eqno">(1)<a class="headerlink" href="#equation-3635eba9-cfe1-4940-8eb3-342439901f1f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7a02db73-7a7e-445b-a6ab-9d8a846b602c">
+<span class="eqno">(1)<a class="headerlink" href="#equation-7a02db73-7a7e-445b-a6ab-9d8a846b602c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	 I = \int_V f(\textbf{x}) \, d\textbf{x} = \int_V
 	 \frac{f(\textbf{x})}{h(\textbf{x})} h(\textbf{x}) \, d\textbf{x} 
 	 = \left&lt; \frac{f(\textbf{x})}{h(\textbf{x})} \right&gt;_{h(\textbf{x})}
@@ -668,14 +732,14 @@ generating random samples of <span class="math notranslate nohighlight">\(\textb
 distribution
 <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span>. The simplest case is to uniformly generate <span class="math notranslate nohighlight">\(\textbf{x}\)</span>
 in the volume (<span class="math notranslate nohighlight">\(V\)</span>). In this way, <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span> becomes constant as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1e8ef71b-7783-4af0-85ef-e92c403ab4be">
-<span class="eqno">(2)<a class="headerlink" href="#equation-1e8ef71b-7783-4af0-85ef-e92c403ab4be" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8f8ee298-29ba-4f71-ab05-12d5c0727975">
+<span class="eqno">(2)<a class="headerlink" href="#equation-8f8ee298-29ba-4f71-ab05-12d5c0727975" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	h(\textbf{x}) = \frac{1}{V}
 	\label{eq.uniformDist}
 \end{equation}\]</div>
 <p>Using this sampling density <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span>, the integral becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8bed0307-d517-4ef4-9712-8b46b6282c1b">
-<span class="eqno">(3)<a class="headerlink" href="#equation-8bed0307-d517-4ef4-9712-8b46b6282c1b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5edabeea-fce8-4978-afa8-8654e3fc66e3">
+<span class="eqno">(3)<a class="headerlink" href="#equation-5edabeea-fce8-4978-afa8-8654e3fc66e3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	I = \int_V f(\textbf{x}) \, d\textbf{x} \approx \frac{V}{N} \sum_{i=1}^N
 	f(\textbf{x}_i)
 	\label{eq.averageUniform}

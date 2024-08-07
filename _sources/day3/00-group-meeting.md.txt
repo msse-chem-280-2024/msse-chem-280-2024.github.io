@@ -6,11 +6,11 @@ To start class today, we will spend about 20 minutes reviewing Python concepts, 
 ## Python Review
 
 Pick a chapter from the e-book [Think Python](https://greenteapress.com/thinkpython/html/index.html). 
-To pick your chapter, read the topics and one you think you don't understand. 
+To pick your chapter, read the topics and one you think you'd like to know more about. 
 To complete the activity, go into the break out room for the chapter you pick.
-Read the chapter for 15 minutes. As you read, take note of at least four new or interesting points. 
+Read the chapter for about 20 minutes. As you read, take note of at least four new or interesting points. 
 If you have any questions, or if anything is unclear, make a note of that also.
-During the last 5 minutes of the Python Review, each group should share their observations on the [class Google Doc](https://docs.google.com/document/d/1Bs5K45Y9uPrfE1XoGYgawg4_oA9DGKwAGTD_-KCbe0Y/edit?usp=sharing)]. (You must be logged into your UC Berkeley account to view the Google Doc.)
+During the last 5 minutes of the Python Review, each group should share their observations on the [class Google Slide Presentation](https://docs.google.com/presentation/d/13b2208ItU8VLqdxMI1ovSCl0Ll3aIYy6CdWZUZi5LxA/edit?usp=sharing)]. (You must be logged into your UC Berkeley account to view the presentation.)
 
 ## Calculation of Lennard Jones Energy for System of Particles
 
