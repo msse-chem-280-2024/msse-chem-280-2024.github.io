@@ -36,11 +36,17 @@ So far we have only used an initial configuration from a file. For this task, yo
 For density, use the number density. For example, in our sample configuration from NIST, the density is 0.8. This is calculated by dividing the number of atoms by the box volume - 800 atoms / (10 * 10 * 10), since 10 was our box length.
 You will need to calculate a box length depending on the number of atoms and the desired density.
 
-Write a function that makes a configuration by randomly placing points in a 3 dimensional box. The function should return `coordinates``, `box_length` the same way our `read_xyz` function does so we can switch out the two without changing our code.
+Write a function that makes a configuration by randomly placing points in a 3 dimensional box. The function should return `coordinates`, `box_length` the same way our `read_xyz` function does so we can switch out the two without changing our code.
 
 ## Task 2 - Alternate Initial Configuration - Cubic Lattice
 
-This task is similar to task 1 except that for this function, you should generate points on a cubic lattice. Similar to the random configuration generator, the function should accept arguments for the number of atoms and the desired system density.
+This task is similar to task 1 except that for this function, you should generate points on a simple cubic lattice. Similar to the random configuration generator, the function should accept arguments for the number of atoms and the desired system density.
+
+```{image} ../fig/simple_cubic.png
+:align: center
+```
+
+You can see a [YouTube Video](https://www.youtube.com/watch?v=Rm-i1c7zr6Q) about cubic lattice cells as well.
 
 ## Task 3 - Tail Correction
 Truncating interactions using a cutoff removes contribution to the potential energy that might be non-negligible.  The tail correction for our system makes a correction for use of the cutoff. We only have to calculate this once at the start of our simulation. The formula is:

@@ -544,11 +544,13 @@ If they exit through one side of the box, they reappear on the other.</p>
 <p>So far we have only used an initial configuration from a file. For this task, you will write a function which can generate initial system configurations from a number of particles and a desired system density. Make sure your function includes docstrings!</p>
 <p>For density, use the number density. For example, in our sample configuration from NIST, the density is 0.8. This is calculated by dividing the number of atoms by the box volume - 800 atoms / (10 * 10 * 10), since 10 was our box length.
 You will need to calculate a box length depending on the number of atoms and the desired density.</p>
-<p>Write a function that makes a configuration by randomly placing points in a 3 dimensional box. The function should return <code class="docutils literal notranslate"><span class="pre">coordinates``,</span> </code>box_length<code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">same</span> <span class="pre">way</span> <span class="pre">our</span></code>read_xyz` function does so we can switch out the two without changing our code.</p>
+<p>Write a function that makes a configuration by randomly placing points in a 3 dimensional box. The function should return <code class="docutils literal notranslate"><span class="pre">coordinates</span></code>, <code class="docutils literal notranslate"><span class="pre">box_length</span></code> the same way our <code class="docutils literal notranslate"><span class="pre">read_xyz</span></code> function does so we can switch out the two without changing our code.</p>
 </section>
 <section id="task-2-alternate-initial-configuration-cubic-lattice">
 <h2>Task 2 - Alternate Initial Configuration - Cubic Lattice<a class="headerlink" href="#task-2-alternate-initial-configuration-cubic-lattice" title="Link to this heading">#</a></h2>
-<p>This task is similar to task 1 except that for this function, you should generate points on a cubic lattice. Similar to the random configuration generator, the function should accept arguments for the number of atoms and the desired system density.</p>
+<p>This task is similar to task 1 except that for this function, you should generate points on a simple cubic lattice. Similar to the random configuration generator, the function should accept arguments for the number of atoms and the desired system density.</p>
+<img alt="../_images/simple_cubic.png" class="align-center" src="../_images/simple_cubic.png" />
+<p>You can see a <a class="reference external" href="https://www.youtube.com/watch?v=Rm-i1c7zr6Q">YouTube Video</a> about cubic lattice cells as well.</p>
 </section>
 <section id="task-3-tail-correction">
 <h2>Task 3 - Tail Correction<a class="headerlink" href="#task-3-tail-correction" title="Link to this heading">#</a></h2>
