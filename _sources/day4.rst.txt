@@ -22,15 +22,14 @@ Lessons
    :maxdepth: 1
    :hidden:
 
-   day4/00-group-meeting
    day4/01-total-energy-NIST
    day4/02-LJ-MC
 
 Discussions and Assignments
----------------------------
+--------------------------- 
 .. toctree::
    :maxdepth: 1
 
-   day4/group-assignment
+   day4/00-group-meeting
    
    

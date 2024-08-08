@@ -6,7 +6,35 @@ In additon to code, each task should also include a markdown cell reflection tha
 
 ## Task 1 - Exploring the Acceptance Criteria
 Write code to calculate the probability of accepting a Monte Carlo move for energies ranging from -2 to 2 for T = 0.9, T = 0.4, and T = 1.4. 
-What is the effect of temperature on the probability of a MC move being accepted? Does this make sense based on your intuition or from what you know about thermodynamics? Why or why not? Create a plot showing your results. Note that you aren’t going to be able to use your function `accept_or_reject`` for this. You will have to take `p_acc` out of it to make the plot.
+What is the effect of temperature on the probability of a MC move being accepted? Does this make sense based on your intuition or from what you know about thermodynamics? Why or why not? Create a plot showing your results. Note that you aren’t going to be able to use your function `accept_or_reject` for this. You will have to take `p_acc` out of it to make the plot.
+
+
+:::{admonition} Making a Plot
+:class: tip
+
+You can use the `matplotlib` library to make a plot.
+In class, we added points to a plot one at a time in a `for` loop.
+However, it is more common to create a list of x values and a list of y values and then plot them all at once.
+
+Here is an example of how to plot a list of x values and a list of y values.
+
+```python
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5] 
+y1 = [1, 4, 9, 16, 25]
+y2 = [1, 2, 3, 4, 5]
+
+plt.plot(x, y1, Label='y = x^2')
+plt.plot(x, y2), Label='y = x')
+
+plt.xlabel('x')
+plt.ylabel('y')
+
+plt.legend()
+```
+:::
+
 
 ## Task 2 - Comparing Performance
 In our implementation, we've made a smart choice about our algorithm. 
