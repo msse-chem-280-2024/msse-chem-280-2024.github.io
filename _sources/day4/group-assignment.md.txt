@@ -42,7 +42,7 @@ In our implementation, we've made a smart choice about our algorithm.
 We noticed that we only need to calculate the energy for the moved particle rather than the whole system.
 For this task, you should alter the code to perform a naive implementaiton where this choice was not made. 
 Change your code to calculate the total energy for every step. 
-Compare timings for 10,000 steps.
+Compare timings for 1,000 steps.
 
 You can compare timings by using the `time` module in Python. 
 A common pattern is 
