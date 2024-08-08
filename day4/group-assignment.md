@@ -1,6 +1,7 @@
 # Group Homework Assignment Day 4
 
 Like previous days, your task should be placed in the appropriate folder (`day4`), with the file name `lastname_firstname_taskX` with the appropriate extension.
+**Each task should contain code and should also contain a reflection in a markdown cell.**
 
 In additon to code, each task should also include a markdown cell reflection that is at least five sentences.
 
