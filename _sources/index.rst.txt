@@ -62,6 +62,9 @@ Discussions and Assignments
 
 Day 4
 #######
+
+Lessons
+=======
 .. csv-table:: 
   :file: csv_tables/day4.csv
   :header-rows: 1
