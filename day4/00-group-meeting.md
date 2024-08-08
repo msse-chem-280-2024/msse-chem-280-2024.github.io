@@ -135,8 +135,8 @@ def calculate_tail_correction(arguments):
 ```
 ````
 
-In the class [Google Doc](https://docs.google.com/document/d/1Bs5K45Y9uPrfE1XoGYgawg4_oA9DGKwAGTD_-KCbe0Y/edit?usp=sharing) write an explanation of changes to our `calculate_distance` function and our `calculate_total_energy` function under the section "Code Difference Explanation" at the end of the document. 
-Add a header with your group name over your explanation.
+In the class [Google Presentation](https://docs.google.com/presentation/d/13b2208ItU8VLqdxMI1ovSCl0Ll3aIYy6CdWZUZi5LxA/edit?usp=sharing) write an explanation of changes to our `calculate_distance` function and our `calculate_total_energy` function under the section "Code Difference Explanation" at the end of the document. 
+Add a slide with your group name and your explanation.
 
 If you need a `calculate_tail_correction` function, use this one:
 

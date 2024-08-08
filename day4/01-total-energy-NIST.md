@@ -36,9 +36,24 @@ print(f"Cut off 4: {calc_4cut}")
 
 ````
 
+:::{admonition} Formatted Strings   
+:class: tip
+
+
 The code block above uses a special syntax in the print statment called a formatted string.
 In Python, formatted strings, denoted by an f prefix, allow us to embed expressions and variables directly into a string. 
-By using curly braces {} to wrap the expressions, the values of those expressions are evaluated and inserted into the string when it is printed. 
+By using curly braces {} to wrap the expressions, the values of those expressions are evaluated and inserted into the string when it is printed.
+
+Here is another example of a formatted string:
+
+```python
+class_name = "Chem 280"
+my_string = f"Hello from {class_name}!"
+
+print(my_string)    # prints "Hello from Chem 280!"
+```
+:::
+
 
 Now that we have our calculated values, we can compare our results to those computed by NIST.
 
