@@ -16,7 +16,7 @@ Objectives:
 For the next section, we will move our code from the Jupyter notebook to a module.  
 We will be able to import functions from that module into the Jupyter notebook to more cleanly run our simulations. 
 
-Create a file called `monte_carlo_yourname.py` in `day5` folder.
+Create a file called `lastname_firstname_monte_carlo.py` in `day5` folder.
 
 Gather all of your functions from your Jupyter notebook and paste them into the python module you created. 
 In a Python module, most import statements are typically at the top of the module, followed by function definitions. 
