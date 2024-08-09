@@ -6,4 +6,4 @@ For this assignment, a full explanation is given in the assignment repository.
 
 Please note that this assignment is much more difficult than individual assignment 1.
 
-[Click this link to accept the assignment](https://classroom.github.com/a/6KCxK50H).
+[Click this link to accept the assignment](https://classroom.github.com/a/5rx3QpDP).

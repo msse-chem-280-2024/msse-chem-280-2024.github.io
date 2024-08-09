@@ -75,13 +75,17 @@ Discussions and Assignments
   :file: csv_tables/day4_assignments.csv  
   :header-rows: 1
 
-..
-  Day 5
-  #######
-  .. csv-table:: 
-    :file: csv_tables/day5.csv
-    :header-rows: 1
 
+Day 5
+#######
+
+Lessons
+========
+.. csv-table:: 
+  :file: csv_tables/day5.csv
+  :header-rows: 1
+
+..
   Day 6
   #######
   .. csv-table:: 
@@ -116,3 +120,4 @@ Discussions and Assignments
    day2
    day3
    day4
+   day5

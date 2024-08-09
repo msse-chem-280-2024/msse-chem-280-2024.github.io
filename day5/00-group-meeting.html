@@ -54,6 +54,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'day5/00-group-meeting';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Group Homework Assignment - Day 5" href="group-assignment.html" />
+    <link rel="prev" title="Creating a Python Module" href="04-modules.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,6 +189,13 @@
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../day4.html">
     Day 4
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../day5.html">
+    Day 5
   </a>
 </li>
 
@@ -368,6 +377,13 @@ document.write(`
 </li>
 
 
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day5.html">
+    Day 5
+  </a>
+</li>
+
+
 <li class="nav-item ">
   <a class="nav-link nav-external" href="https://msse.berkeley.edu/">
     MSSE
@@ -454,7 +470,17 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-numpy.html">Working with Numpy Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-calculate-distance.html">Rewriting the Distance Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-modules.html">Creating a Python Module</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class Warm Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="group-assignment.html">Group Homework Assignment - Day 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../individual-assignments/individual-assignment-2.html">Individual Homework Assignment 2</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -490,6 +516,9 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="../day5.html" class="nav-link">Day 5</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page">Class Warm Up</li>
   </ul>
 </nav>
@@ -509,12 +538,95 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-warm-up">
 <h1>Class Warm Up<a class="headerlink" href="#class-warm-up" title="Link to this heading">#</a></h1>
-<p>Work through our first lesson on NumPy with your group.
-In the class <a class="reference external" href="https://docs.google.com/document/d/1Bs5K45Y9uPrfE1XoGYgawg4_oA9DGKwAGTD_-KCbe0Y/edit?usp=sharing">Google Doc</a>
-write at least 10 important points from the lesson for your group.
-We will take about 30-45 minutes for this activity.</p>
-<p>While in your group, please take the mid-course survey available on BCourses under the Day 5 module.
-Also prepare for the day by making sure all pull requests are merged!</p>
+<p>To start class, take the Warm Up Quiz under Day 5 on bCourses.</p>
+<p>After taking the quiz, please take the mid-course survey available on BCourses under the Day 5 module.</p>
+<section id="activity-debugging">
+<h2>Activity: Debugging<a class="headerlink" href="#activity-debugging" title="Link to this heading">#</a></h2>
+<p>For this next session, you will spend some time debugging as a group.</p>
+<p>When you are writing Python code, you will encounter two types of errors - (1) Exceptions (errors that cause program to halt) (2) Code errors - logical mistakes or typos that cause your code to be incorrect.</p>
+<section id="debugging-exceptions">
+<h3>Debugging Exceptions<a class="headerlink" href="#debugging-exceptions" title="Link to this heading">#</a></h3>
+<p>Consider the following code example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_average</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+    <span class="n">average</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="n">count</span>
+    <span class="k">return</span> <span class="n">average</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average of data:&quot;</span><span class="p">,</span> <span class="n">calculate_average</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+<span class="n">empty_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average of empty_data:&quot;</span><span class="p">,</span> <span class="n">calculate_average</span><span class="p">(</span><span class="n">empty_data</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Running this in a Jupyter notebook will result in a message similar to the following:</p>
+<div class="highlight-error notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+ZeroDivisionError                         Traceback (most recent call last)
+File ~/my_code.py:11
+      8 print(&quot;Average of data:&quot;, calculate_average(data))
+     10 empty_data = []
+---&gt; 11 print(&quot;Average of empty_data:&quot;, calculate_average(empty_data))
+
+File ~/my_code.py:4, in calculate_average(numbers)
+      2 total = sum(numbers)
+      3 count = len(numbers)
+----&gt; 4 average = total / count
+      5 return average
+
+ZeroDivisionError: division by zero
+</pre></div>
+</div>
+</section>
+<section id="how-to-read-a-python-error-message">
+<h3>How to Read a Python Error Message<a class="headerlink" href="#how-to-read-a-python-error-message" title="Link to this heading">#</a></h3>
+<p>When your Python code encounters an error, Python generates an error message (often called a “traceback”) that can help you figure out what went wrong.</p>
+<p>When reading a Python error message, you should start at the bottom of the message to determine what the problem is and the line of code. In the example above, the first line we should look at is</p>
+<div class="highlight-error notranslate"><div class="highlight"><pre><span></span>ZeroDivisionError: division by zero
+</pre></div>
+</div>
+<p>This tells us that a division by zero was attempted in our code. We now have to figure out where and why.</p>
+<p>Going up from this first line, we see what is called the “traceback”. The traceback is the sequence of commands taht led to this error.</p>
+<p>Let’s break down the traceback from the error message:</p>
+<div class="highlight-error notranslate"><div class="highlight"><pre><span></span>File ~/my_code.py:11
+      8 print(&quot;Average of data:&quot;, calculate_average(data))
+     10 empty_data = []
+---&gt; 11 print(&quot;Average of empty_data:&quot;, calculate_average(empty_data))
+</pre></div>
+</div>
+<p>This part of the traceback tells you:</p>
+<ul class="simple">
+<li><p>File: The error occurred in the file named my_code.py.</p></li>
+<li><p>Line Number: The error occurred at line 11 in the file.</p></li>
+<li><p>Code Context: The specific line of code that caused the error was print(“Average of empty_data:”, calculate_average(empty_data)).
+The arrow (<code class="docutils literal notranslate"><span class="pre">---&gt;</span></code>) points to the exact line that caused the problem. This line is where the calculate_average(empty_data) function was called.</p></li>
+</ul>
+<p>Now, let’s look at the next part of the traceback:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">File</span> <span class="o">~/</span><span class="n">my_code</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="n">calculate_average</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+      <span class="mi">2</span> <span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+      <span class="mi">3</span> <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="o">----&gt;</span> <span class="mi">4</span> <span class="n">average</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="n">count</span>
+      <span class="mi">5</span> <span class="k">return</span> <span class="n">average</span>
+</pre></div>
+</div>
+<p>This part tells us that the error happened inside the calculate_average function on line 4, where the code tried to execute <code class="docutils literal notranslate"><span class="pre">average</span> <span class="pre">=</span> <span class="pre">total</span> <span class="pre">/</span> <span class="pre">count</span></code>. Since count was 0 (because the list empty_data was empty), this resulted in a <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>.</p>
+<p>To fix this error, you have a few options.
+You might choose to check if a list is empty before calling the <code class="docutils literal notranslate"><span class="pre">calculate_average</span></code> function, or you might modify your function to handle the case of the list length being zero.</p>
+<p>Practice debugging with the following code example.
+Write about your debugging process in the class <a class="reference external" href="https://docs.google.com/presentation/d/13b2208ItU8VLqdxMI1ovSCl0Ll3aIYy6CdWZUZi5LxA/edit?usp=sharing">Google Presentation</a>. How would you fix this problem?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_max</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">max_number</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">max_number</span><span class="p">:</span>
+            <span class="n">max_number</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">max_number</span>
+
+<span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">find_max</span><span class="p">(</span><span class="n">numbers</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
 
@@ -527,6 +639,24 @@ Also prepare for the day by making sure all pull requests are merged!</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="04-modules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Creating a Python Module</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="group-assignment.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Group Homework Assignment - Day 5</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -536,6 +666,22 @@ Also prepare for the day by making sure all pull requests are merged!</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-debugging">Activity: Debugging</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-exceptions">Debugging Exceptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-read-a-python-error-message">How to Read a Python Error Message</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 

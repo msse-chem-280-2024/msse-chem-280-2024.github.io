@@ -51,9 +51,13 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'day5/group-assignment';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Individual Homework Assignment 2" href="../individual-assignments/individual-assignment-2.html" />
+    <link rel="prev" title="Class Warm Up" href="00-group-meeting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,6 +191,13 @@
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../day4.html">
     Day 4
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../day5.html">
+    Day 5
   </a>
 </li>
 
@@ -368,6 +379,13 @@ document.write(`
 </li>
 
 
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day5.html">
+    Day 5
+  </a>
+</li>
+
+
 <li class="nav-item ">
   <a class="nav-link nav-external" href="https://msse.berkeley.edu/">
     MSSE
@@ -454,7 +472,17 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01-numpy.html">Working with Numpy Arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-calculate-distance.html">Rewriting the Distance Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-modules.html">Creating a Python Module</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="00-group-meeting.html">Class Warm Up</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Group Homework Assignment - Day 5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../individual-assignments/individual-assignment-2.html">Individual Homework Assignment 2</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -490,6 +518,9 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="../day5.html" class="nav-link">Day 5</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page">Group...</li>
   </ul>
 </nav>
@@ -509,13 +540,24 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="group-homework-assignment-day-5">
 <h1>Group Homework Assignment - Day 5<a class="headerlink" href="#group-homework-assignment-day-5" title="Link to this heading">#</a></h1>
+<section id="rewriting-pi-calculation">
+<h2>Rewriting <span class="math notranslate nohighlight">\(\pi\)</span> calculation<a class="headerlink" href="#rewriting-pi-calculation" title="Link to this heading">#</a></h2>
+<p>For your group work today, you should rewrite the Monte Carlo calculation of <span class="math notranslate nohighlight">\(\pi\)</span> (from Day 2 lecture) to use NumPy.
+You should be able to eliminate the use of loops entirely with this rewrite.
+Note that you can use <a class="reference external" href="https://numpy.org/doc/stable/user/basics.creation.html">NumPy array creation routines</a> to quickly create arrays.
+For example, you might find it useful to use <code class="docutils literal notranslate"><span class="pre">np.random.random_sample(n_samples)</span></code> to quickly create an array with <code class="docutils literal notranslate"><span class="pre">n_samples</span></code> random numbers (<a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.random_sample.html">documentation</a>.</p>
+<p>After your rewrite, use the Python <code class="docutils literal notranslate"><span class="pre">time</span></code> module (see Day 4 task 2) to compare performance for <code class="docutils literal notranslate"><span class="pre">n_samples=100</span></code> and <code class="docutils literal notranslate"><span class="pre">n_samples=10000000</span></code> for the two versions of your code.</p>
+</section>
+<section id="molecular-monte-carlo-using-numpy">
+<h2>Molecular Monte Carlo using NumPy<a class="headerlink" href="#molecular-monte-carlo-using-numpy" title="Link to this heading">#</a></h2>
 <p>For your final project, you will need to write a version of your molecular Monte Carlo simulation that uses NumPy.</p>
-<p>Today, take time to to discuss with your teammates what changes you can make to your code to take advantage of the features of NumPy arrays. For this portion, take the first 20 minutes to think about this by yourself, then discuss for with your group. We will talk as a class about parts that can be rewritten about an hour into group work time.</p>
-<p>For the pull request for today, just submit your lecture notes (including the NumPy tutorial).
-You are free to start working on your NumPy implementation with your group or catch up on other topics for as long as you would like, but you can also leave after the class discussion (mentioned above, will be about one hour into group work time).
-Remember that you will have to write a NumPy version of your code, so it might be a good idea to start while you have time.
-You might also choose to work on individual homework!</p>
-<p>Have a good weekend!</p>
+<p>Today, take time to to discuss with your teammates what changes you can make to your code to take advantage of the features of NumPy arrays. If you have extra time, start working on your NumPy implementation with your group.
+Remember that you will have to write a NumPy version of your code, so it might be a good idea to start while you have time.</p>
+</section>
+<section id="turning-in-your-pull-request">
+<h2>Turning in your Pull Request<a class="headerlink" href="#turning-in-your-pull-request" title="Link to this heading">#</a></h2>
+<p>For today, turn in a pull request that contains your Monte Carlo <span class="math notranslate nohighlight">\(\pi\)</span> calculation using Numpy and a markdown explanation of code changes you discussed for the NumPy version of your molecular Monte Carlo simulation. Like usual, name your file with <code class="docutils literal notranslate"><span class="pre">lastname_firstname</span></code>. You also need to review a group member’s pull request. Check that they have the completed task and explanation.</p>
+</section>
 </section>
 
 
@@ -528,6 +570,24 @@ You might also choose to work on individual homework!</p>
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="00-group-meeting.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Class Warm Up</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../individual-assignments/individual-assignment-2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Individual Homework Assignment 2</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -537,6 +597,20 @@ You might also choose to work on individual homework!</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rewriting-pi-calculation">Rewriting <span class="math notranslate nohighlight">\(\pi\)</span> calculation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#molecular-monte-carlo-using-numpy">Molecular Monte Carlo using NumPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#turning-in-your-pull-request">Turning in your Pull Request</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 
