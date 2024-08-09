@@ -211,7 +211,7 @@ def calculate_pair_energy(coordinates, i_particle, box_length, cutoff):
 ```
 ````
 
-Put your simulation loop in a second cell:
+Next, add your simulation loop below your function definitions.
 
 ````{tab-set-code} 
 
@@ -279,19 +279,16 @@ for move in range(num_moves):
 ```
 ````
 
-
-Note that we have moved all the imports to the top and also changed the location of our file path. 
-If you have moved everything without problems, you should be able to run the simulation by typing the following command from your `day5` folder.
+If you have moved everything without problems, you should be able to run the simulation by typing the following command from your `day5` folder in your terminal
 
 ````{tab-set-code} 
 
 ```{code-block} shell
-$ python monte_carlo_yourname.py
+python monte_carlo_yourname.py
 ```
 ````
 
-This seems great! 
-But, we want to make our simulation code importable from another file like a Jupyter notebook. 
+We now want to make our simulation code importable from another file like a Jupyter notebook. 
 Let's make our simulation run into a function. 
 For this function, we want to consider what are input simulation parameters. 
 In other words, if we want to run several simulations, what would we change? We will want to make these our function arguments. 
@@ -350,72 +347,6 @@ def run_simulation(coordinates, box_length, cutoff, reduced_temperature, num_mov
     
         if move % freq == 0:
             print(move, total_energy/num_particles)
-```
-````
-
-For a Monte Carlo simulation, we want to keep track of the coordinates so we can analyze them.
-We can add some additional statements to our functions under `if move % freq` to keep the coordinates
-at specified snapshots, then we can return them at the end of the simulation.
-
-````{tab-set-code}
-```{code-block} python
-def run_simulation(coordinates, box_length, cutoff, reduced_temperature, num_moves, max_displacement, freq=1000):
-    # Calculated quantities
-    beta = 1 / reduced_temperature
-
-    num_particles = len(coordinates)
-    
-    # Set up energy
-    delta_energy = 0
-    
-    total_energy = calculate_total_energy(coordinates, box_length, cutoff)
-    total_energy += calculate_tail_correction(num_particles, box_length, cutoff)
-
-    # Create a list for coordinates
-    all_coordinates = []
-    
-    print(f"The starting energy is {total_energy}.")
-    
-    # Monte Carlo Simulation Loop
-    
-    for move in range(num_moves):
-        # 1. Randomly pick one of N particles.
-        random_particle = random.randrange(num_particles)
-        
-        # 2. Calculate the interaction energy of the selected particle with the system, and store this value.
-        current_energy = calculate_pair_energy(coordinates, random_particle, box_length, cutoff)
-        
-        # 3. Generate a random x, y, z displacement within max_displacement.
-        x_rand = random.uniform(-max_displacement, max_displacement)
-        y_rand = random.uniform(-max_displacement, max_displacement)
-        z_rand = random.uniform(-max_displacement, max_displacement)
-        
-        # 4. Modify the coordinate of the selected particle by the generated displacements.
-        coordinates[random_particle][0] += x_rand
-        coordinates[random_particle][1] += y_rand
-        coordinates[random_particle][2] += z_rand
-        
-        # 5. Calculate the interaction energy of the moved particle with the system, and store this value.
-        proposed_energy = calculate_pair_energy(coordinates, random_particle, box_length, cutoff)
-        energy_difference = proposed_energy - current_energy
-        
-        # 6. Based on the energy difference, decide to accept or reject the movement.
-        accept = accept_or_reject(energy_difference, beta)
-        
-        # 7. If we accept, move the particle.
-        if accept:
-            total_energy += energy_difference
-        else:
-            coordinates[random_particle][0] -= x_rand
-            coordinates[random_particle][1] -= y_rand
-            coordinates[random_particle][2] -= z_rand
-    
-        if move % freq == 0:
-            print(move, total_energy/num_particles)
-            all_coordinates.append(coordinates)
-
-    return all_coordinates
-
 ```
 ````
 

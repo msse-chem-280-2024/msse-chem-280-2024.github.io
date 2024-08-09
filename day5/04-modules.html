@@ -749,7 +749,7 @@ PYTHON</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>Put your simulation loop in a second cell:</p>
+<p>Next, add your simulation loop below your function definitions.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-1">
@@ -816,19 +816,17 @@ PYTHON</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>Note that we have moved all the imports to the top and also changed the location of our file path.
-If you have moved everything without problems, you should be able to run the simulation by typing the following command from your <code class="docutils literal notranslate"><span class="pre">day5</span></code> folder.</p>
+<p>If you have moved everything without problems, you should be able to run the simulation by typing the following command from your <code class="docutils literal notranslate"><span class="pre">day5</span></code> folder in your terminal</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-2">
 SHELL</label><div class="sd-tab-content docutils">
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>monte_carlo_yourname.py
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>monte_carlo_yourname.py
 </pre></div>
 </div>
 </div>
 </div>
-<p>This seems great!
-But, we want to make our simulation code importable from another file like a Jupyter notebook.
+<p>We now want to make our simulation code importable from another file like a Jupyter notebook.
 Let’s make our simulation run into a function.
 For this function, we want to consider what are input simulation parameters.
 In other words, if we want to run several simulations, what would we change? We will want to make these our function arguments.
@@ -891,79 +889,12 @@ PYTHON</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>For a Monte Carlo simulation, we want to keep track of the coordinates so we can analyze them.
-We can add some additional statements to our functions under <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">move</span> <span class="pre">%</span> <span class="pre">freq</span></code> to keep the coordinates
-at specified snapshots, then we can return them at the end of the simulation.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-4">
-PYTHON</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_simulation</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="n">box_length</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">,</span> <span class="n">reduced_temperature</span><span class="p">,</span> <span class="n">num_moves</span><span class="p">,</span> <span class="n">max_displacement</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
-    <span class="c1"># Calculated quantities</span>
-    <span class="n">beta</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">reduced_temperature</span>
-
-    <span class="n">num_particles</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">coordinates</span><span class="p">)</span>
-    
-    <span class="c1"># Set up energy</span>
-    <span class="n">delta_energy</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="n">total_energy</span> <span class="o">=</span> <span class="n">calculate_total_energy</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="n">box_length</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">)</span>
-    <span class="n">total_energy</span> <span class="o">+=</span> <span class="n">calculate_tail_correction</span><span class="p">(</span><span class="n">num_particles</span><span class="p">,</span> <span class="n">box_length</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">)</span>
-
-    <span class="c1"># Create a list for coordinates</span>
-    <span class="n">all_coordinates</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The starting energy is </span><span class="si">{</span><span class="n">total_energy</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-    
-    <span class="c1"># Monte Carlo Simulation Loop</span>
-    
-    <span class="k">for</span> <span class="n">move</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_moves</span><span class="p">):</span>
-        <span class="c1"># 1. Randomly pick one of N particles.</span>
-        <span class="n">random_particle</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">num_particles</span><span class="p">)</span>
-        
-        <span class="c1"># 2. Calculate the interaction energy of the selected particle with the system, and store this value.</span>
-        <span class="n">current_energy</span> <span class="o">=</span> <span class="n">calculate_pair_energy</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="n">random_particle</span><span class="p">,</span> <span class="n">box_length</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">)</span>
-        
-        <span class="c1"># 3. Generate a random x, y, z displacement within max_displacement.</span>
-        <span class="n">x_rand</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">max_displacement</span><span class="p">,</span> <span class="n">max_displacement</span><span class="p">)</span>
-        <span class="n">y_rand</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">max_displacement</span><span class="p">,</span> <span class="n">max_displacement</span><span class="p">)</span>
-        <span class="n">z_rand</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">max_displacement</span><span class="p">,</span> <span class="n">max_displacement</span><span class="p">)</span>
-        
-        <span class="c1"># 4. Modify the coordinate of the selected particle by the generated displacements.</span>
-        <span class="n">coordinates</span><span class="p">[</span><span class="n">random_particle</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">x_rand</span>
-        <span class="n">coordinates</span><span class="p">[</span><span class="n">random_particle</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">y_rand</span>
-        <span class="n">coordinates</span><span class="p">[</span><span class="n">random_particle</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">z_rand</span>
-        
-        <span class="c1"># 5. Calculate the interaction energy of the moved particle with the system, and store this value.</span>
-        <span class="n">proposed_energy</span> <span class="o">=</span> <span class="n">calculate_pair_energy</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="n">random_particle</span><span class="p">,</span> <span class="n">box_length</span><span class="p">,</span> <span class="n">cutoff</span><span class="p">)</span>
-        <span class="n">energy_difference</span> <span class="o">=</span> <span class="n">proposed_energy</span> <span class="o">-</span> <span class="n">current_energy</span>
-        
-        <span class="c1"># 6. Based on the energy difference, decide to accept or reject the movement.</span>
-        <span class="n">accept</span> <span class="o">=</span> <span class="n">accept_or_reject</span><span class="p">(</span><span class="n">energy_difference</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
-        
-        <span class="c1"># 7. If we accept, move the particle.</span>
-        <span class="k">if</span> <span class="n">accept</span><span class="p">:</span>
-            <span class="n">total_energy</span> <span class="o">+=</span> <span class="n">energy_difference</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">coordinates</span><span class="p">[</span><span class="n">random_particle</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="n">x_rand</span>
-            <span class="n">coordinates</span><span class="p">[</span><span class="n">random_particle</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="n">y_rand</span>
-            <span class="n">coordinates</span><span class="p">[</span><span class="n">random_particle</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-=</span> <span class="n">z_rand</span>
-    
-        <span class="k">if</span> <span class="n">move</span> <span class="o">%</span> <span class="n">freq</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">move</span><span class="p">,</span> <span class="n">total_energy</span><span class="o">/</span><span class="n">num_particles</span><span class="p">)</span>
-            <span class="n">all_coordinates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">coordinates</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">all_coordinates</span>
-</pre></div>
-</div>
-</div>
-</div>
 <p>Now we can try this out in another Python module Jupyter notebook.</p>
 <p>Create a Python module called <code class="docutils literal notranslate"><span class="pre">run_sim.py</span></code> - make sure that you replace yourname with your name!
 The any time “monte_carlo_yourname” is used in the cell below, it should match the name of the module you created above.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-5">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-4">
 PYTHON</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">monte_carlo_yourname</span>
 
@@ -984,8 +915,8 @@ PYTHON</label><div class="sd-tab-content docutils">
 </div>
 <p>You can now run your simulation from the command line (terminal) by typing:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-6" type="radio">
-<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-6">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-5">
 SHELL</label><div class="sd-tab-content docutils">
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>run_sim.py
 </pre></div>
