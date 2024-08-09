@@ -85,6 +85,12 @@ Lessons
   :file: csv_tables/day5.csv
   :header-rows: 1
 
+Discussions and Assignments
+===========================
+.. csv-table:: 
+  :file: csv_tables/day5_assignments.csv  
+  :header-rows: 1
+
 ..
   Day 6
   #######
