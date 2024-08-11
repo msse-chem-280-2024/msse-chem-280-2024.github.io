@@ -1,4 +1,4 @@
-# Intro to Monte Carlo Methods
+# Introduction to Monte Carlo Methods
 
 ````{admonition} Overview
 :class: overview
@@ -20,15 +20,51 @@ Objectives:
 
 {download}`Lecture Slides <../_files/pi_calculation.pdf>`
 
-This module will cover calculating pi using Monte Carlo integration. For this module, as well as for the initial Monte Carlo code, we will use only libraries and functions which are part of the [Python Standard Library](https://docs.python.org/3/library/). The Python Standard Library is the set of modules and functions that are distributed with Python. We will use Matplotlib (not part of Python standard library) for visualization.
+This module will cover calculating $\pi$ using Monte Carlo integration. 
+For this module, as well as for the initial Monte Carlo code, we will use only libraries and functions which are part of the [Python Standard Library](https://docs.python.org/3/library/). 
+The Python Standard Library is the set of modules and functions that are distributed with Python. 
+We will use Matplotlib (not part of Python standard library) for visualization.
 
-Later in the course, we will also see how we can perform the calculations more quickly by utilizing the Python library NumPy.
+## Monte Carlo (MC) Integration
+
+Monte Carlo methods estimate values (such as integrals or other statistical properties) through random sampling techniques. 
+They provide approximate solutions, particularly useful when exact solutions are difficult or impossible to obtain analytically.
+
+Consider a function $y = f(x)$.
+In calculus courses, you have learned that the integral of $f(x)$ over a certain interval gives the area under the curve of this function. 
+This area can be calculated exactly for many simple functions using analytical techniques.
+In fact, the example shown in this lesson could be easily calculated.
+However, for more complex functions finding the exact integral can be challenging or even impossible.
+In this lesson, we introduce Monte Carlo using a simple integral. 
+Later in the course, we will see Monte Carlo applied to high dimensional integrals.
+
+### Procedure
+
+In order to use MC for a funtion, we will generate random points on our interval of interest.
+For high-dimensional functions, this domain is sometimes informally referred to as the []"phase space,"](https://en.wikipedia.org/wiki/Phase_space) particularly in fields like physics or statistical mechanics.
+
+* Generate a set of uniformly distributed random points ($N_{trial}) over the area of interest, $A_{tested}$. For example, if we were to evaluate a generic function $f(x)$ over -3 to 3 in the x dimension and 0 to 3 in the y dimension, $A_{tested} = 6 * 3 = 18$
+
+* Count the number of points that fall underneath the curve $f(x)$.
+This number, is $N_{accept}$ in the equation below. 
+With a large number of points, dividing the number of points under the curve to the total number of points will give you the ratio of the area under the curve to the total area tested.
+
+* Multiply the area of consideration ($A_{tested}$) by the calculated ratio.
+
+
+$$
+A_{curve} = \frac{N_{accept}}{N_{trial}} * A_{tested} 
+$$
+
 
 ## Calculation of $ \pi $ using MC Integration
 
 In this lesson, we will be using Monte Carlo integration to estimate the value of $\pi$. Monte Carlo techniques depend on the generation of random numbers.
 
-We calculate $\pi$ using random numbers and the unit circle. We will generate $N$ random $(x, y)$ points with x and y values between zero and one. This corresponds to points in the first quadrant of a Cartesian coordinate system. We start with a counter equal to zero. If a randomly generated point lies inside of the unit circle, we will increase our counter by one. After $N$ random numbers are generated, we can estimate the area of one quarter of the unit circle:
+For our Monte Carlo integration, our
+
+We calculate $\pi$ using random numbers and the unit circle. 
+We will generate $N$ random $(x, y)$ points with x and y values between zero and one. This corresponds to points in the first quadrant of a Cartesian coordinate system. We start with a counter equal to zero. If a randomly generated point lies inside of the unit circle, we will increase our counter by one. After $N$ random numbers are generated, we can estimate the area of one quarter of the unit circle:
 
 $$
 A_{curve} = \frac{N_{accept}}{N_{trial}} * A_{tested} 
@@ -60,7 +96,8 @@ import math
 ```
 ````
 
-We will begin our calculation with 100 randomly generated points. We define a variable called `n_samples` to contain this information. 
+We will begin our calculation with 100 randomly generated points. 
+We define a variable called `n_samples` to contain this information. 
 
 ````{tab-set-code} 
 
