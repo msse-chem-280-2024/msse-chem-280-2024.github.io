@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Intro to Monte Carlo Methods &#8212; UC Berkeley Chem 280  documentation</title>
+    <title>Introduction to Monte Carlo Methods &#8212; UC Berkeley Chem 280  documentation</title>
   
   
   
@@ -499,7 +499,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Intro to...</li>
+    <li class="breadcrumb-item active" aria-current="page">Introduction...</li>
   </ul>
 </nav>
 </div>
@@ -516,8 +516,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="intro-to-monte-carlo-methods">
-<h1>Intro to Monte Carlo Methods<a class="headerlink" href="#intro-to-monte-carlo-methods" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-monte-carlo-methods">
+<h1>Introduction to Monte Carlo Methods<a class="headerlink" href="#introduction-to-monte-carlo-methods" title="Link to this heading">#</a></h1>
 <div class="overview admonition">
 <p class="admonition-title">Overview</p>
 <p>Questions:</p>
@@ -539,13 +539,45 @@ document.write(`
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p><a class="reference download internal" download="" href="../_downloads/aec81c09828ebe701ff1ba524f9febc9/pi_calculation.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Lecture</span> <span class="pre">Slides</span></code></a></p>
-<p>This module will cover calculating pi using Monte Carlo integration. For this module, as well as for the initial Monte Carlo code, we will use only libraries and functions which are part of the <a class="reference external" href="https://docs.python.org/3/library/">Python Standard Library</a>. The Python Standard Library is the set of modules and functions that are distributed with Python. We will use Matplotlib (not part of Python standard library) for visualization.</p>
-<p>Later in the course, we will also see how we can perform the calculations more quickly by utilizing the Python library NumPy.</p>
+<p>This module will cover calculating <span class="math notranslate nohighlight">\(\pi\)</span> using Monte Carlo integration.
+For this module, as well as for the initial Monte Carlo code, we will use only libraries and functions which are part of the <a class="reference external" href="https://docs.python.org/3/library/">Python Standard Library</a>.
+The Python Standard Library is the set of modules and functions that are distributed with Python.
+We will use Matplotlib (not part of Python standard library) for visualization.</p>
+</section>
+<section id="monte-carlo-mc-integration">
+<h2>Monte Carlo (MC) Integration<a class="headerlink" href="#monte-carlo-mc-integration" title="Link to this heading">#</a></h2>
+<p>Monte Carlo methods estimate values (such as integrals or other statistical properties) through random sampling techniques.
+They provide approximate solutions, particularly useful when exact solutions are difficult or impossible to obtain analytically.</p>
+<p>Consider a function <span class="math notranslate nohighlight">\(y = f(x)\)</span>.
+In calculus courses, you have learned that the integral of <span class="math notranslate nohighlight">\(f(x)\)</span> over a certain interval gives the area under the curve of this function.
+This area can be calculated exactly for many simple functions using analytical techniques.
+In fact, the example shown in this lesson could be easily calculated.
+However, for more complex functions finding the exact integral can be challenging or even impossible.
+In this lesson, we introduce Monte Carlo using a simple integral.
+Later in the course, we will see Monte Carlo applied to high dimensional integrals.</p>
+<section id="procedure">
+<h3>Procedure<a class="headerlink" href="#procedure" title="Link to this heading">#</a></h3>
+<p>In order to use MC for a funtion, we will generate random points on our interval of interest.
+For high-dimensional functions, this domain is sometimes informally referred to as the []”phase space,”](https://en.wikipedia.org/wiki/Phase_space) particularly in fields like physics or statistical mechanics.</p>
+<ul class="simple">
+<li><p>Generate a set of uniformly distributed random points (<span class="math notranslate nohighlight">\(N_{trial}) over the area of interest, \)</span>A_{tested}<span class="math notranslate nohighlight">\(. For example, if we were to evaluate a generic function \)</span>f(x)<span class="math notranslate nohighlight">\( over -3 to 3 in the x dimension and 0 to 3 in the y dimension, \)</span>A_{tested} = 6 * 3 = 18$</p></li>
+<li><p>Count the number of points that fall underneath the curve <span class="math notranslate nohighlight">\(f(x)\)</span>.
+This number, is <span class="math notranslate nohighlight">\(N_{accept}\)</span> in the equation below.
+With a large number of points, dividing the number of points under the curve to the total number of points will give you the ratio of the area under the curve to the total area tested.</p></li>
+<li><p>Multiply the area of consideration (<span class="math notranslate nohighlight">\(A_{tested}\)</span>) by the calculated ratio.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+A_{curve} = \frac{N_{accept}}{N_{trial}} * A_{tested} 
+\]</div>
+</section>
 </section>
 <section id="calculation-of-pi-using-mc-integration">
 <h2>Calculation of <span class="math notranslate nohighlight">\( \pi \)</span> using MC Integration<a class="headerlink" href="#calculation-of-pi-using-mc-integration" title="Link to this heading">#</a></h2>
 <p>In this lesson, we will be using Monte Carlo integration to estimate the value of <span class="math notranslate nohighlight">\(\pi\)</span>. Monte Carlo techniques depend on the generation of random numbers.</p>
-<p>We calculate <span class="math notranslate nohighlight">\(\pi\)</span> using random numbers and the unit circle. We will generate <span class="math notranslate nohighlight">\(N\)</span> random <span class="math notranslate nohighlight">\((x, y)\)</span> points with x and y values between zero and one. This corresponds to points in the first quadrant of a Cartesian coordinate system. We start with a counter equal to zero. If a randomly generated point lies inside of the unit circle, we will increase our counter by one. After <span class="math notranslate nohighlight">\(N\)</span> random numbers are generated, we can estimate the area of one quarter of the unit circle:</p>
+<p>For our Monte Carlo integration, our</p>
+<p>We calculate <span class="math notranslate nohighlight">\(\pi\)</span> using random numbers and the unit circle.
+We will generate <span class="math notranslate nohighlight">\(N\)</span> random <span class="math notranslate nohighlight">\((x, y)\)</span> points with x and y values between zero and one. This corresponds to points in the first quadrant of a Cartesian coordinate system. We start with a counter equal to zero. If a randomly generated point lies inside of the unit circle, we will increase our counter by one. After <span class="math notranslate nohighlight">\(N\)</span> random numbers are generated, we can estimate the area of one quarter of the unit circle:</p>
 <div class="math notranslate nohighlight">
 \[
 A_{curve} = \frac{N_{accept}}{N_{trial}} * A_{tested} 
@@ -573,7 +605,8 @@ PYTHON</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>We will begin our calculation with 100 randomly generated points. We define a variable called <code class="docutils literal notranslate"><span class="pre">n_samples</span></code> to contain this information.</p>
+<p>We will begin our calculation with 100 randomly generated points.
+We define a variable called <code class="docutils literal notranslate"><span class="pre">n_samples</span></code> to contain this information.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-1">
@@ -745,8 +778,8 @@ PYTHON</label><div class="sd-tab-content docutils">
 <p>Monte Carlo methods are numerical techniques
 frequently used to estimate complex multidimensional integrals which otherwise could not be performed. The idea of Monte Carlo integration is to estimate the value of an integral by generating random points from the probability density.</p>
 <p>For instance, the integral of the function <span class="math notranslate nohighlight">\(f(\textbf{x})\)</span>, where <span class="math notranslate nohighlight">\(\textbf{x} \in \Re^{M}\)</span>, is approximated as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-67f59d33-af5a-4f42-ac0e-01a55f19c0ee">
-<span class="eqno">(1)<a class="headerlink" href="#equation-67f59d33-af5a-4f42-ac0e-01a55f19c0ee" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-77c8cc36-e0a1-4772-b591-1f0ff7c1e775">
+<span class="eqno">(1)<a class="headerlink" href="#equation-77c8cc36-e0a1-4772-b591-1f0ff7c1e775" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	 I = \int_V f(\textbf{x}) \, d\textbf{x} = \int_V
 	 \frac{f(\textbf{x})}{h(\textbf{x})} h(\textbf{x}) \, d\textbf{x} 
 	 = \left&lt; \frac{f(\textbf{x})}{h(\textbf{x})} \right&gt;_{h(\textbf{x})}
@@ -760,14 +793,14 @@ generating random samples of <span class="math notranslate nohighlight">\(\textb
 distribution
 <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span>. The simplest case is to uniformly generate <span class="math notranslate nohighlight">\(\textbf{x}\)</span>
 in the volume (<span class="math notranslate nohighlight">\(V\)</span>). In this way, <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span> becomes constant as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-93359647-4d27-46ef-845a-20b06b68684d">
-<span class="eqno">(2)<a class="headerlink" href="#equation-93359647-4d27-46ef-845a-20b06b68684d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-55bb61b7-7c07-4f36-b2ca-03d8af189014">
+<span class="eqno">(2)<a class="headerlink" href="#equation-55bb61b7-7c07-4f36-b2ca-03d8af189014" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	h(\textbf{x}) = \frac{1}{V}
 	\label{eq.uniformDist}
 \end{equation}\]</div>
 <p>Using this sampling density <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span>, the integral becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-17aecf28-ed99-4234-8ceb-161b64a147f4">
-<span class="eqno">(3)<a class="headerlink" href="#equation-17aecf28-ed99-4234-8ceb-161b64a147f4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ba055957-ec68-4880-9ddb-7a10b247d618">
+<span class="eqno">(3)<a class="headerlink" href="#equation-ba055957-ec68-4880-9ddb-7a10b247d618" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	I = \int_V f(\textbf{x}) \, d\textbf{x} \approx \frac{V}{N} \sum_{i=1}^N
 	f(\textbf{x}_i)
 	\label{eq.averageUniform}
@@ -814,6 +847,10 @@ integrand evaluated using the <span class="math notranslate nohighlight">\(i^{th
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-2-overview-slides">Day 2  - Overview Slides</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monte-carlo-mc-integration">Monte Carlo (MC) Integration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#procedure">Procedure</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculation-of-pi-using-mc-integration">Calculation of <span class="math notranslate nohighlight">\( \pi \)</span> using MC Integration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-our-mc-code">Writing our MC code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a><ul class="visible nav section-nav flex-column">
