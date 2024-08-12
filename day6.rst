@@ -25,8 +25,7 @@ Discussions and Assignments
 .. toctree::
    :maxdepth: 1
 
-   day6/group-assignment
-
+   day6/00-group-meeting
    
    
    
