@@ -285,6 +285,24 @@ Instead, you will need to create something called an ssh key to verify your acco
 
 Follow the [instructions given by GitHub](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) to create an SSH key and add it to your account.
 
+After you have added an `ssh` key, you can verify that it is added correctly and that you can use GitHub by executing 
+
+````{tab-set-code} 
+
+```{code-block} shell
+ssh -T git@github.com
+```
+````
+
+This should return an output similar to the following, but with your GitHub username:
+
+````{tab-set-code} 
+
+```{code-block} output
+Hi YOUR_GITHUB_USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
+```
+````
+
 (text-editor)=
 ## Text Editor
 Everyone should have a text editor to edit Python and C++. 
