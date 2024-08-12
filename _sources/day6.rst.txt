@@ -26,6 +26,7 @@ Discussions and Assignments
    :maxdepth: 1
 
    day6/00-group-meeting
+   day6/group-assignment
    
    
    

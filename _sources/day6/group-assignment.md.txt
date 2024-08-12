@@ -22,7 +22,7 @@ Answer the following questions:
 6. Complete Exercise 1 from chapter 2 with both Python and C++.
 
 Include your write up in your homework assignment with in a file called
-`lastname_firstname_answers.md`.
+`lastname_firstname_discussion.md`. For 6, submit your code in either a `.py` or `.ipynb` file for Python and a `.cpp` file for C++.
 
 ## Coding Assignment
 Your assignment is to again approximate the integral from the first individual
