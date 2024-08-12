@@ -56,7 +56,7 @@ Commonly used parameters for simulating Argon are $\sigma = 3.4 \unicode{xC5} $ 
 ### Dealing with units
 Throughout this project, we will be working with **reduced units**. As stated above, common values are $\sigma = 3.4 \unicode{xC5}$ and $\epsilon/k_B = 120~K$. When converted to SI units, these quickly become inconvenient to work with. Often, in simulation, we will use something called *reduced units* in order to make calculations more convenient. This approach essentially scales quantities by characteristic values to get them closer to unity.
 
-For example, when working with Argon, the distances we compute will be in units of $$\sigma$$ instead of angstrom. 
+For example, when working with Argon, the distances we compute will be in units of $\sigma$ instead of angstrom. 
 
 Quantity    | Expression
 ------------|------------
@@ -87,7 +87,7 @@ def function_name(function_arguments):
 ```
 ````
 
-For our `calculate_LJ` function, we will need to raise $$\frac{1}{r_ij}$$ to the 12th and 6th power. We will use the `pow` function in the python `math` module for this.
+For our `calculate_LJ` function, we will need to raise $\frac{1}{r_ij}$ to the 12th and 6th power. We will use the `pow` function in the python `math` module for this.
 
 ````{tab-set-code} 
 
