@@ -791,6 +791,26 @@ Keeping this in mind, ensure your GitHub username is both <strong>professional</
 GitHub <em>very recently</em> deprecated using a username and password from the command line.
 Instead, you will need to create something called an ssh key to verify your account.</p>
 <p>Follow the <a class="reference external" href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">instructions given by GitHub</a> to create an SSH key and add it to your account.</p>
+<p>After you have added an <code class="docutils literal notranslate"><span class="pre">ssh</span></code> key, you can verify that it is added correctly and that you can use GitHub by executing</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-19" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="shell" for="sd-tab-item-19">
+SHELL</label><div class="sd-tab-content docutils">
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>-T<span class="w"> </span>git@github.com
+</pre></div>
+</div>
+</div>
+</div>
+<p>This should return an output similar to the following, but with your GitHub username:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-18" type="radio">
+<label class="sd-tab-label" data-sync-group="code" data-sync-id="output" for="sd-tab-item-20">
+OUTPUT</label><div class="sd-tab-content docutils">
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">Hi YOUR_GITHUB_USERNAME! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="text-editor">
