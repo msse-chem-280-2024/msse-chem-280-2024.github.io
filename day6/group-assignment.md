@@ -36,7 +36,7 @@ This integral will evaluate to $$\frac{\pi}{4} $$.
 
 This is a group project, to be written in C++. The group should discuss
 the answers to the questions below and write their answers
-in the `lastname_firstname_discussion.md` file from the previous section.
+in the individual `lastname_firstname_discussion.md` files from the previous section.
 
 The best way to do this assignment is for one person to share their screen
 and write the code while discussing the questions; the rest of the group
