@@ -578,7 +578,7 @@ U(r) = 4 \epsilon \left[\left(\frac{\sigma}{r}\right)^{12} -\left(\frac{\sigma}{
 <section id="dealing-with-units">
 <h3>Dealing with units<a class="headerlink" href="#dealing-with-units" title="Link to this heading">#</a></h3>
 <p>Throughout this project, we will be working with <strong>reduced units</strong>. As stated above, common values are <span class="math notranslate nohighlight">\(\sigma = 3.4 \unicode{xC5}\)</span> and <span class="math notranslate nohighlight">\(\epsilon/k_B = 120~K\)</span>. When converted to SI units, these quickly become inconvenient to work with. Often, in simulation, we will use something called <em>reduced units</em> in order to make calculations more convenient. This approach essentially scales quantities by characteristic values to get them closer to unity.</p>
-<p>For example, when working with Argon, the distances we compute will be in units of $<span class="math notranslate nohighlight">\(\sigma\)</span>$ instead of angstrom.</p>
+<p>For example, when working with Argon, the distances we compute will be in units of <span class="math notranslate nohighlight">\(\sigma\)</span> instead of angstrom.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Quantity</p></th>
@@ -628,7 +628,7 @@ PYTHON</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>For our <code class="docutils literal notranslate"><span class="pre">calculate_LJ</span></code> function, we will need to raise $<span class="math notranslate nohighlight">\(\frac{1}{r_ij}\)</span>$ to the 12th and 6th power. We will use the <code class="docutils literal notranslate"><span class="pre">pow</span></code> function in the python <code class="docutils literal notranslate"><span class="pre">math</span></code> module for this.</p>
+<p>For our <code class="docutils literal notranslate"><span class="pre">calculate_LJ</span></code> function, we will need to raise <span class="math notranslate nohighlight">\(\frac{1}{r_ij}\)</span> to the 12th and 6th power. We will use the <code class="docutils literal notranslate"><span class="pre">pow</span></code> function in the python <code class="docutils literal notranslate"><span class="pre">math</span></code> module for this.</p>
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" data-sync-group="code" data-sync-id="python" for="sd-tab-item-1">
