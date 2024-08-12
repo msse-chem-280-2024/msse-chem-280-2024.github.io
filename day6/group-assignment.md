@@ -35,12 +35,14 @@ $$ \int_{a}^{b} \frac{1}{1 + x^2} dx $$
 This integral will evaluate to $$\frac{\pi}{4} $$.
 
 This is a group project, to be written in C++. The group should discuss
-the answers to the questions and write the README for the project repository.
+the answers to the questions below and write their answers
+in the `lastname_firstname_discussion.md` file from the previous section.
 
 The best way to do this assignment is for one person to share their screen
 and write the code while discussing the questions; the rest of the group
 should be copying the final code into their own files, and perhaps helping
-debug the code on their machine if issues arise.
+debug the code on their machine if issues arise. Each member should also have a copy
+of the group discussion answers in their `lastname_firstname_discussion.md` file.
 
 ## Integration via Summation (Riemann sum)
 
