@@ -56,6 +56,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'day7/00-group-meeting';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Common data types" href="01-datatypes.html" />
+    <link rel="prev" title="Day 7" href="../day7.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -203,6 +205,13 @@
 <li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../day6.html">
     Day 6
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="../day7.html">
+    Day 7
   </a>
 </li>
 
@@ -398,6 +407,13 @@ document.write(`
 </li>
 
 
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../day7.html">
+    Day 7
+  </a>
+</li>
+
+
 <li class="nav-item ">
   <a class="nav-link nav-external" href="https://msse.berkeley.edu/">
     MSSE
@@ -484,7 +500,15 @@ document.write(`
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"></div>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class Warm Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="01-datatypes.html">Common data types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-pointers.html">Arrays, Pointers, Memory, and Vectors</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class Warm Up</a></li>
+</ul>
+</div>
 </nav></div>
     </div>
   
@@ -520,6 +544,9 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
+    
+    <li class="breadcrumb-item"><a href="../day7.html" class="nav-link">Day 7</a></li>
+    
     <li class="breadcrumb-item active" aria-current="page">Class Warm Up</li>
   </ul>
 </nav>
@@ -539,17 +566,19 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-warm-up">
 <h1>Class Warm Up<a class="headerlink" href="#class-warm-up" title="Link to this heading">#</a></h1>
-<p>Today, for the class warm-up, we will be learning about and applying the <a class="reference external" href="https://course.ccs.neu.edu/cs5010sp15/recipe.html">Programming Design Recipe</a>.
-This is a formalized strategy and design process for writing a function.
+<p>Today, for the class warm-up, we will be learning about and applying the <a class="reference external" href="https://www.cs.umb.edu/~stchang/cs450/f23/designrecipe.html">Programming Design Recipe</a>.
+This is a formalized strategy and design process for writing code.
+You can follow a “Design Recipe” for data, functions, or entire programs.
 There is a more detailed specification, but we present a condensed version here.</p>
 <p>Some text is taken directly and adapted from the reference.</p>
-<p>As you read through the design recipe, apply it to the following problems for both Python and C++:</p>
+<p>As you read through the design recipe, apply it to the following problems for both Python and C++.
+You should write code for each and practice running and executing it in both languages.</p>
 <ol class="arabic simple">
 <li><p>Calculation of number density given a number of molecules an a box length (assume cubic box).</p></li>
 <li><p>Calculation of the solute’s contribution to final volume in a dilution. Given a starting concentration <span class="math notranslate nohighlight">\(C_{1}\)</span> and volume of solution <span class="math notranslate nohighlight">\(V_{1}\)</span>, and knowing the final concentration <span class="math notranslate nohighlight">\(C_2\)</span> after adding solvent, calculate the volume <span class="math notranslate nohighlight">\(V_2\)</span> that represents the solute’s contribution to the final solution. The relationship between these quantities is represented by the equation:
 <span class="math notranslate nohighlight">\( C_1 \times V_1 = C_2 \times V_2 \)</span></p></li>
 </ol>
-<p>As you work through the Design Recipe steps, record your answers in the <a class="reference external" href="https://docs.google.com/document/d/1Bs5K45Y9uPrfE1XoGYgawg4_oA9DGKwAGTD_-KCbe0Y/edit?usp=sharing">class Google Doc</a></p>
+<p>As you work through the Design Recipe steps, record your answers in the <a class="reference external" href="https://docs.google.com/presentation/d/13b2208ItU8VLqdxMI1ovSCl0Ll3aIYy6CdWZUZi5LxA/edit?usp=sharing">class Google Presentation</a></p>
 <section id="summary-of-recipe-steps">
 <h2>Summary of Recipe Steps<a class="headerlink" href="#summary-of-recipe-steps" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
@@ -578,16 +607,19 @@ Data design can involve creating representations that may not directly resemble 
 <h3>Step 1.1 - Data Definitions<a class="headerlink" href="#step-1-1-data-definitions" title="Link to this heading">#</a></h3>
 <p>To create a data representation for a piece of information, we write <em>data definitions</em>.</p>
 <p>A <em>data definition</em> is a written statement that defines a piece of data.
-In simpler terms, it helps us describe what the data should look like and how it is structured.</p>
+In simpler terms, it helps us describe what the data should look like and how it is structured.
+When designing data, you should (1) identify the data you need to represent, (2) determine the structure of the data, and (3) define the data in your program.
+This will involve picking appropriate data types and other data organization.</p>
 <section id="why-data-design-matters">
 <h4>Why Data Design Matters<a class="headerlink" href="#why-data-design-matters" title="Link to this heading">#</a></h4>
 <p>Data design is essential because it lays the foundation for writing functions.
-By defining data clearly, we can better understand what inputs our functions need and what outputs they should produce.
-This understanding is crucial for writing effective and reliable programs.</p>
+By defining data clearly, we can better understand what inputs our functions need and what outputs they should produce.</p>
 </section>
 <section id="examples-of-data-definitions">
 <h4>Examples of Data Definitions<a class="headerlink" href="#examples-of-data-definitions" title="Link to this heading">#</a></h4>
-<p>Let’s consider a few examples of data definitions:</p>
+<p>In the first week of the course, we programmed a Monte Carlo integration and simulation.
+In these programs, many choices about data design were made by the instructors.
+Let’s consider a few examples of data definitions:</p>
 <ol class="arabic simple">
 <li><p><strong>3D Coordinate in Python</strong>:</p>
 <ul class="simple">
@@ -597,6 +629,14 @@ This understanding is crucial for writing effective and reliable programs.</p>
 <li><p>A z value is a floating-point number.</p></li>
 </ul>
 </li>
+<li><p><strong>A set of 3D Coordinates in Python</strong>:</p>
+<ul class="simple">
+<li><p>A set of coordinates is a <em>list</em> of 3D coordinates (as defined above).</p></li>
+</ul>
+</li>
+</ol>
+<p>Some other examples of data definitions include:</p>
+<ol class="arabic simple">
 <li><p><strong>A Rectangle</strong>:</p>
 <ul class="simple">
 <li><p>A rectangle is represented by a <em>length</em> and <em>width</em>.</p></li>
@@ -620,7 +660,8 @@ This understanding is crucial for writing effective and reliable programs.</p>
 <section id="step-2-function-specification">
 <h2>Step 2 - Function Specification<a class="headerlink" href="#step-2-function-specification" title="Link to this heading">#</a></h2>
 <p>You will next define the function specification.
-This involves deciding the function inputs and signature and writing
+This involves deciding the function inputs and signature,
+deciding the functions return data, and writing the
 function documentation.</p>
 <p>In Python a function signature looks like</p>
 <div class="sd-tab-set docutils">
@@ -645,9 +686,9 @@ C++</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<section id="step-2-1-defining-function-inputs">
-<h3>Step 2.1 - Defining Function Inputs<a class="headerlink" href="#step-2-1-defining-function-inputs" title="Link to this heading">#</a></h3>
-<p>Before writing a function, you need to determine what inputs the function requires to perform its task.
+<section id="step-2-1-defining-function-inputs-and-outputs">
+<h3>Step 2.1 - Defining Function Inputs and Outputs<a class="headerlink" href="#step-2-1-defining-function-inputs-and-outputs" title="Link to this heading">#</a></h3>
+<p>Before writing a function, you need to determine what inputs the function requires to perform its task, and what data it should return.
 These inputs are known as function parameters or arguments.
 Think about the data that the function will need to process and how it should be organized.</p>
 </section>
@@ -787,8 +828,7 @@ Review the function and refine it as necessary, then retest until all test cases
 </li>
 <li><p><strong>Error Case</strong>:</p>
 <ul class="simple">
-<li><p>While our function doesn’t have explicit error handling, think about scenarios that could be problematic,
-such as negative lengths or widths.</p></li>
+<li><p>While our function doesn’t have explicit error handling, think about scenarios that could be problematic, such as negative lengths or widths.</p></li>
 </ul>
 </li>
 </ol>
@@ -806,8 +846,7 @@ PYTHON</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>It’s important to understand that no matter how thorough your tests are, there’s always the possibility of undiscovered issues.
-Regular testing and refinement are essential to maintaining reliable code.</p>
+<p>It’s important to understand that no matter how thorough your tests are, there’s always the possibility of undiscovered issues.</p>
 </section>
 </section>
 </section>
@@ -817,8 +856,7 @@ Regular testing and refinement are essential to maintaining reliable code.</p>
 Code review is a crucial practice in the professional world, and developing this habit early will benefit you in the long run.</p>
 <section id="step-5-1-review-for-consistency">
 <h3>Step 5.1 - Review for Consistency<a class="headerlink" href="#step-5-1-review-for-consistency" title="Link to this heading">#</a></h3>
-<p>Ensure that your data definitions, function specifications, and implementations align with one another.
-Any deviation might lead to unexpected behaviors.</p>
+<p>Ensure that your data definitions, function specifications, and implementations align with one another.</p>
 </section>
 <section id="step-5-2-check-for-code-quality">
 <h3>Step 5.2 - Check for Code Quality<a class="headerlink" href="#step-5-2-check-for-code-quality" title="Link to this heading">#</a></h3>
@@ -835,7 +873,7 @@ It’s a way to improve the code’s design, readability, or reduce complexity.<
 <h3>Step 5.4 - Peer Review<a class="headerlink" href="#step-5-4-peer-review" title="Link to this heading">#</a></h3>
 <p>If possible, have a classmate or colleague review your code.
 They might provide a fresh perspective, notice things you’ve missed, or offer suggestions for improvement.
-This is a common practice in the software industry and is known to improve code quality significantly.</p>
+This is a common practice in the software industry.</p>
 <section id="example-program-review-for-rectangle-area-function">
 <h4>Example Program Review for Rectangle Area Function<a class="headerlink" href="#example-program-review-for-rectangle-area-function" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
@@ -864,6 +902,24 @@ Did they notice any potential issues or have suggestions for improvement?</p></l
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../day7.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Day 7</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="01-datatypes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Common data types</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -892,7 +948,7 @@ Did they notice any potential issues or have suggestions for improvement?</p></l
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-function-specification">Step 2 - Function Specification</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-1-defining-function-inputs">Step 2.1 - Defining Function Inputs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-1-defining-function-inputs-and-outputs">Step 2.1 - Defining Function Inputs and Outputs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-2-writing-function-documentation">Step 2.2 - Writing Function Documentation</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-function-specification-and-documentation">Example Function Specification and Documentation</a></li>
 </ul>

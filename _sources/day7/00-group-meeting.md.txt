@@ -1,18 +1,20 @@
 # Class Warm Up
 
-Today, for the class warm-up, we will be learning about and applying the [Programming Design Recipe](https://course.ccs.neu.edu/cs5010sp15/recipe.html). 
-This is a formalized strategy and design process for writing a function. 
+Today, for the class warm-up, we will be learning about and applying the [Programming Design Recipe](https://www.cs.umb.edu/~stchang/cs450/f23/designrecipe.html). 
+This is a formalized strategy and design process for writing code.
+You can follow a "Design Recipe" for data, functions, or entire programs. 
 There is a more detailed specification, but we present a condensed version here.
 
 Some text is taken directly and adapted from the reference.
 
-As you read through the design recipe, apply it to the following problems for both Python and C++:
+As you read through the design recipe, apply it to the following problems for both Python and C++. 
+You should write code for each and practice running and executing it in both languages.
 
 1. Calculation of number density given a number of molecules an a box length (assume cubic box).
 2. Calculation of the solute's contribution to final volume in a dilution. Given a starting concentration $C_{1}$ and volume of solution $V_{1}$, and knowing the final concentration $C_2$ after adding solvent, calculate the volume $V_2$ that represents the solute's contribution to the final solution. The relationship between these quantities is represented by the equation:
 $ C_1 \times V_1 = C_2 \times V_2 $
 
-As you work through the Design Recipe steps, record your answers in the [class Google Doc](https://docs.google.com/document/d/1Bs5K45Y9uPrfE1XoGYgawg4_oA9DGKwAGTD_-KCbe0Y/edit?usp=sharing) 
+As you work through the Design Recipe steps, record your answers in the [class Google Presentation](https://docs.google.com/presentation/d/13b2208ItU8VLqdxMI1ovSCl0Ll3aIYy6CdWZUZi5LxA/edit?usp=sharing) 
 
 
 ## Summary of Recipe Steps
@@ -45,15 +47,18 @@ To create a data representation for a piece of information, we write *data defin
 
 A *data definition* is a written statement that defines a piece of data. 
 In simpler terms, it helps us describe what the data should look like and how it is structured. 
+When designing data, you should (1) identify the data you need to represent, (2) determine the structure of the data, and (3) define the data in your program. 
+This will involve picking appropriate data types and other data organization. 
 
 #### Why Data Design Matters
 
 Data design is essential because it lays the foundation for writing functions. 
 By defining data clearly, we can better understand what inputs our functions need and what outputs they should produce. 
-This understanding is crucial for writing effective and reliable programs.
 
 #### Examples of Data Definitions
 
+In the first week of the course, we programmed a Monte Carlo integration and simulation.
+In these programs, many choices about data design were made by the instructors. 
 Let's consider a few examples of data definitions:
 
 1. **3D Coordinate in Python**:
@@ -62,12 +67,17 @@ Let's consider a few examples of data definitions:
    - A y value is a floating-point number.
    - A z value is a floating-point number.
 
-2. **A Rectangle**:
+2. **A set of 3D Coordinates in Python**:
+   - A set of coordinates is a *list* of 3D coordinates (as defined above).
+
+Some other examples of data definitions include:
+
+1. **A Rectangle**:
    - A rectangle is represented by a *length* and *width*.
    - A width is a floating point number (Python) or a double (C++).
    - A height is a floating point number or a double (C++).
 
-3. **Person's Information**:
+2. **Person's Information**:
    - A person's information is a *dictionary* with keys: "name", "age", "email".
    - The name is a *string*.
    - The age is an integer.
@@ -78,7 +88,8 @@ Now that we understand the importance of data design and how to create data defi
 ## Step 2 - Function Specification
 
 You will next define the function specification.
-This involves deciding the function inputs and signature and writing
+This involves deciding the function inputs and signature, 
+deciding the functions return data, and writing the
 function documentation.
 
 In Python a function signature looks like
@@ -102,9 +113,9 @@ return_type function_name(arguments) {
 ```
 ````
 
-### Step 2.1 - Defining Function Inputs
+### Step 2.1 - Defining Function Inputs and Outputs
 
-Before writing a function, you need to determine what inputs the function requires to perform its task. 
+Before writing a function, you need to determine what inputs the function requires to perform its task, and what data it should return.
 These inputs are known as function parameters or arguments. 
 Think about the data that the function will need to process and how it should be organized.
 
@@ -209,7 +220,7 @@ Before running any tests, identify and write down several test cases. These shou
 ### Step 4.2 - Use Assertions or Print Statements
 
 In languages that support them, assertions can be used to automatically verify if a function's output is as expected.
- Otherwise, you can use print statements to display outputs for manual verification.
+Otherwise, you can use print statements to display outputs for manual verification.
 
 ### Step 4.3 - Run the Tests
 
@@ -236,8 +247,7 @@ Using the `calculate_rectangle_area` function from our previous sections:
     - Expected Output: `0.0`
 
 3. **Error Case**: 
-    - While our function doesn't have explicit error handling, think about scenarios that could be problematic, 
-    such as negative lengths or widths.
+    - While our function doesn't have explicit error handling, think about scenarios that could be problematic, such as negative lengths or widths.
 
 ````{tab-set-code}
 ```{code-block} python
@@ -251,7 +261,6 @@ assert result == 0.0, f"Test 2 Failed: Expected 0.0 but got {result}"
 ````
 
 It's important to understand that no matter how thorough your tests are, there's always the possibility of undiscovered issues.
-Regular testing and refinement are essential to maintaining reliable code.
 
 ## Step 5 - Program Review
 
@@ -261,7 +270,6 @@ Code review is a crucial practice in the professional world, and developing this
 ### Step 5.1 - Review for Consistency
 
 Ensure that your data definitions, function specifications, and implementations align with one another. 
-Any deviation might lead to unexpected behaviors.
 
 ### Step 5.2 - Check for Code Quality
 
@@ -278,7 +286,7 @@ It's a way to improve the code's design, readability, or reduce complexity.
 
 If possible, have a classmate or colleague review your code. 
 They might provide a fresh perspective, notice things you've missed, or offer suggestions for improvement. 
-This is a common practice in the software industry and is known to improve code quality significantly.
+This is a common practice in the software industry.
 
 #### Example Program Review for Rectangle Area Function
 
