@@ -28,3 +28,4 @@ Discussions and Assignments
 
    day7/00-group-meeting
    day7/group-assignment
+   individual-assignments/individual-assignment-3
