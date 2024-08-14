@@ -51,11 +51,9 @@
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'day6/00-group-meeting';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'day8/00-group-meeting';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Group Homework Assignment - Day 6" href="group-assignment.html" />
-    <link rel="prev" title="First C++ Program" href="02-first-program.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,7 +198,7 @@
 </li>
 
 
-<li class=" current active">
+<li class=" ">
   <a class="nav-link dropdown-item nav-internal" href="../day6.html">
     Day 6
   </a>
@@ -348,7 +346,9 @@ document.write(`
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -405,7 +405,7 @@ document.write(`
 </li>
 
 
-<li class="nav-item current active">
+<li class="nav-item ">
   <a class="nav-link nav-internal" href="../day6.html">
     Day 6
   </a>
@@ -507,23 +507,6 @@ document.write(`
     
   </div>
   
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-<nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="01-intro-cpp.html">Introduction to C++</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02-first-program.html">First C++ Program</a></li>
-</ul>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Class Warm Up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="group-assignment.html">Group Homework Assignment - Day 6</a></li>
-</ul>
-</div>
-</nav></div>
-    </div>
-  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -556,9 +539,6 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="../day6.html" class="nav-link">Day 6</a></li>
-    
     <li class="breadcrumb-item active" aria-current="page">Class Warm Up</li>
   </ul>
 </nav>
@@ -578,17 +558,32 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="class-warm-up">
 <h1>Class Warm Up<a class="headerlink" href="#class-warm-up" title="Link to this heading">#</a></h1>
-<p>To start class today, you will analyze the number of times functions are called within your Monte Carlo simulation code.
-Your goal is to identify the most computational intensive functions to target for optimization when rewriting your MC code using NumPy.
-In programming, optimizing the performance of your code is very important, especially in areas that are executed frequently.
-By focusing on the functions that are called the most, you can target those sections of the code that have the greatest impact on overall performance.</p>
-<p>Consider each of the functions in your code.
-Without executing any code, calculate the number of times each function is called in a simulation with 10 steps, 100 steps, and 1000 steps.
-Create a table on the class <a class="reference external" href="https://docs.google.com/presentation/d/13b2208ItU8VLqdxMI1ovSCl0Ll3aIYy6CdWZUZi5LxA/edit?usp=sharing">Google Presentation</a> that contains the function name and the number of times it is called for each simulation length.</p>
-<p>After you have calculated the number of times each function is called, insert a counter for your two most frequently called functions to check your answer.</p>
-<p>Based on your results, which functions should you target to most effectively optimize your code? Why?</p>
-<p>You might also try commenting out these functions or replacing them with a simpler version to get a sense of how much time they are taking up in your code.
-Does this match your expectations based on the number of times they are called?</p>
+<section id="warm-up-quiz">
+<h2>Warm-Up Quiz<a class="headerlink" href="#warm-up-quiz" title="Link to this heading">#</a></h2>
+<p>Take the Warm-Up Quiz available on bCourses under Day 8.</p>
+</section>
+<section id="library-tutorial">
+<h2>Library Tutorial<a class="headerlink" href="#library-tutorial" title="Link to this heading">#</a></h2>
+<p>As a graduate student at UC Berkeley, you now have access to amenities such as UC Berkeley’s library.
+For this class’s warm-up, you’ll be using the UC Berkeley library to find read “Programming: Principles and Practice Using C++” by Bjarne Stroustrup.
+Bjarne Stroustrup is the creator of the C++ programming language and has written many books on the subject.
+This book is an introduction to C++.
+In Chem 274A, we will also be using another book, “The C++ Programming Language” by Bjarne Stroustrup, which is a more advanced book on C++.</p>
+<p>To access the textbook, go to the <a class="reference external" href="https://www.lib.berkeley.edu/">UC Berkeley Library</a> website.
+Enter the title of the book in the search bar, as shown below and search.</p>
+<img alt="day8/fig/berkeley-libraries.png" class="align-center" src="day8/fig/berkeley-libraries.png" />
+<p>Find the book in the list of results.
+You can click the title to open more information, but ultimately to access the book, click “Available Online” and follow links in that section.
+You will need to log into your Berkeley account to access the book.</p>
+<p>After logging in, you should be able to access the book.
+Pick a chapter from the book and read it.
+As you read, take note of interesting ideas and points.
+These don’t have to be directly related to programming syntax.
+For example, Dr. Nash finds Stroustrup’s observation “Good software is invisible” in Chapter 1 to be particularly interesting (we could have a whole discussion on this one sentence).
+You can also take note of any questions you have about the chapter.</p>
+<p>After 15-20 minutes, take some time to discuss what you read with your group.
+Then, make a note on the class <a class="reference internal" href="#ttps://docs.google.com/presentation/d/13b2208ItU8VLqdxMI1ovSCl0Ll3aIYy6CdWZUZi5LxA/edit?usp=sharing"><span class="xref myst">Google Presentation</span></a>.</p>
+</section>
 </section>
 
 
@@ -601,24 +596,6 @@ Does this match your expectations based on the number of times they are called?<
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="02-first-program.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">First C++ Program</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="group-assignment.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Group Homework Assignment - Day 6</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -630,9 +607,22 @@ Does this match your expectations based on the number of times they are called?<
 
 
   <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-quiz">Warm-Up Quiz</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#library-tutorial">Library Tutorial</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
 
   <div class="tocsection sourcelink">
-    <a href="../_sources/day6/00-group-meeting.md.txt">
+    <a href="../_sources/day8/00-group-meeting.md.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

@@ -215,6 +215,13 @@
 
 
 <li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../day8.html">
+    Day 8
+  </a>
+</li>
+
+
+<li class=" ">
   <a class="nav-link dropdown-item nav-external" href="https://msse.berkeley.edu/">
     MSSE
   </a>
@@ -410,6 +417,13 @@ document.write(`
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../day7.html">
     Day 7
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../day8.html">
+    Day 8
   </a>
 </li>
 
@@ -806,8 +820,8 @@ PYTHON</label><div class="sd-tab-content docutils">
 <p>Monte Carlo methods are numerical techniques
 frequently used to estimate complex multidimensional integrals which otherwise could not be performed. The idea of Monte Carlo integration is to estimate the value of an integral by generating random points from the probability density.</p>
 <p>For instance, the integral of the function <span class="math notranslate nohighlight">\(f(\textbf{x})\)</span>, where <span class="math notranslate nohighlight">\(\textbf{x} \in \Re^{M}\)</span>, is approximated as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c5da80ad-f07f-417d-8fd7-297954632e34">
-<span class="eqno">(1)<a class="headerlink" href="#equation-c5da80ad-f07f-417d-8fd7-297954632e34" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b42c1d0e-8bf4-4490-8778-2e7843eae758">
+<span class="eqno">(1)<a class="headerlink" href="#equation-b42c1d0e-8bf4-4490-8778-2e7843eae758" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	 I = \int_V f(\textbf{x}) \, d\textbf{x} = \int_V
 	 \frac{f(\textbf{x})}{h(\textbf{x})} h(\textbf{x}) \, d\textbf{x} 
 	 = \left&lt; \frac{f(\textbf{x})}{h(\textbf{x})} \right&gt;_{h(\textbf{x})}
@@ -821,14 +835,14 @@ generating random samples of <span class="math notranslate nohighlight">\(\textb
 distribution
 <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span>. The simplest case is to uniformly generate <span class="math notranslate nohighlight">\(\textbf{x}\)</span>
 in the volume (<span class="math notranslate nohighlight">\(V\)</span>). In this way, <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span> becomes constant as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-721a130d-2a1c-4e08-b1a6-b2672b4c80f3">
-<span class="eqno">(2)<a class="headerlink" href="#equation-721a130d-2a1c-4e08-b1a6-b2672b4c80f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d8170a9c-d27d-4ad2-854a-d4e34a1b48e7">
+<span class="eqno">(2)<a class="headerlink" href="#equation-d8170a9c-d27d-4ad2-854a-d4e34a1b48e7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	h(\textbf{x}) = \frac{1}{V}
 	\label{eq.uniformDist}
 \end{equation}\]</div>
 <p>Using this sampling density <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span>, the integral becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d85f704a-9036-49b5-9d58-7d320a6de925">
-<span class="eqno">(3)<a class="headerlink" href="#equation-d85f704a-9036-49b5-9d58-7d320a6de925" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f52214d3-56f3-4b99-a6c2-6a0d65ed6222">
+<span class="eqno">(3)<a class="headerlink" href="#equation-f52214d3-56f3-4b99-a6c2-6a0d65ed6222" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	I = \int_V f(\textbf{x}) \, d\textbf{x} \approx \frac{V}{N} \sum_{i=1}^N
 	f(\textbf{x}_i)
 	\label{eq.averageUniform}

@@ -26,6 +26,19 @@ As an example, Dr. Pritchard and Dr. Nash completed this assignment and made the
 ```
 Do you see similar relative performance/trends?
 
+:::{admonition} Ensuring Comparable Measurments
+:class: hint
+
+This project asks you to run 27 simulations. 
+For purposses of comparison, it would be best to run all simulations on the same machine. However, this will tie one person up for a long time. Another possibility would be to divide the work among your group members and then combine the results.
+To do this, you should split the work along the independent variables, number of steps or atoms and programming language.
+Under this scheme, each group member would run 9 simulations. 
+Each person would run one trial of each of the three versions of the code for a given number of steps or atoms. 
+Then, you would combine the results to make your plots.
+This would mean that each group member runs the same set of simulations to help account for performmace differences between machines.
+
+:::
+
 ### Timing Your Code
 You will want to use the same method to time trials of your code.
 You should use the `time` command line utility. 
