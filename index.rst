@@ -122,13 +122,21 @@ Discussions and Assignments
   :file: csv_tables/day7_assignments.csv  
   :header-rows: 1
 
-..
-  Day 8
-  #######
-  .. csv-table:: 
-    :file: csv_tables/day8.csv
-    :header-rows: 1
+Day 8
+#######
 
+Lessons
+========
+.. csv-table:: 
+  :file: csv_tables/day8.csv
+  :header-rows: 1
+
+Discussions and Assignments
+===========================
+.. csv-table:: 
+  :file: csv_tables/day8_assignments.csv  
+  :header-rows: 1
+..
   Day 9
   #######
   .. csv-table:: 
@@ -148,3 +156,4 @@ Discussions and Assignments
    day5
    day6
    day7
+   day8
