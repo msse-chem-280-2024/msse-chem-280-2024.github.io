@@ -31,4 +31,4 @@ For example, Dr. Nash finds Stroustrup's observation "Good software is invisible
 You can also take note of any questions you have about the chapter.
 
 After 15-20 minutes, take some time to discuss what you read with your group.
-Then, make a note on the class [Google Presentation](ttps://docs.google.com/presentation/d/13b2208ItU8VLqdxMI1ovSCl0Ll3aIYy6CdWZUZi5LxA/edit?usp=sharing).
+Then, make a note on the class [Google Presentation](https://docs.google.com/presentation/d/13b2208ItU8VLqdxMI1ovSCl0Ll3aIYy6CdWZUZi5LxA/edit?usp=sharing).
