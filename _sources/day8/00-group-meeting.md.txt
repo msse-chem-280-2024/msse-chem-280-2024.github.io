@@ -15,7 +15,7 @@ In Chem 274A, we will also be using another book, "The C++ Programming Language"
 To access the textbook, go to the [UC Berkeley Library](https://www.lib.berkeley.edu/) website.
 Enter the title of the book in the search bar, as shown below and search.
 
-```{image} fig/berkeley-libraries.png
+```{image} ../fig/berkeley-libraries.png
 :align: center
 ```
 
