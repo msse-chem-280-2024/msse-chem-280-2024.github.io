@@ -4,4 +4,4 @@ This should be completed by each group member individually. **Individual assignm
 
 For this assignment, a full explanation is given in the assignment repository. 
 
-[Click this link to accept the assignment](https://classroom.github.com/a/2BJQNmeM)
+[Click this link to accept the assignment](https://classroom.github.com/a/4bEBYZpO)
