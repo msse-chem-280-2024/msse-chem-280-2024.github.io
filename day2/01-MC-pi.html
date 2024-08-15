@@ -834,8 +834,8 @@ PYTHON</label><div class="sd-tab-content docutils">
 <p>Monte Carlo methods are numerical techniques
 frequently used to estimate complex multidimensional integrals which otherwise could not be performed. The idea of Monte Carlo integration is to estimate the value of an integral by generating random points from the probability density.</p>
 <p>For instance, the integral of the function <span class="math notranslate nohighlight">\(f(\textbf{x})\)</span>, where <span class="math notranslate nohighlight">\(\textbf{x} \in \Re^{M}\)</span>, is approximated as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-03b4760e-8694-42dd-8260-5f46ed1f191b">
-<span class="eqno">(1)<a class="headerlink" href="#equation-03b4760e-8694-42dd-8260-5f46ed1f191b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3db0d270-ef45-49fb-97c5-fc4705f24a46">
+<span class="eqno">(1)<a class="headerlink" href="#equation-3db0d270-ef45-49fb-97c5-fc4705f24a46" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	 I = \int_V f(\textbf{x}) \, d\textbf{x} = \int_V
 	 \frac{f(\textbf{x})}{h(\textbf{x})} h(\textbf{x}) \, d\textbf{x} 
 	 = \left&lt; \frac{f(\textbf{x})}{h(\textbf{x})} \right&gt;_{h(\textbf{x})}
@@ -849,14 +849,14 @@ generating random samples of <span class="math notranslate nohighlight">\(\textb
 distribution
 <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span>. The simplest case is to uniformly generate <span class="math notranslate nohighlight">\(\textbf{x}\)</span>
 in the volume (<span class="math notranslate nohighlight">\(V\)</span>). In this way, <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span> becomes constant as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79956770-26f4-4551-9d3c-2c764e277e0d">
-<span class="eqno">(2)<a class="headerlink" href="#equation-79956770-26f4-4551-9d3c-2c764e277e0d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6c1954d5-fcfd-4b4d-847d-3a27de76ede4">
+<span class="eqno">(2)<a class="headerlink" href="#equation-6c1954d5-fcfd-4b4d-847d-3a27de76ede4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	h(\textbf{x}) = \frac{1}{V}
 	\label{eq.uniformDist}
 \end{equation}\]</div>
 <p>Using this sampling density <span class="math notranslate nohighlight">\(h(\textbf{x})\)</span>, the integral becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-050e4be8-b7be-4a29-be4e-c051e9726aa7">
-<span class="eqno">(3)<a class="headerlink" href="#equation-050e4be8-b7be-4a29-be4e-c051e9726aa7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e7ebe0f3-fc4f-4253-86ff-d6a5f772d040">
+<span class="eqno">(3)<a class="headerlink" href="#equation-e7ebe0f3-fc4f-4253-86ff-d6a5f772d040" title="Permalink to this equation">#</a></span>\[\begin{equation}
 	I = \int_V f(\textbf{x}) \, d\textbf{x} \approx \frac{V}{N} \sum_{i=1}^N
 	f(\textbf{x}_i)
 	\label{eq.averageUniform}

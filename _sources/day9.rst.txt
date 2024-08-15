@@ -26,3 +26,4 @@ Discussions and Assignments
    :maxdepth: 1
 
    day9/00-group-meeting
+   individual-assignments/individual-assignment-4
