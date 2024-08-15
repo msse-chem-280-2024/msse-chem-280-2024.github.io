@@ -136,12 +136,21 @@ Discussions and Assignments
 .. csv-table:: 
   :file: csv_tables/day8_assignments.csv  
   :header-rows: 1
-..
-  Day 9
-  #######
-  .. csv-table:: 
-    :file: csv_tables/day9.csv
-    :header-rows: 1
+
+Day 9
+#######
+
+Lessons
+=======
+.. csv-table:: 
+  :file: csv_tables/day9.csv
+  :header-rows: 1
+
+Discussions and Assignments
+===========================
+.. csv-table:: 
+  :file: csv_tables/day9_assignments.csv  
+  :header-rows: 1
 
 .. toctree::
    :maxdepth: 2
@@ -157,3 +166,4 @@ Discussions and Assignments
    day6
    day7
    day8
+   day9

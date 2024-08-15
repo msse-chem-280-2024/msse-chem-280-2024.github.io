@@ -19,3 +19,10 @@ Lessons
 
    day9/01-multifile-projects
    day9/02-documentation
+
+Discussions and Assignments
+---------------------------
+.. toctree::
+   :maxdepth: 1
+
+   day9/00-group-meeting
